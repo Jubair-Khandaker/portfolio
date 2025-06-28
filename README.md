@@ -16,6 +16,7 @@ __LinkedIn: [Jubair Khandaker](https://www.linkedin.com/in/jubairkhandaker/)__
 
 #### Master’s Thesis & Working Student - Production Data Analysis 
 [(Employer Reference)](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
+
 _April 2024 - December 2024_                                                                                           
 - Contributed to the full development cycle of predictive maintenance solutions, helping reduce machine downtime upto 75% and improve customer satisfaction
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
