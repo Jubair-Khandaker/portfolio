@@ -1,5 +1,5 @@
-#### Data Analysis | Process Optimization | Business Intelligence  
-#### M.Eng. in Technology and Innovation Management
+## Data Analysis | Process Optimization | Business Intelligence  
+## M.Eng. in Technology and Innovation Management
 
 - __Phone: +4915781303249__  
 - __Email: jubairkhandaker73@gmail.com__
