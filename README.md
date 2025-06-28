@@ -1,14 +1,20 @@
-<div style="
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-">
-  <img src="Foto.png" alt="Profile Picture" style="
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+<div style="display: flex; align-items: flex-start;">
+  <!-- Left: Cropped Circular Image -->
+  <div style="
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 30px;
   ">
+    <img src="Foto.png" alt="Profile Picture" style="
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    ">
+  </div>
+
 </div>
 
 
