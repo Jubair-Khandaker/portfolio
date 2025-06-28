@@ -63,9 +63,9 @@ _March 2021 - February 2025_
 - __Grade__ : 1.80
 - __Thesis__ : Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
 - __Noteworthy Coursework__ :
-Agile Requirements Engineering and Digital Business Transformation
-Digital Business Model, Strategic Innovation Managemeng
-Engineering Project
+Agile Requirements Engineering and Digital Business Transformation,
+Digital Business Model, Strategic Innovation Managemeng,
+Engineering Project, and
 Technology Assessment and Sustainability
 
 #### Bachelors of Science in Industrial and Production Engineering
@@ -73,13 +73,7 @@ _April 2014 - February 2019_
 - __University__ : Shahjalal University of Science and Technology; Sylhet, Bangladesh
 - __Grade__ : 2.00
 - __Thesis__ : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
-- __Noteworthy Coursework__ :
-+ Project Management
-+ Supply Chain Management
-+ Operation Management
-+ Product Design and Development
-+ Operations Research
-+ Quality Control and Management
+- __Noteworthy Coursework__ : Project Management, Supply Chain Management, Operation Management, Product Design and Development, Operations Research, and Quality Control and Management
 
 ## Technical Skills
 - Data & Database Tools : SQL (MySQL, PostgreSQL)
