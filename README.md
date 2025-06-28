@@ -79,7 +79,7 @@ _April 2014 - February 2019_
 - Productivity and Office Tools : MS Office (Excel, PowerPoint, Word, Outlook, SharePoint, Visio, Power Automate), Google Sheets, Jira, and SAP S4/ Hana (basic)
 
 ## Language Skills
-- English : C1 - Business fluent proficiency
+- English : C2 - Near native fluency
 - German  : B1 - Conversational
 - Bengali : Native
 
