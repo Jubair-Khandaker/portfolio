@@ -63,10 +63,10 @@ _March 2021 - February 2025_
 - __Grade__ : 1.80
 - __Thesis__ : Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
 - __Noteworthy Coursework__ :
-+ Agile Requirements Engineering and Digital Business Transformation
-+ Digital Business Model, Strategic Innovation Managemeng
-+ Engineering Project
-+ Technology Assessment and Sustainability
+* Agile Requirements Engineering and Digital Business Transformation
+* Digital Business Model, Strategic Innovation Managemeng
+* Engineering Project
+* Technology Assessment and Sustainability
 
 #### Bachelors of Science in Industrial and Production Engineering
 _April 2014 - February 2019_ 
