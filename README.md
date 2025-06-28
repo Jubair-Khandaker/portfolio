@@ -33,7 +33,6 @@ _January 2023 - December 2023_
 - Developed marketing materials like newsletters and short videos to support promotion of products
 
 #### Industrial Engineer - Supply Chain and Product Management
-[Employer Reference](https://drive.google.com/file/d/1Cu6XEVdEMZ6gR-oaJ8TYRWVWY07TibLR/view?usp=drive_link)
 
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
@@ -60,17 +59,27 @@ Calculating the shortest distance between 12 cities in Spain by creating a symme
 ## Education
 #### Masters of Engineering in Technology and Innovation Management
 _March 2021 - February 2025_ 
-- University : Hochschule Harz; Wernigerode, Germany
-- Grade : 1.80
-- Thesis : Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
-- Noteworthy Coursework : Agile Requirements Engineering and Digital Business Transformation, Digital Business Model, Strategic Innovation Management, and Engineering Project, Technology Assessment and Sustainability
+- __University__ : [Hochschule Harz](https://www.hs-harz.de/en/); Wernigerode, Germany
+- __Grade__ : 1.80
+- __Thesis__ : Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
+- __Noteworthy Coursework__ :
++ Agile Requirements Engineering and Digital Business Transformation
++ Digital Business Model, Strategic Innovation Managemeng
++ Engineering Project
++ Technology Assessment and Sustainability
 
 #### Bachelors of Science in Industrial and Production Engineering
 _April 2014 - February 2019_ 
-- University : Shahjalal University of Science and Technology; Sylhet, Bangladesh
-- Grade : 2.00
-- Thesis : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
-- Relevant Coursework : Project Management, Supply Chain Management, Operation Management, Product Design and Development, Operations Research, Quality Control and Management
+- __University__ : Shahjalal University of Science and Technology; Sylhet, Bangladesh
+- __Grade__ : 2.00
+- __Thesis__ : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
+- __Noteworthy Coursework__ :
++ Project Management
++ Supply Chain Management
++ Operation Management
++ Product Design and Development
++ Operations Research
++ Quality Control and Management
 
 ## Technical Skills
 - Data & Database Tools : SQL (MySQL, PostgreSQL)
@@ -91,16 +100,6 @@ _April 2014 - February 2019_
 - Results-driven
 - Detail-oriented
 - Adaptable to change
-
-## Relevant Academic Courses
-
-- Agile Requirements Engineering and Digital Business Transformation
-- Digital Business Model
-- Strategic Innovation Management
-- Technology Assessment and Sustainability
-- Project Management
-- Operations Research
-- Supply Chain Management
 
 ## Online Courses and Certifications
 
