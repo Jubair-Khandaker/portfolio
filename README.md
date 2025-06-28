@@ -1,4 +1,6 @@
-# Data Analyst
+### Phone: +4915781303249
+### Email: jubairkhandaker73@gmail.com
+### LinkedIn: www.linkedin.com/in/jubairkhandaker/
 
 ### Core Competencies
  - Digital process optimization
@@ -81,3 +83,21 @@ _April 2014 - February 2019_
 - Results-driven
 - Detail-oriented
 - Adaptable to change
+
+### Relevant Academic Courses
+
+- Agile Requirements Engineering and Digital Business Transformation
+- Digital Business Model
+- Strategic Innovation Management
+- Technology Assessment and Sustainability
+- Project Management
+- Operations Research
+- Supply Chain Management
+
+### Online Courses and Certifications
+
+- [Microsoft Power BI for Business Intelligence](https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/)
+- [Learn Jira with Real-World Examples](https://www.udemy.com/certificate/UC-9905aec1-36be-4420-8059-7acfd4f9123a/)
+- [Google Sheets for Data Analysis & Business Intelligence](https://www.udemy.com/certificate/UC-ebd981c7-6e0d-48ed-bf46-fd7666b33d5d/)
+- [SQL for Data Science](https://www.coursera.org/account/accomplishments/verify/234R2KYX6FLY?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course)
+- [Supply Chain Management Specialization](https://www.coursera.org/account/accomplishments/specialization/7MZWVZEWEDQK?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=s12n)
