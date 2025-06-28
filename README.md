@@ -1,18 +1,5 @@
-<div style="display: flex;">
-  <!-- Left Column -->
-  <div style="width: 200px; margin-right: 20px; text-align: center;">
-    <img src="Foto.png" alt="Profile" style="width: 150px; border-radius: 50%;">
-  </div>
-
-  <!-- Right Column (main content) -->
-  <div>
-    <!-- Your existing content goes here -->
-    <h1>Jubair Khandaker</h1>
-    <p>Recent Master's graduate in Technology and Innovation Management...</p>
-    <!-- etc. -->
-  </div>
-</div>
-
+<img src="Foto.png" alt="Profile Picture"
+     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
 
 ### Profile
 
