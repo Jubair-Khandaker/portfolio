@@ -1,3 +1,6 @@
+### Product & Project Management | Data Analysis | Process Optimization | Business Intelligence  
+### M.Eng. in Technology and Innovation Management
+
 #### Phone: +4915781303249
 #### Email: jubairkhandaker73@gmail.com
 #### LinkedIn: www.linkedin.com/in/jubairkhandaker/
