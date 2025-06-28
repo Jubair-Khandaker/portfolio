@@ -1,6 +1,4 @@
-### Profile
-
-Recent Master’s graduate in Technology and Innovation Management with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
+# Product & Project Management | Data Analysis | Process Optimization | Business Intelligence | M.Eng. in Technology and Innovation Management
 
 ### Core Competencies
  - Digital process optimization
@@ -36,6 +34,14 @@ _January 2020 - June 2020_
 - Reduced the defect rates (upto 40%) by following the DMAIC approach of six sigma under the supervision of the higher management
 - Creating daily and monthly reports to track the efficiency of production units
 
+#### Noteworthy Projects
+
+- Streamlined Purchasing of Machine Functionality : Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
+- Prioritizing Preventive Maintenance : Using an asset performance management system to eliminate machine downtime at customers’ sites and enhance customer service at SIG
+- Smart Automation for Energy Efficiency : Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project
+- Idea Engineering : Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center ofExcellence
+- Optimizing Travelling Distance : Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities
+
 ### Education
 #### Masters of Engineering in Technology and Innovation Management
 _March 2021 - February 2025_ 
@@ -56,3 +62,17 @@ _April 2014 - February 2019_
 - Business Intelligence Tools : BI tools (MS Power BI)
 - Programming Language : Python
 - Productivity and Office Tools : MS Office (Excel, PowerPoint, Word, Outlook, SharePoint, Visio, Power Automate), Google Sheets, Jira, and SAP S4/ Hana (basic)
+
+### Language Skills
+- English : C1 - Business fluent proficiency
+- German  : B1 - Conversational
+- Bengali : Native
+
+### Soft Skills
+
+- Analytical thinking
+- Problem-solving skills
+- Presentation skills
+- Results-driven
+- Detail-oriented
+- Adaptable to change
