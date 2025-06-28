@@ -1,4 +1,4 @@
-#### Product & Project Management | Data Analysis | Process Optimization | Business Intelligence  
+#### Data Analysis | Process Optimization | Business Intelligence  
 #### M.Eng. in Technology and Innovation Management
 
 - __Phone: +4915781303249__  
