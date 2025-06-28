@@ -13,7 +13,8 @@
 
 ## Work Experiences
 
-#### Master’s Thesis & Working Student - Production Data Analysis 
+#### Master’s Thesis & Working Student - Production Data Analysis
+[SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
@@ -23,6 +24,7 @@ _April 2024 - December 2024_
 - Defined and executed project goals for predictive maintenance initiatives, aligned with operational needs
 
 #### Working Student - Product and Project Management
+[SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
 
 _January 2023 - December 2023_   
@@ -33,7 +35,7 @@ _January 2023 - December 2023_
 - Developed marketing materials like newsletters and short videos to support promotion of products
 
 #### Industrial Engineer - Supply Chain and Product Management
-
+[Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
 - Coordinated the tasks with internal stakeholders such as the merchandising team, planning team, sales team, and warehouse to avoid backlog and feeding crisis
@@ -70,7 +72,7 @@ Technology Assessment and Sustainability
 
 #### Bachelors of Science in Industrial and Production Engineering
 _April 2014 - February 2019_ 
-- __University__ : Shahjalal University of Science and Technology; Sylhet, Bangladesh
+- __University__ : [Shahjalal University of Science and Technology](https://www.sust.edu/); Sylhet, Bangladesh
 - __Grade__ : 2.00
 - __Thesis__ : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
 - __Noteworthy Coursework__ : Project Management, Supply Chain Management, Operation Management, Product Design and Development, Operations Research, and Quality Control and Management
