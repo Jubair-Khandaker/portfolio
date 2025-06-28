@@ -36,15 +36,15 @@ _January 2020 - June 2020_
 
 #### Projects
 
-- __Streamlined Purchasing of Machine Functionality__
+- __Streamlined Purchasing of Machine Functionality__ :
 Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
-- __Prioritizing Preventive Maintenance__
+- __Prioritizing Preventive Maintenance__ :
 Using an asset performance management system to eliminate machine downtime at customers’ sites and enhance customer service at SIG
-- __Smart Automation for Energy Efficiency__
+- __Smart Automation for Energy Efficiency__ :
 Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project
-- __Idea Engineering__
+- __Idea Engineering__ :
 Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center ofExcellence
-- __Optimizing Travelling Distance__
+- __Optimizing Travelling Distance__ :
 Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities
 
 ### Education
