@@ -1,8 +1,5 @@
-# Data Analyst
+# Data Analyst | M.Eng. in Technology and Innovation Management
 
-- __Phone: +4915781303249__  
-- __Email: jubairkhandaker73@gmail.com__
-- __LinkedIn: [Jubair Khandaker](https://www.linkedin.com/in/jubairkhandaker/)__
 
 ## Core Competencies
  - Digital process optimization
