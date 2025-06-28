@@ -1,4 +1,4 @@
-# Product & Project Management | Data Analysis | Process Optimization | Business Intelligence | M.Eng. in Technology and Innovation Management
+# Data Analyst
 
 ### Core Competencies
  - Digital process optimization
@@ -36,11 +36,11 @@ _January 2020 - June 2020_
 
 #### Noteworthy Projects
 
-- Streamlined Purchasing of Machine Functionality : Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
-- Prioritizing Preventive Maintenance : Using an asset performance management system to eliminate machine downtime at customers’ sites and enhance customer service at SIG
-- Smart Automation for Energy Efficiency : Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project
-- Idea Engineering : Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center ofExcellence
-- Optimizing Travelling Distance : Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities
+- _Streamlined Purchasing of Machine Functionality_ : Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
+- _Prioritizing Preventive Maintenance_ : Using an asset performance management system to eliminate machine downtime at customers’ sites and enhance customer service at SIG
+- _Smart Automation for Energy Efficiency_ : Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project
+- _Idea Engineering_ : Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center ofExcellence
+- _Optimizing Travelling Distance_ : Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities
 
 ### Education
 #### Masters of Engineering in Technology and Innovation Management
