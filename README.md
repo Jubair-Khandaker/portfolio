@@ -1,5 +1,16 @@
-<img src="Foto.png" alt="Profile Picture"
-     style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover;">
+<div style="
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+">
+  <img src="Foto.png" alt="Profile Picture" style="
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  ">
+</div>
+
 
 ### Profile
 
