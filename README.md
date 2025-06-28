@@ -15,7 +15,7 @@
 
 #### Master’s Thesis & Working Student - Production Data Analysis
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
-[Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
+##### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
 - Contributed to the full development cycle of predictive maintenance solutions, helping reduce machine downtime upto 75% and improve customer satisfaction
@@ -25,7 +25,7 @@ _April 2024 - December 2024_
 
 #### Working Student - Product and Project Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
-[Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
+##### [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
 
 _January 2023 - December 2023_   
 - Led product management for a development project to sell software features for SIG filling machines, evaluating technical, commercial, and operational feasibility, and aligning with business stakeholders
