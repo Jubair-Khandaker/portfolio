@@ -100,6 +100,7 @@ _April 2014 - February 2019_
 ## Online Courses and Certifications
 
 - [Microsoft Power BI for Business Intelligence](https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/)
+- [Complete A.I. & Machine Learning, Data Science Bootcamp](https://www.udemy.com/certificate/UC-46cbb747-2241-4fdb-b46a-6ec91bcc8245/)
 - [Learn Jira with Real-World Examples](https://www.udemy.com/certificate/UC-9905aec1-36be-4420-8059-7acfd4f9123a/)
 - [Google Sheets for Data Analysis & Business Intelligence](https://www.udemy.com/certificate/UC-ebd981c7-6e0d-48ed-bf46-fd7666b33d5d/)
 - [SQL for Data Science](https://www.coursera.org/account/accomplishments/verify/234R2KYX6FLY?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course)
