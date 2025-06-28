@@ -33,6 +33,8 @@ _January 2023 - December 2023_
 - Developed marketing materials like newsletters and short videos to support promotion of products
 
 #### Industrial Engineer - Supply Chain and Product Management
+[Employer Reference](https://drive.google.com/file/d/1Cu6XEVdEMZ6gR-oaJ8TYRWVWY07TibLR/view?usp=drive_link)
+
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
 - Coordinated the tasks with internal stakeholders such as the merchandising team, planning team, sales team, and warehouse to avoid backlog and feeding crisis
