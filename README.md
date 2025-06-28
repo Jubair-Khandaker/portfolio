@@ -11,13 +11,13 @@ Recent Master’s graduate in Technology and Innovation Management with experien
 
 ### Work Experiences
 
-#### Master’s Thesis & Working Student - Production Data Analysis
+#### Master’s Thesis & Working Student - Production Data Analysis                                                              _April 2024 - December 2024_                                                                                           
 - Contributed to the full development cycle of predictive maintenance solutions, helping reduce machine downtime upto 75% and improve customer satisfaction
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
 - Delivered data-driven insights to support maintenance decisions in cross-functional environment
 - Defined and executed project goals for predictive maintenance initiatives, aligned with operational needs
 
-#### Working Student - Product and Project Management
+#### Working Student - Product and Project Management                                                                                                    _January 2023 - December 2023_   
 - Led product management for a development project to sell software features for SIG filling machines, evaluating technical, commercial, and operational feasibility, and aligning with business stakeholders
 - Tracked progress, monitored deadlines, scheduled meetings, conducted budget analysis, defined feature requirements, developed milestones plans, developed workflow and diagrams for projects
 - Led a project to evaluate machine effectiveness by analyzing server data using PostgreSQL
