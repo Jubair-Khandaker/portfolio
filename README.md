@@ -41,11 +41,11 @@ Communicating the purchase of various machine functionalities by customersusing 
 - __Prioritizing Preventive Maintenance__ :
 Using an asset performance management system to eliminate machine downtime at customers’ sites and enhance customer service at SIG
 - __Smart Automation for Energy Efficiency__ :
-Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project. [Link](https://drive.google.com/file/d/1qeXAJkOYDI6roRvzwD_YOpqJclsJVK5a/view)
+Automating dorm room appliances and heating systems with smart devices and FHEM to save energy and promote sustainability as a university project [Read More](https://drive.google.com/file/d/1qeXAJkOYDI6roRvzwD_YOpqJclsJVK5a/view)
 - __Idea Engineering__ :
-Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center ofExcellence
+Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center of Excellence [Read More](https://drive.google.com/file/d/1PbjXRiq3xXlmJap7EwFMqKVto9rKUYt9/view)
 - __Optimizing Travelling Distance__ :
-Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities
+Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities [Read More](https://drive.google.com/file/d/1Ye8X-lJI1K7Hw3dMV1BUptmPwpLfoFl8/view)
 
 ### Education
 #### Masters of Engineering in Technology and Innovation Management
