@@ -1,4 +1,4 @@
-(./Foto.png)
+!(./Foto.png)
 
 ### Profile
 
