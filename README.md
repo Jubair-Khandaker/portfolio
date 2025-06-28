@@ -5,14 +5,14 @@
 #### Email: jubairkhandaker73@gmail.com
 #### LinkedIn: www.linkedin.com/in/jubairkhandaker/
 
-### Core Competencies
+## Core Competencies
  - Digital process optimization
  - Business intelligence tools
  - Technical documentation
  - Cross functional team collaboration
  - Data driven decision making
 
-### Work Experiences
+## Work Experiences
 
 #### Master’s Thesis & Working Student - Production Data Analysis                                                              
 _April 2024 - December 2024_                                                                                           
@@ -39,7 +39,7 @@ _January 2020 - June 2020_
 - Reduced the defect rates (upto 40%) by following the DMAIC approach of six sigma under the supervision of the higher management
 - Creating daily and monthly reports to track the efficiency of production units
 
-#### Projects
+## Projects
 
 - __Streamlined Purchasing of Machine Functionality__ :
 Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
@@ -52,7 +52,7 @@ Examining knowledge café and world café methods in both physical and virtualse
 - __Optimizing Travelling Distance__ :
 Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities [(Read More)](https://drive.google.com/file/d/1Ye8X-lJI1K7Hw3dMV1BUptmPwpLfoFl8/view)
 
-### Education
+## Education
 #### Masters of Engineering in Technology and Innovation Management
 _March 2021 - February 2025_ 
 - University : Hochschule Harz; Wernigerode, Germany
@@ -67,18 +67,18 @@ _April 2014 - February 2019_
 - Thesis : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
 - Relevant Coursework : Project Management, Supply Chain Management, Operation Management, Product Design and Development, Operations Research, Quality Control and Management
 
-### Technical Skills
+## Technical Skills
 - Data & Database Tools : SQL (MySQL, PostgreSQL)
 - Business Intelligence Tools : BI tools (MS Power BI)
 - Programming Language : Python
 - Productivity and Office Tools : MS Office (Excel, PowerPoint, Word, Outlook, SharePoint, Visio, Power Automate), Google Sheets, Jira, and SAP S4/ Hana (basic)
 
-### Language Skills
+## Language Skills
 - English : C1 - Business fluent proficiency
 - German  : B1 - Conversational
 - Bengali : Native
 
-### Soft Skills
+## Soft Skills
 
 - Analytical thinking
 - Problem-solving skills
@@ -87,7 +87,7 @@ _April 2014 - February 2019_
 - Detail-oriented
 - Adaptable to change
 
-### Relevant Academic Courses
+## Relevant Academic Courses
 
 - Agile Requirements Engineering and Digital Business Transformation
 - Digital Business Model
@@ -97,7 +97,7 @@ _April 2014 - February 2019_
 - Operations Research
 - Supply Chain Management
 
-### Online Courses and Certifications
+## Online Courses and Certifications
 
 - [Microsoft Power BI for Business Intelligence](https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/)
 - [Learn Jira with Real-World Examples](https://www.udemy.com/certificate/UC-9905aec1-36be-4420-8059-7acfd4f9123a/)
