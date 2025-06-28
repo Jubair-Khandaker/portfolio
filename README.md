@@ -1,6 +1,6 @@
-### Phone: +4915781303249
-### Email: jubairkhandaker73@gmail.com
-### LinkedIn: www.linkedin.com/in/jubairkhandaker/
+#### Phone: +4915781303249
+#### Email: jubairkhandaker73@gmail.com
+#### LinkedIn: www.linkedin.com/in/jubairkhandaker/
 
 ### Core Competencies
  - Digital process optimization
