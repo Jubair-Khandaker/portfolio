@@ -1,23 +1,3 @@
-<div style="display: flex; align-items: flex-start;">
-  <!-- Left: Cropped Circular Image -->
-  <div style="
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    overflow: hidden;
-    flex-shrink: 0;
-    margin-right: 30px;
-  ">
-    <img src="Foto.png" alt="Profile Picture" style="
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    ">
-  </div>
-
-</div>
-
-
 ### Profile
 
 Recent Master’s graduate in Technology and Innovation Management with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
