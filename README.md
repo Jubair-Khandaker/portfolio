@@ -1,4 +1,4 @@
-# Data Analyst
+Recent Master’s graduate in Technology and Innovation Management with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
 
 ### Core Competencies
  - Digital process optimization
