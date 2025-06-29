@@ -16,7 +16,7 @@ Recent Master’s graduate in Technology and Innovation Management with experien
 
 #### Working Student - Production Data Analysis
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
-##### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
+### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
 - Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime by up to 75% and improving customer satisfaction.
@@ -26,7 +26,7 @@ _April 2024 - December 2024_
 
 #### Working Student - Product and Project Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
-##### [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
+### [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
 
 _January 2023 - December 2023_   
 - Led product management for a development project to sell software features for SIG filling machines, evaluating technical, commercial, and operational feasibility, and aligning with business stakeholders
@@ -37,7 +37,7 @@ _January 2023 - December 2023_
 - Analyzed insights from over 150 customer surveys to identify key pain points and gain factors, translating them into user stories for Jira dashboard
 - Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
 
-#### Industrial Engineer - Supply Chain and Product Management
+#### Industrial Engineer - Product Management
 [Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
