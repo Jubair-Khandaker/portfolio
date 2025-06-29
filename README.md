@@ -1,4 +1,5 @@
-### Data Analyst | M.Eng. in Technology and Innovation Management
+## Summary
+Master’s graduate in Technology and Innovation Management with practical experience in business intelligence, data analysis, and process improvement. Proven expertise in building interactive dashboards, technical reporting, automate workflows, and support strategic decisions through data-driven insights. 
 
 - __Phone:__ +4915781303249
 - __Email:__ jubairkhandaker73@gmail.com
@@ -18,10 +19,10 @@
 ##### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
-- Contributed to the full development cycle of predictive maintenance solutions, helping reduce machine downtime upto 75% and improve customer satisfaction
+- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime by up to 75% and improving customer satisfaction.
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
-- Delivered data-driven insights to support maintenance decisions in cross-functional environment
-- Defined and executed project goals for predictive maintenance initiatives, aligned with operational needs
+- Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
+- Defined and executed project goals for predictive maintenance initiatives using Visio for project mapping
 
 #### Working Student - Product and Project Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
@@ -29,10 +30,12 @@ _April 2024 - December 2024_
 
 _January 2023 - December 2023_   
 - Led product management for a development project to sell software features for SIG filling machines, evaluating technical, commercial, and operational feasibility, and aligning with business stakeholders
-- Tracked progress, monitored deadlines, scheduled meetings, conducted budget analysis, defined feature requirements, developed milestones plans, developed workflow and diagrams for projects
+- Updated project reports on SharePoint by tracking project progress, monitoring deadlines, scheduling meetings, conducting budget analysis, and defining feature requirements
+- developed workflow diagrams for projects by utliziing MS Visio
+- Collected and maintained customer data through NetBox
 - Led a project to evaluate machine effectiveness by analyzing server data using PostgreSQL
-- Assessed customer requirements by analyzing survey insights (over 150 individual surveys) to identify pain points and gain factors
-- Developed marketing materials like newsletters and short videos to support promotion of products
+- Analyzed insights from over 150 customer surveys to identify key pain points and gain factors, translating them into user stories for Jira dashboard
+- Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
 
 #### Industrial Engineer - Supply Chain and Product Management
 [Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
@@ -83,6 +86,8 @@ _April 2014 - February 2019_
 - Programming Language : Python (Pandas, NumPy, Matplotlib, Scikit-learn)
 - Automation & Workflow: MS Power Automate, Sharepoint, Excel
 - Project Tools: Jira and Visio
+- Network Tools: NetBox
+- Content Creation Tools: Canva, CapCut
 
 ## Language Skills
 - English : C2 - Near native fluency
