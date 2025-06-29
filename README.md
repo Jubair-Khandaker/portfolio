@@ -19,10 +19,10 @@ Master’s graduate in Technology and Innovation Management with practical exper
 ##### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
-- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime by up to 75% and improving customer satisfaction.
+- Contributed to the full development cycle of predictive maintenance solutions using **Python libraries** in **Google Colaboratory**, reducing machine downtime by up to 75% and improving customer satisfaction.
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
-- Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
-- Defined and executed project goals for predictive maintenance initiatives using Visio for project mapping
+- Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing **MS Power BI** and **Excel**
+- Defined and executed project goals for predictive maintenance initiatives using **MS Visio** for project mapping
 
 #### Working Student - Product and Project Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
@@ -31,11 +31,11 @@ _April 2024 - December 2024_
 _January 2023 - December 2023_   
 - Led product management for a development project to sell software features for SIG filling machines, evaluating technical, commercial, and operational feasibility, and aligning with business stakeholders
 - Updated project reports on SharePoint by tracking project progress, monitoring deadlines, scheduling meetings, conducting budget analysis, and defining feature requirements
-- developed workflow diagrams for projects by utliziing MS Visio
-- Collected and maintained customer data through NetBox
-- Led a project to evaluate machine effectiveness by analyzing server data using PostgreSQL
-- Analyzed insights from over 150 customer surveys to identify key pain points and gain factors, translating them into user stories for Jira dashboard
-- Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
+- developed workflow diagrams for projects by utliziing **MS Visio**
+- Collected and maintained customer data through **NetBox**
+- Led a project to evaluate machine effectiveness by analyzing server data using **PostgreSQL**
+- Analyzed insights from over 150 customer surveys to identify key pain points and gain factors, translating them into user stories for **Jira** dashboard
+- Developed marketing materials like newsletters, presentations, and short videos (by utilizing **CapCut**) aligned with corporate design to support promotion of products and services
 
 #### Industrial Engineer - Supply Chain and Product Management
 [Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
