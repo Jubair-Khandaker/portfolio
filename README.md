@@ -13,7 +13,7 @@
 
 ## Work Experiences
 
-#### Master’s Thesis & Working Student - Production Data Analysis
+#### Working Student - Production Data Analysis
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ##### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
@@ -85,7 +85,7 @@ _April 2014 - February 2019_
 
 ## Language Skills
 - English : C2 - Near native fluency
-- German  : B1 - Conversational
+- German  : B1 - Conversational, B2 - Learning stage
 - Bengali : Native
 
 ## Soft Skills
