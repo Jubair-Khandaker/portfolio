@@ -80,8 +80,9 @@ _April 2014 - February 2019_
 ## Technical Skills
 - Data & Database Tools : SQL (MySQL, PostgreSQL)
 - Business Intelligence Tools : BI tools (MS Power BI)
-- Programming Language : Python
-- Productivity and Office Tools : MS Office (Excel, PowerPoint, Word, Outlook, SharePoint, Visio, Power Automate), Google Sheets, Jira, and SAP S4/ Hana (basic)
+- Programming Language : Python (Pandas, NumPy, Matplotlib, Scikit-learn)
+- Automation & Workflow: MS Power Automate, Sharepoint, Excel
+- Project Tools: Jira and Visio
 
 ## Language Skills
 - English : C2 - Near native fluency
