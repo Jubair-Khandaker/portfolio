@@ -35,6 +35,7 @@ _January 2023 - December 2023_
 - Collected and maintained customer data through NetBox
 - Led a project to evaluate machine effectiveness by analyzing server data using PostgreSQL
 - Analyzed insights from over 150 customer surveys to identify key pain points and gain factors, translating them into user stories for Jira dashboard
+- Maintained a structured data model in NetBox to manage customer infrastructure data, including IP allocations, devices, and network connections
 - Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
 
 #### Industrial Engineer - Product Management
