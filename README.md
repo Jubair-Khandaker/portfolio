@@ -19,7 +19,7 @@ Recent Master’s graduate in Technology and Innovation Management with experien
 ### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
 _April 2024 - December 2024_                                                                                           
-- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime by up to 75% and improving customer satisfaction.
+- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime.
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
 - Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
 - Defined and executed project goals for predictive maintenance initiatives using MS Visio for project mapping
