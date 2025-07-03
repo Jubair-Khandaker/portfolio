@@ -1,22 +1,20 @@
-## Summary
+# Summary
 Recent Master’s graduate in Technology and Innovation Management with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
 
 - __Phone:__ +4915781303249
 - __Email:__ jubairkhandaker73@gmail.com
 - __LinkedIn:__ [Jubair Khandaker](https://www.linkedin.com/in/jubairkhandaker/)
 
-## Core Competencies
+# Core Competencies
  - Digital process optimization
  - Business intelligence tools
  - Technical documentation
  - Cross functional team collaboration
  - Data driven decision making
 
-<span style="color:#001F3F">This won't appear blue on GitHub</span>
+# Work Experiences
 
-## Work Experiences
-
-#### Working Student - Production Data Analysis
+### Working Student - Production Data Analysis
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
@@ -26,7 +24,7 @@ _April 2024 - December 2024_
 - Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
 - Defined and executed project goals for predictive maintenance initiatives using MS Visio for project mapping
 
-#### Working Student - Product and Project Management
+### Working Student - Product and Project Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ### [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
 
@@ -40,7 +38,7 @@ _January 2023 - December 2023_
 - Maintained a structured data model in NetBox to manage customer infrastructure data, including IP allocations, devices, and network connections
 - Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
 
-#### Industrial Engineer - Product Management
+### Industrial Engineer - Product Management
 [Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
@@ -51,7 +49,7 @@ _January 2020 - June 2020_
 - Reduced the defect rates (upto 40%) by following the DMAIC approach of six sigma under the supervision of the higher management
 - Creating daily and monthly reports to track the efficiency of production units
 
-## Projects
+# Projects
 
 - __Streamlined Purchasing of Machine Functionality__ :
 Communicating the purchase of various machine functionalities by customersusing a central server instead of going through multiple channels at SIG
@@ -65,8 +63,8 @@ Examining knowledge café and world café methods in both physical and virtualse
 Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities [(Read More)](https://drive.google.com/file/d/1Ye8X-lJI1K7Hw3dMV1BUptmPwpLfoFl8/view)
 -__Sustainable Mobility of Canada, Nigeria & Brazil in Distant Future__: Analyzing current mobility issues using the PESTEL analysis and coming up with ideas of innovations for the three countries from three different continents with respect to Megatrends and Sustainable Development Goals (SDGs) [(Read More)](https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view)
 
-## Education
-#### Masters of Engineering in Technology and Innovation Management
+# Education
+### Masters of Engineering in Technology and Innovation Management
 _March 2021 - February 2025_ 
 - __University__ : [Hochschule Harz](https://www.hs-harz.de/en/); Wernigerode, Germany
 - __Grade__ : 1.80
@@ -77,14 +75,14 @@ Digital Business Model, Strategic Innovation Managemeng,
 Engineering Project, and
 Technology Assessment and Sustainability
 
-#### Bachelors of Science in Industrial and Production Engineering
+### Bachelors of Science in Industrial and Production Engineering
 _April 2014 - February 2019_ 
 - __University__ : [Shahjalal University of Science and Technology](https://www.sust.edu/); Sylhet, Bangladesh
 - __Grade__ : 2.00
 - __Thesis__ : Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh
 - __Noteworthy Coursework__ : Project Management, Supply Chain Management, Operation Management, Product Design and Development, Operations Research, and Quality Control and Management
 
-## Technical Skills
+# Technical Skills
 - Data & Database Tools : SQL (MySQL, PostgreSQL)
 - Business Intelligence Tools : BI tools (MS Power BI)
 - Programming Language : Python (Pandas, NumPy, Matplotlib, Scikit-learn)
@@ -93,12 +91,12 @@ _April 2014 - February 2019_
 - Network Tools: NetBox
 - Content Creation Tools: Canva, CapCut
 
-## Language Skills
+# Language Skills
 - English : C2 - Near native fluency
 - German  : B1 - Conversational, B2 - Learning stage
 - Bengali : Native
 
-## Soft Skills
+# Soft Skills
 
 - Analytical thinking
 - Problem-solving skills
@@ -107,7 +105,7 @@ _April 2014 - February 2019_
 - Detail-oriented
 - Adaptable to change
 
-## Online Courses and Certifications
+# Online Courses and Certifications
 
 - [Microsoft Power BI for Business Intelligence](https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/)
 - [Complete A.I. & Machine Learning, Data Science Bootcamp](https://www.udemy.com/certificate/UC-46cbb747-2241-4fdb-b46a-6ec91bcc8245/)
