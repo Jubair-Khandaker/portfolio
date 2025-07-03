@@ -12,6 +12,8 @@ Recent Master’s graduate in Technology and Innovation Management with experien
  - Cross functional team collaboration
  - Data driven decision making
 
+<span style="color:blue">This won't appear blue on GitHub</span>
+
 ## Work Experiences
 
 #### Working Student - Production Data Analysis
@@ -61,6 +63,7 @@ Automating dorm room appliances and heating systems with smart devices and FHEM 
 Examining knowledge café and world café methods in both physical and virtualsettings to generate ideas for paid services at the Magdeburg Center of Excellence [(Read More)](https://drive.google.com/file/d/1PbjXRiq3xXlmJap7EwFMqKVto9rKUYt9/view)
 - __Optimizing Travelling Distance__ :
 Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities [(Read More)](https://drive.google.com/file/d/1Ye8X-lJI1K7Hw3dMV1BUptmPwpLfoFl8/view)
+-__Sustainable Mobility of Canada, Nigeria & Brazil in Distant Future__: Analyzing current mobility issues using the PESTEL analysis and coming up with ideas of innovations for the three countries from three different continents with respect to Megatrends and Sustainable Development Goals (SDGs) [(Read More)](https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view)
 
 ## Education
 #### Masters of Engineering in Technology and Innovation Management
