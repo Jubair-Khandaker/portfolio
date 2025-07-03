@@ -12,7 +12,7 @@ Recent Master’s graduate in Technology and Innovation Management with experien
  - Cross functional team collaboration
  - Data driven decision making
 
-<span style="color:blue">This won't appear blue on GitHub</span>
+<span style="color:#001F3F">This won't appear blue on GitHub</span>
 
 ## Work Experiences
 
