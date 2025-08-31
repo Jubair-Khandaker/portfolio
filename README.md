@@ -62,6 +62,8 @@ Examining knowledge café and world café methods in both physical and virtualse
 - __Optimizing Travelling Distance__ :
 Calculating the shortest distance between 12 cities in Spain by creating a symmetric and metric matrix based on the distances between the cities [(Read More)](https://drive.google.com/file/d/1Ye8X-lJI1K7Hw3dMV1BUptmPwpLfoFl8/view)
 -__Sustainable Mobility of Canada, Nigeria & Brazil in Distant Future__: Analyzing current mobility issues using the PESTEL analysis and coming up with ideas of innovations for the three countries from three different continents with respect to Megatrends and Sustainable Development Goals (SDGs) [(Read More)](https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view)
+-__eMobility Support Hub – Jira Ticketing & Workflow Demo__: This project demonstrates a complete Jira ticketing workflow, including service requests, incidents, and approval processes. It features custom dashboards for tracking ticket status, priority, and team workload, showcasing end-to-end workflow management and reporting. [(Read More)](https://jubair-khandaker.github.io/jira-ticketing-demo/)
+
 
 # Education
 ### Masters of Engineering in Technology and Innovation Management
