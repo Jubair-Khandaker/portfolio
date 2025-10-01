@@ -1,5 +1,5 @@
 # Summary
-Recent Master’s graduate in Technology and Innovation Management with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
+Ongoing Master’s student in Advanced Industrial Engineering at Rosenheim University of Applied Sciences with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
 
 - __Phone:__ +4915781303249
 - __Email:__ jubairkhandaker73@gmail.com
@@ -68,7 +68,11 @@ This project demonstrates a complete Jira ticketing workflow, including service 
 
 
 # Education
-### Masters of Engineering in Technology and Innovation Management
+### Masters in Advanced Industrial Engineering
+_Ongoing_ 
+- __University__ : [TH Rosenheim](https://www.th-rosenheim.de/); Rosenheim, Germany
+  
+### Masters in Technology and Innovation Management
 _March 2021 - February 2025_ 
 - __University__ : [Hochschule Harz](https://www.hs-harz.de/en/); Wernigerode, Germany
 - __Grade__ : 1.80
@@ -79,7 +83,7 @@ Digital Business Model, Strategic Innovation Managemeng,
 Engineering Project, and
 Technology Assessment and Sustainability
 
-### Bachelors of Science in Industrial and Production Engineering
+### Bachelors in Industrial and Production Engineering
 _April 2014 - February 2019_ 
 - __University__ : [Shahjalal University of Science and Technology](https://www.sust.edu/); Sylhet, Bangladesh
 - __Grade__ : 2.00
