@@ -76,7 +76,7 @@ This project demonstrates a complete Jira ticketing workflow, including service 
 
 # Education
 ### Masters in Advanced Industrial Engineering
-_October 2025 - Presenet_  
+_October 2025 - Present_  
 - __University__ : [TH Rosenheim](https://www.th-rosenheim.de/); Rosenheim, Germany
   
 ### Masters in Technology and Innovation Management
