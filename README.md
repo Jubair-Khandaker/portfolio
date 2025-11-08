@@ -30,10 +30,6 @@ _April 2024 - August 2024_
                                                            
 
 _September 2024 - December 2024_                                                                                           
-- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime.
-- Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
-- Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
-- Defined and executed project goals for predictive maintenance initiatives using MS Visio for project mapping
 
 ### Working Student - Product Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
