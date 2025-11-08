@@ -28,7 +28,7 @@ _September 2024 - December 2024_
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 _April 2024 - August 2024_  
 
-Title: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
+__Title__: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines
                                                            
 
 _September 2024 - December 2024_                                                                                           
