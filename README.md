@@ -26,7 +26,9 @@ _September 2024 - December 2024_
 
 ### Masters Thesis Student
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
+
 _April 2024 - August 2024_  
+
 __Title__: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines                                                                                                                                             
 
 ### Working Student - Product Management
