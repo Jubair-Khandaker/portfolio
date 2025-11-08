@@ -18,13 +18,24 @@ Ongoing Master’s student in Advanced Industrial Engineering at Rosenheim Unive
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
 
-_April 2024 - December 2024_                                                                                           
+_September 2024 - December 2024_                                                                                           
 - Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime.
 - Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
 - Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
 - Defined and executed project goals for predictive maintenance initiatives using MS Visio for project mapping
 
-### Working Student - Product and Project Management
+### Masters Thesis Student
+[SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
+_April 2024 - August 2024_  
+                                                           
+
+_September 2024 - December 2024_                                                                                           
+- Contributed to the full development cycle of predictive maintenance solutions using Python libraries in Google Colaboratory, reducing machine downtime.
+- Developed efficient processes that improved data quality significantly (upto 100%) and made analysis faster and more efficient
+- Delivered data-driven insights and created interactive dashboards to support maintenance decisions by utilizing MS Power BI and Excel
+- Defined and executed project goals for predictive maintenance initiatives using MS Visio for project mapping
+
+### Working Student - Product Management
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ### [Employer Reference](https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link)
 
@@ -38,7 +49,7 @@ _January 2023 - December 2023_
 - Maintained a structured data model in NetBox to manage customer infrastructure data, including IP allocations, devices, and network connections
 - Developed marketing materials like newsletters, presentations, and short videos (by utilizing CapCut) aligned with corporate design to support promotion of products and services
 
-### Industrial Engineer - Product Management
+### Industrial Engineer - Product and Supply Chain Management
 [Ha-Meem Group](https://www.hameemgroup.net/); Dhaka, Bangladesh
 _January 2020 - June 2020_   
 - Followed up on pre-production activities to ensure in-time supply of inventory and the flow of production according to the proposed plan
