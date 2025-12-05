@@ -107,7 +107,7 @@ _April 2014 - February 2019_
 - Content Creation Tools: Canva, CapCut
 
 # Language Skills
-- English : C2 - Near native fluency
+- English : C1 - Near native fluency
 - German  : B1 - Conversational, B2 - Learning stage
 - Bengali : Native
 
