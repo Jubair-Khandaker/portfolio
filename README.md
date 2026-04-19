@@ -1,16 +1,17 @@
 # Summary
-Ongoing Master’s student in Advanced Industrial Engineering at Rosenheim University of Applied Sciences with experience in business intelligence and data analysis. Proficient in MS Excel, Power Automate, Power BI, and SQL as well as have expertise in process optimization, technical reporting, and digital transformation in cross-functional environments.
+Industrial Engineering graduate student at TH Rosenheim with hands-on experience in automation, business intelligence, and process optimization. Currently building end-to-end automation workflows at Bears with Benefits using n8n, Power Automate, and the Shopify API, with a background in predictive maintenance and data analysis from three years at SIG International. Experienced working in cross-functional, international environments with a focus on translating operational problems into scalable digital solutions.
 
 - __Phone:__ +4915781303249
 - __Email:__ jubairkhandaker73@gmail.com
 - __LinkedIn:__ [Jubair Khandaker](https://www.linkedin.com/in/jubairkhandaker/)
 
 # Core Competencies
- - Digital process optimization
- - Business intelligence tools
- - Technical documentation
- - Cross functional team collaboration
- - Data driven decision making
+- Workflow & process automation (n8n, Power Automate)
+- Business intelligence & data visualization (Power BI, Excel)
+- Data analysis & predictive modelling (Python, SQL)
+- ERP systems & digital operations (Xentral, NetBox)
+- Knowledge management & documentation (Notion)
+- Cross-functional stakeholder collaboration
 
 # Work Experiences
 
@@ -23,6 +24,8 @@ _January 2026 - Present_
 - Developed a real-time Shopify analytics pipeline using the Shopify API (read_orders, read_customers, read_reports scopes) that runs on a 10-minute schedule and updates a SharePoint Excel workbook with order, refund, and customer metrics per sales channel (Shopify, TikTok Shop); connected a live pivot summary table to the same data source
 - Designed and implemented a centralized Notion workspace from scratch, including a company-wide Knowledge Index, structured team spaces for HR, IT, Business Functions, Design and Committees, a process documentation database with standardized templates to capture workflows, ownership, automation potential, and a Shopify change logging process to replace ad-hoc Slack tracking with a searchable, structured record
 - Built a scheduled Power Automate flow that detects new Xentral Analytics exports, downloads the report file via an S3 redirect, parses the CSV (including quoted fields) using a custom Office Script, and automatically overwrites a SharePoint Excel table with the latest stock data — replacing a fully manual export and update process
+- Developed an automated weekly Shopify-to-SharePoint pipeline using n8n and Power Automate that extracts net sales and shipping charges per market via the Shopify Admin GraphQL API, aggregates results by week with full pagination handling, and writes structured rows into a SharePoint Excel table, replacing a fully manual reporting process used for weekly cash-flow planning
+- Built an automated OPOS debtor reporting pipeline in n8n that parses weekly receivables exports, applies customer-specific payment terms, and generates a weekly cash-flow maturity summary in SharePoint Excel via Power Automate, replacing a fully manual finance reporting process
 
 
 ### Working Student - Production Data Analysis
