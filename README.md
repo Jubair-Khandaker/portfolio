@@ -14,6 +14,17 @@ Ongoing Master’s student in Advanced Industrial Engineering at Rosenheim Unive
 
 # Work Experiences
 
+### Internship - Automations
+[Bears with Benefits](https://www.bears-with-benefits.com/); Munich, Germany                                                             
+
+_January 2026 - Present_                                                                                           
+- Designed and deployed an end-to-end order processing automation in n8n that ingests B2B purchase orders from multiple input formats (email body, PDF, Excel) and automatically creates sales orders in Xentral ERP, returning a confirmation link to the sender for review and approval
+- Built a second automation workflow handling bulk vendor orders: converts raw order files into Xentral-compatible format, processes tracking number assignments, and generates country-specific invoice CSV files for upload into Xentral's Beleg importer across multiple markets
+- Developed a real-time Shopify analytics pipeline using the Shopify API (read_orders, read_customers, read_reports scopes) that runs on a 10-minute schedule and updates a SharePoint Excel workbook with order, refund, and customer metrics per sales channel (Shopify, TikTok Shop); connected a live pivot summary table to the same data source
+- Designed and implemented a centralized Notion workspace from scratch, including a company-wide Knowledge Index, structured team spaces for HR, IT, Business Functions, Design and Committees, a process documentation database with standardized templates to capture workflows, ownership, automation potential, and a Shopify change logging process to replace ad-hoc Slack tracking with a searchable, structured record
+- Built a scheduled Power Automate flow that detects new Xentral Analytics exports, downloads the report file via an S3 redirect, parses the CSV (including quoted fields) using a custom Office Script, and automatically overwrites a SharePoint Excel table with the latest stock data — replacing a fully manual export and update process
+
+
 ### Working Student - Production Data Analysis
 [SIG International Services GmbH](https://www.sig.biz/de-de); Linnich, Germany
 ### [Employer Reference](https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing)                                                             
