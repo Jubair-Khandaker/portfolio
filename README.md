@@ -93,6 +93,12 @@ This project demonstrates a complete Jira ticketing workflow, including service 
 ### Masters in Advanced Industrial Engineering
 _October 2025 - Present_  
 - __University__ : [TH Rosenheim](https://www.th-rosenheim.de/); Rosenheim, Germany
+- __Noteworthy Coursework__ :
+Advanced Production Systems and Automation
+Data Analytics for Industrial Engineering
+Supply Chain and Logistics Optimization
+Sustainable Manufacturing and Resource Efficiency
+Industrial Project and Case Studies
   
 ### Masters in Technology and Innovation Management
 _March 2021 - February 2025_ 
