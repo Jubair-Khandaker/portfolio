@@ -26,6 +26,7 @@ _January 2026 - Present_
 - Built a scheduled Power Automate flow that detects new Xentral Analytics exports, downloads the report file via an S3 redirect, parses the CSV (including quoted fields) using a custom Office Script, and automatically overwrites a SharePoint Excel table with the latest stock data — replacing a fully manual export and update process
 - Developed an automated weekly Shopify-to-SharePoint pipeline using n8n and Power Automate that extracts net sales and shipping charges per market via the Shopify Admin GraphQL API, aggregates results by week with full pagination handling, and writes structured rows into a SharePoint Excel table, replacing a fully manual reporting process used for weekly cash-flow planning
 - Built an automated OPOS debtor reporting pipeline in n8n that parses weekly receivables exports, applies customer-specific payment terms, and generates a weekly cash-flow maturity summary in SharePoint Excel via Power Automate, replacing a fully manual finance reporting process
+- Built a Playwright-based browser automation in Python that extracts creator data across 2,730 pages, parses fields including name, manager, country, email, followers, and category, and exports everything into a formatted Excel file with styled headers, filters, and auto-fitted columns
 
 
 ### Working Student - Production Data Analysis
