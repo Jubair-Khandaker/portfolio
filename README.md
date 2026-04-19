@@ -87,6 +87,7 @@ Calculating the shortest distance between 12 cities in Spain by creating a symme
 Analyzing current mobility issues using the PESTEL analysis and coming up with ideas of innovations for the three countries from three different continents with respect to Megatrends and Sustainable Development Goals (SDGs) [(Read More)](https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view)
 - __eMobility Support Hub – Jira Ticketing & Workflow Demo__ :
 This project demonstrates a complete Jira ticketing workflow, including service requests, incidents, and approval processes. It features custom dashboards for tracking ticket status, priority, and team workload, showcasing end-to-end workflow management and reporting. [(Read More)](https://jubair-khandaker.github.io/jira-ticketing-demo/)
+- __Monthly Performance Dashboard in Looker Studio__ : Built an interactive performance dashboard in Looker Studio based on a simulated ecommerce dataset. The dashboard tracks monthly business KPIs across topline, marketing, and profitability, and allows users to switch between countries and sales channels including D2C, B2B, and Amazon.[(Read More)](https://lookerstudio.google.com/reporting/5f73c65b-9a75-496a-bda6-80012478f12a)
 
 
 # Education
