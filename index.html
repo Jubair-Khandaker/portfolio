@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jubair Khandaker — Automation & Data Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg:          #080c18;
+      --bg-2:        #0d1220;
+      --bg-card:     #111827;
+      --bg-hover:    #162033;
+      --border:      #1c2840;
+      --border-hi:   #263554;
+      --blue:        #3b82f6;
+      --purple:      #8b5cf6;
+      --green:       #10b981;
+      --amber:       #f59e0b;
+      --red:         #ef4444;
+      --text:        #e2e8f0;
+      --muted:       #94a3b8;
+      --dim:         #64748b;
+      --grad:        linear-gradient(135deg,#3b82f6,#8b5cf6);
+      --grad-green:  linear-gradient(135deg,#10b981,#3b82f6);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; overflow-x: hidden; }
+
+    /* ── NAV ─────────────────────────── */
+    nav {
+      position: fixed; top: 0; inset-inline: 0; z-index: 200;
+      height: 58px; display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2.5rem;
+      background: rgba(8,12,24,.88); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo { font-weight: 800; font-size: .9rem; letter-spacing: .5px;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
+    .nav-links a { color: var(--dim); font-size: .8rem; font-weight: 500; text-decoration: none; transition: color .2s; letter-spacing: .3px; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── HERO ────────────────────────── */
+    .hero {
+      min-height: 100vh; display: flex; align-items: center;
+      padding: 90px 2.5rem 5rem; position: relative; overflow: hidden;
+    }
+    .hero::before, .hero::after {
+      content: ''; position: absolute; border-radius: 50%;
+      animation: orb 10s ease-in-out infinite; pointer-events: none;
+    }
+    .hero::before { width: 700px; height: 700px; top: -200px; left: -150px;
+      background: radial-gradient(circle,rgba(59,130,246,.1) 0%,transparent 70%); }
+    .hero::after { width: 550px; height: 550px; bottom: -100px; right: -100px;
+      background: radial-gradient(circle,rgba(139,92,246,.09) 0%,transparent 70%);
+      animation-delay: -5s; animation-direction: reverse; }
+    @keyframes orb { 0%,100%{transform:scale(1) translateY(0)} 50%{transform:scale(1.08) translateY(-20px)} }
+
+    .hero-inner {
+      max-width: 1140px; margin: 0 auto; width: 100%;
+      display: grid; grid-template-columns: 1fr auto; gap: 5rem; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.25);
+      color: #34d399; padding: .3rem .85rem; border-radius: 99px;
+      font-size: .72rem; font-weight: 600; text-transform: uppercase; letter-spacing: .8px;
+      margin-bottom: 1.5rem;
+    }
+    .badge-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981;
+      box-shadow: 0 0 8px #10b981; animation: blink 2s ease-in-out infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+
+    .hero h1 { font-size: clamp(2.4rem,5.5vw,4.2rem); font-weight: 800; line-height: 1.05; margin-bottom: .6rem; }
+    .hero h1 span { background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .hero-role { font-size: 1.05rem; color: var(--muted); font-weight: 400; margin-bottom: 1.3rem; }
+    .hero-desc { color: var(--muted); font-size: .93rem; max-width: 580px; line-height: 1.75; margin-bottom: 2.2rem; }
+
+    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .68rem 1.5rem; border-radius: 9px; font-size: .85rem; font-weight: 600;
+      text-decoration: none; transition: all .2s; border: none; cursor: pointer;
+    }
+    .btn-primary { background: var(--grad); color: #fff; }
+    .btn-primary:hover { opacity: .82; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(59,130,246,.3); }
+    .btn-outline { background: transparent; color: var(--muted); border: 1px solid var(--border-hi); }
+    .btn-outline:hover { color: var(--text); border-color: var(--blue); }
+    .btn-sm { padding: .38rem .85rem; font-size: .75rem; border-radius: 7px; }
+
+    .hero-photo {
+      width: 230px; height: 230px; border-radius: 50%; object-fit: cover; flex-shrink: 0;
+      border: 3px solid transparent;
+      background: linear-gradient(var(--bg-card),var(--bg-card)) padding-box, var(--grad) border-box;
+      box-shadow: 0 0 70px rgba(59,130,246,.22), 0 0 140px rgba(139,92,246,.1);
+    }
+
+    .hero-stats { display: flex; gap: 2.5rem; margin-top: 2.75rem; padding-top: 2.25rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
+    .stat-num { display: block; font-size: 1.6rem; font-weight: 800;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .stat-label { font-size: .72rem; color: var(--dim); margin-top: .05rem; font-weight: 500; letter-spacing: .3px; }
+
+    /* ── SHARED SECTION ──────────────── */
+    section { padding: 5.5rem 2.5rem; }
+    .container { max-width: 1140px; margin: 0 auto; }
+    .section-eyebrow {
+      display: flex; align-items: center; gap: .75rem;
+      font-size: .7rem; font-weight: 700; color: var(--blue);
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: .75rem;
+    }
+    .section-eyebrow::after { content: ''; flex: 1; height: 1px; background: var(--border); max-width: 80px; }
+    .section-title { font-size: clamp(1.7rem,3vw,2.4rem); font-weight: 800; margin-bottom: .4rem; }
+    .section-sub { color: var(--muted); font-size: .9rem; margin-bottom: 3rem; }
+
+    /* ── SKILLS ─────────────────────── */
+    #skills { background: var(--bg-2); }
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(270px,1fr)); gap: 1.1rem; }
+    .skill-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.3rem; transition: border-color .2s, transform .2s;
+    }
+    .skill-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .skill-cat { font-size: .68rem; font-weight: 700; color: var(--blue); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: .65rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .tag {
+      background: rgba(59,130,246,.08); border: 1px solid rgba(59,130,246,.18); color: #93c5fd;
+      padding: .22rem .6rem; border-radius: 6px; font-size: .73rem; font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .tag.p { background: rgba(139,92,246,.08); border-color: rgba(139,92,246,.2); color: #c4b5fd; }
+    .tag.g { background: rgba(16,185,129,.08);  border-color: rgba(16,185,129,.2);  color: #6ee7b7; }
+    .tag.a { background: rgba(245,158,11,.08);  border-color: rgba(245,158,11,.2);  color: #fcd34d; }
+    .tag.r { background: rgba(239,68,68,.08);   border-color: rgba(239,68,68,.2);   color: #fca5a5; }
+
+    /* Language bars */
+    .lang-grid { display: flex; gap: 1.1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+    .lang-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 1.1rem 1.5rem; flex: 1; min-width: 160px; }
+    .lang-name { font-weight: 700; font-size: .9rem; margin-bottom: .2rem; }
+    .lang-level { font-size: .72rem; color: var(--dim); margin-bottom: .65rem; }
+    .lang-bar { height: 4px; background: var(--border); border-radius: 99px; overflow: hidden; }
+    .lang-fill { height: 100%; border-radius: 99px; background: var(--grad); }
+
+    /* ── EXPERIENCE / TIMELINE ───────── */
+    .timeline { position: relative; padding-left: 1.75rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom,var(--blue),var(--purple),transparent);
+    }
+    .timeline-item { position: relative; margin-bottom: 3rem; }
+    .timeline-item::before {
+      content: ''; position: absolute; left: -1.85rem; top: .45rem;
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--blue); border: 2px solid var(--bg); box-shadow: 0 0 10px rgba(59,130,246,.6);
+    }
+    .tl-meta { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: .4rem; margin-bottom: .6rem; }
+    .tl-role { font-size: 1.02rem; font-weight: 700; }
+    .tl-company { font-size: .85rem; color: var(--blue); font-weight: 600; text-decoration: none; }
+    .tl-company:hover { text-decoration: underline; }
+    .tl-where { font-size: .78rem; color: var(--dim); margin-top: .15rem; }
+    .tl-period { font-size: .73rem; color: var(--dim); font-family: 'JetBrains Mono',monospace; white-space: nowrap; }
+    .tl-body { background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px; padding: 1.4rem; margin-top: .8rem; }
+    .tl-body ul { list-style: none; display: flex; flex-direction: column; gap: .65rem; }
+    .tl-body li { color: var(--muted); font-size: .875rem; line-height: 1.65; padding-left: 1.1rem; position: relative; }
+    .tl-body li::before { content: '▸'; position: absolute; left: 0; color: var(--blue); font-size: .68rem; top: .18rem; }
+    .tl-thesis { font-style: italic; color: var(--muted); font-size: .85rem; padding: .8rem 1.1rem; border-left: 3px solid var(--purple); margin-top: .5rem; line-height: 1.65; }
+    .tl-ref { display: flex; gap: .6rem; margin-top: 1rem; flex-wrap: wrap; }
+
+    /* ── AUTOMATION PROJECTS ────────── */
+    #automations { background: var(--bg-2); }
+    .auto-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(340px,1fr)); gap: 1.25rem; }
+    .auto-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
+      padding: 1.6rem; display: flex; flex-direction: column; gap: 1rem;
+      transition: border-color .25s, transform .25s, box-shadow .25s;
+    }
+    .auto-card:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: 0 16px 48px rgba(0,0,0,.4); }
+    .auto-header { display: flex; align-items: flex-start; gap: 1rem; }
+    .auto-icon {
+      width: 44px; height: 44px; border-radius: 11px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+      background: rgba(59,130,246,.1); border: 1px solid rgba(59,130,246,.2);
+    }
+    .auto-icon.p { background: rgba(139,92,246,.1); border-color: rgba(139,92,246,.2); }
+    .auto-icon.g { background: rgba(16,185,129,.1);  border-color: rgba(16,185,129,.2); }
+    .auto-icon.a { background: rgba(245,158,11,.1);  border-color: rgba(245,158,11,.2); }
+    .auto-name { font-size: .98rem; font-weight: 700; line-height: 1.3; }
+    .auto-context { font-size: .75rem; color: var(--dim); font-family: 'JetBrains Mono',monospace; margin-top: .15rem; }
+    .auto-desc { font-size: .845rem; color: var(--muted); line-height: 1.7; flex: 1; }
+    .auto-stack { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .auto-impact {
+      font-size: .75rem; color: #34d399; font-weight: 600;
+      background: rgba(16,185,129,.08); border: 1px solid rgba(16,185,129,.18);
+      border-radius: 6px; padding: .25rem .65rem; display: inline-block; margin-top: .25rem;
+    }
+
+    /* ── OTHER PROJECTS ─────────────── */
+    .proj-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(300px,1fr)); gap: 1.1rem; }
+    .proj-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.4rem; display: flex; flex-direction: column; gap: .75rem;
+      text-decoration: none; color: inherit; transition: border-color .2s, transform .2s;
+    }
+    .proj-card:hover { border-color: var(--purple); transform: translateY(-3px); }
+    .proj-icon { width: 40px; height: 40px; border-radius: 10px; background: rgba(139,92,246,.1); border: 1px solid rgba(139,92,246,.2); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .proj-name { font-size: .93rem; font-weight: 700; }
+    .proj-desc { font-size: .825rem; color: var(--muted); line-height: 1.65; flex: 1; }
+    .proj-link { font-size: .73rem; color: var(--blue); font-weight: 600; display: flex; align-items: center; gap: .25rem; }
+
+    /* ── EDUCATION ──────────────────── */
+    .edu-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .edu-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.5rem; display: grid; grid-template-columns: 52px 1fr; gap: 1.25rem;
+      align-items: start; transition: border-color .2s;
+    }
+    .edu-card:hover { border-color: var(--green); }
+    .edu-icon { width: 52px; height: 52px; border-radius: 13px; background: rgba(16,185,129,.1); border: 1px solid rgba(16,185,129,.2); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+    .edu-degree { font-size: .97rem; font-weight: 700; margin-bottom: .2rem; }
+    .edu-uni a { color: var(--green); text-decoration: none; font-size: .875rem; font-weight: 600; }
+    .edu-uni a:hover { text-decoration: underline; }
+    .edu-meta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .5rem; font-size: .78rem; color: var(--dim); }
+    .edu-thesis { margin-top: .75rem; font-size: .8rem; color: var(--muted); border-left: 3px solid var(--green); padding-left: .8rem; font-style: italic; line-height: 1.6; }
+
+    /* ── CERTS ──────────────────────── */
+    #certifications { background: var(--bg-2); }
+    .certs-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(270px,1fr)); gap: 1rem; }
+    .cert-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 11px;
+      padding: 1rem 1.25rem; display: flex; align-items: center; gap: .8rem;
+      text-decoration: none; color: inherit; transition: border-color .2s, transform .2s;
+    }
+    .cert-card:hover { border-color: var(--blue); transform: translateX(3px); }
+    .cert-icon { font-size: 1.3rem; flex-shrink: 0; }
+    .cert-name { font-size: .82rem; font-weight: 600; color: var(--text); }
+    .cert-issuer { font-size: .7rem; color: var(--dim); margin-top: .1rem; }
+
+    /* ── CONTACT ────────────────────── */
+    #contact { text-align: center; }
+    .contact-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.5rem; }
+    .contact-card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 14px;
+      padding: 1.3rem 2rem; text-decoration: none; color: inherit;
+      display: flex; align-items: center; gap: .85rem;
+      transition: border-color .2s, transform .2s; min-width: 230px;
+    }
+    .contact-card:hover { border-color: var(--blue); transform: translateY(-2px); }
+    .contact-icon { font-size: 1.35rem; }
+    .contact-label { font-size: .68rem; color: var(--dim); text-transform: uppercase; letter-spacing: .8px; }
+    .contact-value { font-size: .87rem; font-weight: 600; color: var(--text); }
+
+    /* ── FOOTER ─────────────────────── */
+    footer { text-align: center; padding: 2rem; font-size: .78rem; color: var(--dim); border-top: 1px solid var(--border); }
+
+    /* ── SCROLL ANIMATION ───────────── */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-up.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ─────────────────── */
+    @media (max-width: 780px) {
+      nav { padding: 0 1.25rem; }
+      .nav-links { display: none; }
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo { width: 170px; height: 170px; margin: 0 auto; order: -1; }
+      .hero-cta, .hero-stats { justify-content: center; }
+      section { padding: 3.5rem 1.25rem; }
+      .auto-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">JK</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#automations">Automations</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-badge"><span class="badge-dot"></span> Open to new opportunities</div>
+      <h1>Jubair<br><span>Khandaker</span></h1>
+      <p class="hero-role">Automation & Data Engineer &nbsp;·&nbsp; Industrial Engineering Grad Student</p>
+      <p class="hero-desc">
+        I build end-to-end automation pipelines that turn hours of manual work into minutes. From Shopify analytics and ERP integrations to carrier payment reconciliation and cash-flow forecasting — I translate operational complexity into reliable digital workflows.
+      </p>
+      <div class="hero-cta">
+        <a href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
+        <a href="mailto:jubairkhandaker73@gmail.com" class="btn btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div><span class="stat-num">14+</span><span class="stat-label">Automations Built</span></div>
+        <div><span class="stat-num">7</span><span class="stat-label">Markets Automated</span></div>
+        <div><span class="stat-num">6+</span><span class="stat-label">Years Experience</span></div>
+        <div><span class="stat-num">3</span><span class="stat-label">Languages</span></div>
+      </div>
+    </div>
+    <img src="cropped_circle_image.png" alt="Jubair Khandaker" class="hero-photo" />
+  </div>
+</section>
+
+<!-- ═══ SKILLS ════════════════════════════════════════════════════════════ -->
+<section id="skills">
+  <div class="container">
+    <div class="section-eyebrow">Toolbox</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-sub">Technologies and platforms I work with every day</p>
+    <div class="skills-grid fade-up">
+      <div class="skill-card">
+        <div class="skill-cat">Workflow Automation</div>
+        <div class="skill-tags">
+          <span class="tag">n8n</span><span class="tag">Power Automate</span>
+          <span class="tag">Playwright</span><span class="tag">Office Scripts</span>
+          <span class="tag">IMAP Triggers</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">APIs & Integrations</div>
+        <div class="skill-tags">
+          <span class="tag">Shopify GraphQL API</span><span class="tag">ShopifyQL</span>
+          <span class="tag">Xentral REST API</span><span class="tag">Slack API</span>
+          <span class="tag">REST / HTTP</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Data & Analytics</div>
+        <div class="skill-tags">
+          <span class="tag p">Python</span><span class="tag p">Pandas</span>
+          <span class="tag p">NumPy</span><span class="tag p">Scikit-learn</span>
+          <span class="tag p">Matplotlib</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Databases</div>
+        <div class="skill-tags">
+          <span class="tag g">SQL</span><span class="tag g">MySQL</span>
+          <span class="tag g">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Business Intelligence</div>
+        <div class="skill-tags">
+          <span class="tag a">Power BI</span><span class="tag a">Looker Studio</span>
+          <span class="tag a">Excel</span><span class="tag a">Power Query</span>
+          <span class="tag a">SharePoint</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">ERP & Operations</div>
+        <div class="skill-tags">
+          <span class="tag">Xentral ERP</span><span class="tag">NetBox</span>
+          <span class="tag">Shopify Admin</span><span class="tag">Belege Importer</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Cloud & Collaboration</div>
+        <div class="skill-tags">
+          <span class="tag p">Notion</span><span class="tag p">Jira</span>
+          <span class="tag p">MS Visio</span><span class="tag p">SharePoint Online</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-cat">Lean & Process Engineering</div>
+        <div class="skill-tags">
+          <span class="tag g">DMAIC Six Sigma</span><span class="tag g">KANBAN</span>
+          <span class="tag g">SMED</span><span class="tag g">PESTEL</span>
+        </div>
+      </div>
+    </div>
+    <h3 style="margin:3rem 0 1.25rem;font-size:.95rem;color:var(--muted);font-weight:600;">Language Skills</h3>
+    <div class="lang-grid fade-up">
+      <div class="lang-card"><div class="lang-name">Bengali</div><div class="lang-level">Native</div><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
+      <div class="lang-card"><div class="lang-name">English</div><div class="lang-level">C1 — Near native fluency</div><div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div></div>
+      <div class="lang-card"><div class="lang-name">German</div><div class="lang-level">B1 / B2 — Conversational</div><div class="lang-bar"><div class="lang-fill" style="width:52%"></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EXPERIENCE ════════════════════════════════════════════════════════ -->
+<section id="experience">
+  <div class="container">
+    <div class="section-eyebrow">Career</div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-sub">Five years of delivering automation, data, and process solutions across three countries</p>
+
+    <div class="timeline">
+
+      <!-- Bears with Benefits -->
+      <div class="timeline-item fade-up">
+        <div class="tl-meta">
+          <div>
+            <div class="tl-role">Automation Engineer (Internship)</div>
+            <a class="tl-company" href="https://www.bears-with-benefits.com/" target="_blank">Bears with Benefits GmbH</a>
+            <div class="tl-where">&#128205; Munich, Germany</div>
+          </div>
+          <div class="tl-period">Jan 2026 — Present</div>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Designed an end-to-end B2B purchase order automation in n8n (Excel → Power Automate → n8n → Xentral ERP), reducing manual PO entry from 15–30 min to under 5 min per order and eliminating copy-paste errors.</li>
+            <li>Built a multi-vendor sales order creation system that parses incoming B2B orders from PDF, CSV, and email attachments across 10+ retail and marketplace partners and automatically creates fully enriched sales orders in Xentral with correct customer, currency, tax, warehouse, and payment rules per partner.</li>
+            <li>Developed a real-time Shopify analytics pipeline (10-min schedule) using the ShopifyQL GraphQL API across 7 stores (DE, FR, NL, IT, ES, CH, USA) syncing order, refund, and customer metrics per channel to SharePoint Excel.</li>
+            <li>Built a Shopify Refunds tracking system (Phase 2) that captures refund events, classifies refund reasons, calculates refund rates vs total orders and total sales, and tracks voided COD transactions for Italy and Spain.</li>
+            <li>Implemented a COD Payment Automation that ingests logistics carrier remittance files from email, parses PDF/EML/TXT formats, and marks up to 17,000+ orders as paid simultaneously in both Shopify and Xentral via API.</li>
+            <li>Built a flash-sale platform invoice automation that processes 10 country export files + a price CSV and generates 5 Xentral Belege Importer CSVs (DE, AT, IT, ES, BENELUX) triggered by a single email.</li>
+            <li>Automated a weekly Shopify-to-SharePoint cash-flow pipeline via n8n and Power Automate using the Admin GraphQL API with full pagination handling, aggregating net sales and shipping charges by week per DTC market.</li>
+            <li>Created a Xentral Analytics → SharePoint sync pipeline (Power Automate + Office Scripts) covering 5 report variants — Daily Stock, Weekly, Monthly, Quarterly, and MTD — replacing fully manual CSV export processes.</li>
+            <li>Developed a Slack channel monitoring automation (n8n) that classifies e-commerce operational updates across 6 Slack channels using rule-based keyword logic and writes structured rows to SharePoint Excel — v2.0 removed OpenAI dependency entirely.</li>
+            <li>Built a supplier invoice cash-flow forecast automation using the CW+9 payment rule to aggregate invoice data by payment week and automatically populate the weekly forecast spreadsheet (Power Automate + Office Scripts).</li>
+            <li>Automated Amazon B2B sales sync from Xentral Analytics to the cash-flow forecast, filtering AMZ project tags, aggregating by ISO week, and writing totals into the correct weekly columns in SharePoint Excel.</li>
+            <li>Designed a centralized Notion workspace from scratch — Knowledge Index, structured team spaces, process documentation database, and a Shopify change logging system replacing ad-hoc Slack tracking.</li>
+            <li>Built a Playwright-based browser automation in Python extracting creator data across 2,730 pages, exporting to a formatted Excel file with styled headers, filters, and auto-fitted columns.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SIG Working Student Data Analysis -->
+      <div class="timeline-item fade-up">
+        <div class="tl-meta">
+          <div>
+            <div class="tl-role">Working Student — Production Data Analysis</div>
+            <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
+            <div class="tl-where">&#128205; Linnich, Germany</div>
+          </div>
+          <div class="tl-period">Sep 2024 — Dec 2024</div>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Contributed to the full development cycle of predictive maintenance solutions using Python in Google Colaboratory, reducing machine downtime.</li>
+            <li>Improved data quality by up to 100% and accelerated analytical workflows with efficient data pipelines.</li>
+            <li>Delivered interactive Power BI and Excel dashboards to support maintenance decision-making.</li>
+            <li>Mapped project goals for predictive maintenance initiatives using MS Visio.</li>
+          </ul>
+          <div class="tl-ref">
+            <a href="https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing" target="_blank" class="btn btn-outline btn-sm">&#128196; Employer Reference</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- SIG Thesis -->
+      <div class="timeline-item fade-up">
+        <div class="tl-meta">
+          <div>
+            <div class="tl-role">Masters Thesis Student</div>
+            <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
+            <div class="tl-where">&#128205; Linnich, Germany</div>
+          </div>
+          <div class="tl-period">Apr 2024 — Aug 2024</div>
+        </div>
+        <div class="tl-body">
+          <div class="tl-thesis">
+            "Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines"
+          </div>
+        </div>
+      </div>
+
+      <!-- SIG Product Mgmt -->
+      <div class="timeline-item fade-up">
+        <div class="tl-meta">
+          <div>
+            <div class="tl-role">Working Student — Product Management</div>
+            <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
+            <div class="tl-where">&#128205; Linnich, Germany</div>
+          </div>
+          <div class="tl-period">Jan 2023 — Dec 2023</div>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Led product management for a SIG filling machine software feature sale, evaluating technical, commercial, and operational feasibility with cross-functional stakeholders.</li>
+            <li>Evaluated machine effectiveness by analyzing server data with PostgreSQL; translated 150+ customer survey insights into user stories for Jira.</li>
+            <li>Maintained structured customer infrastructure data (IP allocations, devices, network topology) in NetBox.</li>
+            <li>Produced marketing materials — newsletters, presentations, and short videos aligned with corporate design using CapCut.</li>
+          </ul>
+          <div class="tl-ref">
+            <a href="https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">&#128196; Employer Reference</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ha-Meem -->
+      <div class="timeline-item fade-up">
+        <div class="tl-meta">
+          <div>
+            <div class="tl-role">Industrial Engineer — Product &amp; Supply Chain Management</div>
+            <a class="tl-company" href="https://www.hameemgroup.net/" target="_blank">Ha-Meem Group</a>
+            <div class="tl-where">&#128205; Dhaka, Bangladesh</div>
+          </div>
+          <div class="tl-period">Jan 2020 — Jun 2020</div>
+        </div>
+        <div class="tl-body">
+          <ul>
+            <li>Coordinated pre-production activities across merchandising, planning, sales, and warehouse teams to prevent backlog and feeding crises.</li>
+            <li>Applied lean tools (KANBAN, SMED) reducing idle time by 5–10 min per production cycle.</li>
+            <li>Reduced defect rates by up to 40% using DMAIC Six Sigma approach.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ AUTOMATION PROJECTS ═══════════════════════════════════════════════ -->
+<section id="automations">
+  <div class="container">
+    <div class="section-eyebrow">Built at Bears with Benefits</div>
+    <h2 class="section-title">Automation Projects</h2>
+    <p class="section-sub">14 production automations built from scratch — each fully documented and live</p>
+
+    <div class="auto-grid">
+
+      <!-- 1 PO Automation -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon">&#128230;</div>
+          <div>
+            <div class="auto-name">B2B Purchase Order Automation</div>
+            <div class="auto-context">Excel → Power Automate → n8n → Xentral</div>
+          </div>
+        </div>
+        <p class="auto-desc">Reads B2B purchase orders from SharePoint Excel, detects ready rows, triggers n8n via email bridge, creates fully structured PO headers and line items in Xentral ERP via V3 REST API. Handles multiple bulk groups per run.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Power Automate</span><span class="tag">Xentral V3 API</span><span class="tag">SharePoint Excel</span>
+        </div>
+        <span class="auto-impact">15–30 min/order &#8594; 4–5 min/order</span>
+      </div>
+
+      <!-- 2 Vendor Sales Order (B2B Order Parsing) -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon p">&#128239;</div>
+          <div>
+            <div class="auto-name">Multi-Vendor Sales Order Creation</div>
+            <div class="auto-context">Email Attachment → n8n → Xentral</div>
+          </div>
+        </div>
+        <p class="auto-desc">Parses incoming B2B purchase orders from 10+ retail chains, flash-sale platforms, and marketplace partners across DE, AT, IT, ES, CH, and NL from PDF, CSV, and Excel. Applies partner-specific master data (customer numbers, currencies, tax, warehouses, payment terms) and creates sales orders in Xentral automatically.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Xentral V3 API</span><span class="tag">PDF Parsing</span><span class="tag">Multi-vendor Logic</span>
+        </div>
+        <span class="auto-impact">10+ retail &amp; marketplace partners automated</span>
+      </div>
+
+      <!-- 3 Shopify Refunds -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon a">&#128200;</div>
+          <div>
+            <div class="auto-name">Shopify Refunds Tracker (7 Stores)</div>
+            <div class="auto-context">Shopify GraphQL + ShopifyQL → n8n → Power Automate → Excel</div>
+          </div>
+        </div>
+        <p class="auto-desc">Fetches all refund events, order counts, and total sales per month for DE, FR, NL, IT, ES, CH, and USA stores. Classifies refund reasons (TikTok, Cancellation, Carrier Return, Customer Return, etc.), calculates refund rates as % of orders and revenue, and tracks voided COD transactions for Italy and Spain.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Shopify GraphQL</span><span class="tag">ShopifyQL</span><span class="tag">Office Scripts</span><span class="tag">Power Automate</span>
+        </div>
+        <span class="auto-impact">Phase 2 live across 7 markets</span>
+      </div>
+
+      <!-- 4 Shopify Weekly Actuals -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon g">&#128179;</div>
+          <div>
+            <div class="auto-name">Shopify Weekly Cash-Flow Pipeline</div>
+            <div class="auto-context">Shopify ShopifyQL → n8n → Power Automate → SharePoint Excel</div>
+          </div>
+        </div>
+        <p class="auto-desc">Extracts weekly net sales and shipping charges per DTC market (DE, IT, FR, NL, ES, CH) via the Shopify Admin GraphQL API with full pagination. Aggregates by ISO week and writes structured rows into SharePoint Excel for weekly cash-flow planning — replacing a fully manual reporting process.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Shopify GraphQL</span><span class="tag">OAuth2</span><span class="tag">Power Automate</span><span class="tag">SharePoint</span>
+        </div>
+        <span class="auto-impact">6 EU stores automated</span>
+      </div>
+
+      <!-- 5 COD Payment Automation -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon">&#128176;</div>
+          <div>
+            <div class="auto-name">COD Payment Automation</div>
+            <div class="auto-context">Carrier Email → n8n → Shopify REST + Xentral v1 API</div>
+          </div>
+        </div>
+        <p class="auto-desc">Ingests logistics carrier remittance emails as PDF, EML, TXT, or CSV across multiple carriers and two markets. Extracts order references, validates amounts, and marks orders as paid in both Shopify (via transaction API) and Xentral (via v1 invoice PATCH). Handles files up to 17,000+ orders per run.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Shopify REST API</span><span class="tag">Xentral v1 API</span><span class="tag">PDF / EML Parsing</span>
+        </div>
+        <span class="auto-impact">Italy &amp; Spain — up to 17,000+ orders/run</span>
+      </div>
+
+      <!-- 6 Xentral Analytics → SharePoint -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon a">&#128218;</div>
+          <div>
+            <div class="auto-name">Xentral Analytics → SharePoint Inventory Sync</div>
+            <div class="auto-context">Xentral API → Power Automate → Office Scripts → Excel</div>
+          </div>
+        </div>
+        <p class="auto-desc">Automated pipeline covering 5 report variants: Daily Stock (every 2–4 hrs), Weekly, Monthly, Quarterly, and MTD. Detects new exports by timestamp, downloads base64-encoded CSVs, parses via Office Script with full quote handling, and writes to SharePoint Excel tables consumed downstream by Power Query.</p>
+        <div class="auto-stack">
+          <span class="tag">Power Automate</span><span class="tag">Office Scripts</span><span class="tag">Xentral REST</span><span class="tag">Power Query</span>
+        </div>
+        <span class="auto-impact">5 report variants — replaces fully manual exports</span>
+      </div>
+
+      <!-- 7 Slack Change Log -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon p">&#128172;</div>
+          <div>
+            <div class="auto-name">Slack Operational Change Log</div>
+            <div class="auto-context">Slack API → n8n → Power Automate → SharePoint Excel</div>
+          </div>
+        </div>
+        <p class="auto-desc">Monitors 6 Slack channels (CH, DE, ES, FR, IT, NL) for operational e-commerce updates. Uses rule-based keyword classification to detect product status changes, promo switches, banner changes, price updates, and stock issues. Writes structured rows to SharePoint Excel — v2.0 eliminated OpenAI dependency entirely.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">Slack API</span><span class="tag">Power Automate</span><span class="tag">Rule-based NLP</span>
+        </div>
+        <span class="auto-impact">Replaced OpenAI — zero API cost</span>
+      </div>
+
+      <!-- 8 Veepee Invoice Automation -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon g">&#129534;</div>
+          <div>
+            <div class="auto-name">Flash-Sale Platform Invoice Automation</div>
+            <div class="auto-context">Email (10 Excel + 1 CSV) → n8n → Xentral Belege Importer</div>
+          </div>
+        </div>
+        <p class="auto-desc">Triggered by a single email with 10 country sales exports + 1 price CSV from a European flash-sale platform. Classifies files by market, applies multi-country merging rules, looks up prices, and generates 5 Xentral-ready CSVs (DE, AT, IT, ES, BENELUX) in the Belege Importer NEW/PARENT format.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">IMAP Trigger</span><span class="tag">Xentral Belege Importer</span><span class="tag">File Classification</span>
+        </div>
+        <span class="auto-impact">~622 line items across 5 segments per campaign</span>
+      </div>
+
+      <!-- 9 Westwing Order Automation -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon">&#128233;</div>
+          <div>
+            <div class="auto-name">Marketplace Order Import Automation</div>
+            <div class="auto-context">Email → n8n → Xentral Sales Order Import CSV</div>
+          </div>
+        </div>
+        <p class="auto-desc">Email-triggered workflow that reads campaign export Excel files from an EU home &amp; living marketplace, groups line items by order, maps to Xentral's order import schema (customer, address, delivery date, SKU, price, currency), and returns a ready-to-upload CSV via reply email — ~200+ orders per campaign.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">IMAP Trigger</span><span class="tag">Xentral Order Import</span><span class="tag">JavaScript</span>
+        </div>
+        <span class="auto-impact">~206 orders processed per campaign run</span>
+      </div>
+
+      <!-- 10 Amapharm Cash Flow -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon a">&#128197;</div>
+          <div>
+            <div class="auto-name">Supplier Invoice Cash-Flow Automation</div>
+            <div class="auto-context">Inventory Excel → Power Automate → Office Scripts → Forecast</div>
+          </div>
+        </div>
+        <p class="auto-desc">Reads open supplier invoices from a SharePoint inventory file, applies a CW+9 payment rule (invoice date + 63 days, snapped to Monday of that ISO week), aggregates net totals by pay week with applicable VAT, and auto-populates the weekly cash-flow forecast. Validated against confirmed payment data.</p>
+        <div class="auto-stack">
+          <span class="tag">Power Automate</span><span class="tag">Office Scripts</span><span class="tag">TypeScript</span><span class="tag">SharePoint Excel</span>
+        </div>
+        <span class="auto-impact">Replaces 30–60 min/week of manual forecast entry</span>
+      </div>
+
+      <!-- 11 Xentral AMZ B2B Sync -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon g">&#128666;</div>
+          <div>
+            <div class="auto-name">Amazon B2B Sales Weekly Sync</div>
+            <div class="auto-context">Xentral API → Power Automate → Office Scripts → Cash-Flow</div>
+          </div>
+        </div>
+        <p class="auto-desc">Extracts Amazon B2B sales from a Xentral Analytics report, filters for AMZ project tags, aggregates net revenue by ISO calendar week, and writes weekly totals into the correct columns of the cash-flow forecast spreadsheet. Runs hourly via Power Automate recurrence.</p>
+        <div class="auto-stack">
+          <span class="tag">Power Automate</span><span class="tag">Xentral API</span><span class="tag">Office Scripts</span><span class="tag">Base64 Decode</span>
+        </div>
+        <span class="auto-impact">Hourly updates to cash-flow forecast</span>
+      </div>
+
+      <!-- 12 B2B Sales Data Sync (Havea) -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon p">&#128202;</div>
+          <div>
+            <div class="auto-name">Xentral B2B Sales Data Sync</div>
+            <div class="auto-context">Xentral ERP → Power Automate → Office Scripts → SharePoint</div>
+          </div>
+        </div>
+        <p class="auto-desc">Hourly scheduled pipeline that pulls ~5,000 rows of B2B sales data from a Xentral Analytics report, decodes the base64 CSV response, validates column counts, sorts by order date descending, and writes in 500-row batches to a SharePoint Excel table for downstream reporting and analysis.</p>
+        <div class="auto-stack">
+          <span class="tag">Power Automate</span><span class="tag">Xentral REST API</span><span class="tag">Office Scripts</span><span class="tag">Batch Processing</span>
+        </div>
+        <span class="auto-impact">~5,000 rows synced hourly</span>
+      </div>
+
+      <!-- 13 OPOS Debtor Reporting -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon">&#128193;</div>
+          <div>
+            <div class="auto-name">OPOS B2B Receivables Pipeline</div>
+            <div class="auto-context">Raw OPOS Export → Excel Logic → Cash-Flow Left Side</div>
+          </div>
+        </div>
+        <p class="auto-desc">Transforms the weekly OPOS debtor export (~13,500 rows) into a clean B2B receivables view. Applies customer-specific payment terms (net 30, net 60, end-of-month rules), implements a two-tranche payment split logic for specific partners, and assigns ISO calendar weeks to each invoice for cash-flow week matching.</p>
+        <div class="auto-stack">
+          <span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">Payment Terms Logic</span><span class="tag">ISO Week Calc</span>
+        </div>
+        <span class="auto-impact">10–12 B2B customers tracked weekly</span>
+      </div>
+
+      <!-- 14 COD Data Extraction -->
+      <div class="auto-card fade-up">
+        <div class="auto-header">
+          <div class="auto-icon g">&#128247;</div>
+          <div>
+            <div class="auto-name">COD Data Extraction &amp; Normalization</div>
+            <div class="auto-context">Email (body / PDF / TXT) → n8n → Normalized CSV</div>
+          </div>
+        </div>
+        <p class="auto-desc">Reads incoming carrier remittance emails from any format (HTML table, PDF, TXT attachment), extracts Date / Amount / Order Number from each, normalizes to a consistent 3-column schema, and replies with a clean CSV — serving as the data extraction layer for the full COD Payment Automation.</p>
+        <div class="auto-stack">
+          <span class="tag">n8n</span><span class="tag">PDF Extraction</span><span class="tag">IMAP</span><span class="tag">MIME Parsing</span>
+        </div>
+        <span class="auto-impact">Multi-format extraction — PDF, EML, TXT, HTML</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OTHER PROJECTS ════════════════════════════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-eyebrow">Work</div>
+    <h2 class="section-title">Other Projects</h2>
+    <p class="section-sub">Analytics, BI, and engineering initiatives</p>
+
+    <div class="proj-grid">
+
+      <a href="https://lookerstudio.google.com/reporting/5f73c65b-9a75-496a-bda6-80012478f12a" target="_blank" class="proj-card fade-up">
+        <div class="proj-icon">&#128202;</div>
+        <div class="proj-name">Monthly Performance Dashboard — Looker Studio</div>
+        <div class="proj-desc">Interactive ecommerce KPI dashboard tracking monthly topline, marketing, and profitability metrics — filterable by country and sales channel (D2C, B2B, Amazon).</div>
+        <div class="proj-link">View Live Dashboard &#8594;</div>
+      </a>
+
+      <a href="https://jubair-khandaker.github.io/jira-ticketing-demo/" target="_blank" class="proj-card fade-up">
+        <div class="proj-icon">&#128203;</div>
+        <div class="proj-name">eMobility Support Hub — Jira Ticketing Demo</div>
+        <div class="proj-desc">Complete Jira workflow demonstrating service requests, incidents, and approval processes, with custom dashboards for ticket status, priority, and team workload tracking.</div>
+        <div class="proj-link">View Demo &#8594;</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1qeXAJkOYDI6roRvzwD_YOpqJclsJVK5a/view" target="_blank" class="proj-card fade-up">
+        <div class="proj-icon">&#9889;</div>
+        <div class="proj-name">Smart Energy Automation — FHEM &amp; IoT</div>
+        <div class="proj-desc">Automated dorm room appliances and heating systems using smart devices and FHEM to save energy and promote sustainability — a university engineering project.</div>
+        <div class="proj-link">Read Report &#8594;</div>
+      </a>
+
+      <div class="proj-card fade-up" style="cursor:default">
+        <div class="proj-icon">&#129302;</div>
+        <div class="proj-name">Predictive Maintenance — Machine Learning (Thesis)</div>
+        <div class="proj-desc">Master's thesis: ML approaches for predicting structural component failures in aseptic filling machines for food &amp; beverage packaging (SIG International). Grade 1.80.</div>
+        <div class="proj-link" style="color:var(--dim)">M.Sc. Thesis Research</div>
+      </div>
+
+      <a href="https://drive.google.com/file/d/1PbjXRiq3xXlmJap7EwFMqKVto9rKUYt9/view" target="_blank" class="proj-card fade-up">
+        <div class="proj-icon">&#128161;</div>
+        <div class="proj-name">Idea Engineering — Knowledge Café Research</div>
+        <div class="proj-desc">Examined knowledge café and world café methods in physical and virtual settings for the Magdeburg Center of Excellence paid-service ideation initiative.</div>
+        <div class="proj-link">Read Report &#8594;</div>
+      </a>
+
+      <a href="https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view" target="_blank" class="proj-card fade-up">
+        <div class="proj-icon">&#127758;</div>
+        <div class="proj-name">Sustainable Mobility — Canada, Nigeria &amp; Brazil</div>
+        <div class="proj-desc">PESTEL analysis of current mobility challenges in three continents, proposing innovations aligned with global Megatrends and UN Sustainable Development Goals.</div>
+        <div class="proj-link">Read Report &#8594;</div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EDUCATION ═════════════════════════════════════════════════════════ -->
+<section id="education">
+  <div class="container">
+    <div class="section-eyebrow">Academic</div>
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Engineering and technology management foundation across three universities</p>
+
+    <div class="edu-list">
+
+      <div class="edu-card fade-up">
+        <div class="edu-icon">&#127891;</div>
+        <div>
+          <div class="edu-degree">M.Sc. Advanced Industrial Engineering</div>
+          <div class="edu-uni"><a href="https://www.th-rosenheim.de/" target="_blank">TH Rosenheim</a></div>
+          <div class="edu-meta">
+            <span>&#128197; Oct 2025 — Present</span>
+            <span>&#128205; Rosenheim, Germany</span>
+          </div>
+          <div style="margin-top:.75rem;font-size:.78rem;color:var(--dim);">Advanced Production Systems · Data Analytics · Supply Chain Optimization · Sustainable Manufacturing</div>
+        </div>
+      </div>
+
+      <div class="edu-card fade-up">
+        <div class="edu-icon">&#127891;</div>
+        <div>
+          <div class="edu-degree">M.Sc. Technology and Innovation Management</div>
+          <div class="edu-uni"><a href="https://www.hs-harz.de/en/" target="_blank">Hochschule Harz</a></div>
+          <div class="edu-meta">
+            <span>&#128197; Mar 2021 — Feb 2025</span>
+            <span>&#128205; Wernigerode, Germany</span>
+            <span>&#11088; Grade: 1.80</span>
+          </div>
+          <div class="edu-thesis">Thesis: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines</div>
+        </div>
+      </div>
+
+      <div class="edu-card fade-up">
+        <div class="edu-icon">&#127891;</div>
+        <div>
+          <div class="edu-degree">B.Sc. Industrial and Production Engineering</div>
+          <div class="edu-uni"><a href="https://www.sust.edu/" target="_blank">Shahjalal University of Science and Technology</a></div>
+          <div class="edu-meta">
+            <span>&#128197; Apr 2014 — Feb 2019</span>
+            <span>&#128205; Sylhet, Bangladesh</span>
+            <span>&#11088; Grade: 2.00</span>
+          </div>
+          <div class="edu-thesis">Thesis: Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATIONS ════════════════════════════════════════════════════ -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-eyebrow">Learning</div>
+    <h2 class="section-title">Certifications</h2>
+    <p class="section-sub">Continuous upskilling in data engineering, BI, and automation</p>
+    <div class="certs-grid">
+      <a href="https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#128202;</div><div><div class="cert-name">Microsoft Power BI for Business Intelligence</div><div class="cert-issuer">Udemy</div></div>
+      </a>
+      <a href="https://www.udemy.com/certificate/UC-46cbb747-2241-4fdb-b46a-6ec91bcc8245/" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#129302;</div><div><div class="cert-name">Complete A.I. &amp; Machine Learning, Data Science Bootcamp</div><div class="cert-issuer">Udemy</div></div>
+      </a>
+      <a href="https://www.udemy.com/certificate/UC-9905aec1-36be-4420-8059-7acfd4f9123a/" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#128203;</div><div><div class="cert-name">Learn Jira with Real-World Examples</div><div class="cert-issuer">Udemy</div></div>
+      </a>
+      <a href="https://www.udemy.com/certificate/UC-ebd981c7-6e0d-48ed-bf46-fd7666b33d5d/" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#128200;</div><div><div class="cert-name">Google Sheets for Data Analysis &amp; Business Intelligence</div><div class="cert-issuer">Udemy</div></div>
+      </a>
+      <a href="https://www.coursera.org/account/accomplishments/verify/234R2KYX6FLY" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#128190;</div><div><div class="cert-name">SQL for Data Science</div><div class="cert-issuer">Coursera</div></div>
+      </a>
+      <a href="https://www.coursera.org/account/accomplishments/specialization/7MZWVZEWEDQK" target="_blank" class="cert-card fade-up">
+        <div class="cert-icon">&#128666;</div><div><div class="cert-name">Supply Chain Management Specialization</div><div class="cert-issuer">Coursera</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══════════════════════════════════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-eyebrow">Reach Out</div>
+    <h2 class="section-title">Get in Touch</h2>
+    <p class="section-sub">Open to full-time roles, internships, and automation consulting</p>
+    <div class="contact-grid">
+      <a href="mailto:jubairkhandaker73@gmail.com" class="contact-card">
+        <div class="contact-icon">&#9993;</div>
+        <div><div class="contact-label">Email</div><div class="contact-value">jubairkhandaker73@gmail.com</div></div>
+      </a>
+      <a href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" class="contact-card">
+        <div class="contact-icon">&#128101;</div>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-value">Jubair Khandaker</div></div>
+      </a>
+      <a href="tel:+4915781303249" class="contact-card">
+        <div class="contact-icon">&#128222;</div>
+        <div><div class="contact-label">Phone</div><div class="contact-value">+49 157 813 03249</div></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>&copy; 2026 Jubair Khandaker &mdash; Automation &amp; Industrial Engineering</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
