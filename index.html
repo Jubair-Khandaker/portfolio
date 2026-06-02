@@ -33,33 +33,63 @@
     /* ── NAV ─────────────────────────── */
     nav {
       position: fixed; top: 0; inset-inline: 0; z-index: 200;
-      height: 58px; display: flex; align-items: center; justify-content: space-between;
+      height: 64px; display: flex; align-items: center; justify-content: space-between;
       padding: 0 2.5rem;
-      background: rgba(8,12,24,.88); backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
+      background: rgba(8,12,24,.75); backdrop-filter: blur(20px) saturate(1.4);
+      border-bottom: 1px solid transparent;
+      transition: background .3s;
     }
-    .nav-logo { font-weight: 800; font-size: .9rem; letter-spacing: .5px;
-      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a { color: var(--dim); font-size: .8rem; font-weight: 500; text-decoration: none; transition: color .2s; letter-spacing: .3px; }
+    nav::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--blue) 30%, var(--purple) 70%, transparent 100%);
+      opacity: .45;
+    }
+    nav.scrolled { background: rgba(8,12,24,.96); }
+
+    .nav-logo {
+      font-weight: 800; font-size: .95rem; letter-spacing: .5px;
+      background: var(--grad); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      padding: .4rem .9rem; border-radius: 9px;
+      box-shadow: 0 0 0 1px rgba(59,130,246,.25), 0 0 18px rgba(59,130,246,.12);
+      transition: box-shadow .25s;
+    }
+    .nav-logo:hover { box-shadow: 0 0 0 1px rgba(59,130,246,.5), 0 0 24px rgba(59,130,246,.2); }
+
+    .nav-links { display: flex; gap: 1.6rem; list-style: none; }
+    .nav-links a {
+      position: relative; color: var(--dim); font-size: .8rem; font-weight: 500;
+      text-decoration: none; letter-spacing: .3px;
+      padding-bottom: .2rem;
+      transition: color .2s;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
+      background: var(--grad); border-radius: 1px;
+      transition: width .25s ease;
+    }
     .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a.active { color: var(--text); }
+    .nav-links a.active::after { width: 100%; }
 
     /* ── LANG TOGGLE ─────────────────── */
     .lang-toggle {
-      display: flex; align-items: center; gap: .25rem;
-      background: var(--bg-card); border: 1px solid var(--border-hi);
-      border-radius: 8px; padding: .2rem .3rem;
+      display: flex; align-items: center;
+      background: rgba(255,255,255,.04); border: 1px solid var(--border-hi);
+      border-radius: 99px; padding: .2rem;
     }
     .lang-btn {
       background: none; border: none; cursor: pointer;
-      font-size: .75rem; font-weight: 700; color: var(--dim);
-      padding: .25rem .5rem; border-radius: 5px;
-      transition: background .15s, color .15s;
-      font-family: 'JetBrains Mono', monospace; letter-spacing: .5px;
+      font-size: .72rem; font-weight: 700; color: var(--dim);
+      padding: .3rem .75rem; border-radius: 99px;
+      transition: background .2s, color .2s, box-shadow .2s;
+      font-family: 'JetBrains Mono', monospace; letter-spacing: .6px;
     }
     .lang-btn:hover { color: var(--text); }
-    .lang-btn.active { background: var(--blue); color: #fff; }
-    .lang-sep { color: var(--border-hi); font-size: .7rem; user-select: none; }
+    .lang-btn.active {
+      background: var(--grad); color: #fff;
+      box-shadow: 0 0 12px rgba(59,130,246,.35);
+    }
 
     /* ── HERO ────────────────────────── */
     .hero {
@@ -305,7 +335,6 @@
   </ul>
   <div class="lang-toggle">
     <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
-    <span class="lang-sep">|</span>
     <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
   </div>
 </nav>
@@ -1272,6 +1301,25 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
 }, { threshold: 0.08 });
 document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+/* Nav scroll effect */
+window.addEventListener('scroll', () => {
+  document.querySelector('nav').classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* Active nav link on scroll */
+const navSections = document.querySelectorAll('section[id]');
+const navAnchors  = document.querySelectorAll('.nav-links a');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navAnchors.forEach(a => {
+        a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id);
+      });
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+navSections.forEach(s => sectionObserver.observe(s));
 
 /* Restore saved language preference */
 const savedLang = localStorage.getItem('portfolio-lang') || 'en';
