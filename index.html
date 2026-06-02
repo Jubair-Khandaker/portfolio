@@ -44,6 +44,23 @@
     .nav-links a { color: var(--dim); font-size: .8rem; font-weight: 500; text-decoration: none; transition: color .2s; letter-spacing: .3px; }
     .nav-links a:hover { color: var(--text); }
 
+    /* ── LANG TOGGLE ─────────────────── */
+    .lang-toggle {
+      display: flex; align-items: center; gap: .25rem;
+      background: var(--bg-card); border: 1px solid var(--border-hi);
+      border-radius: 8px; padding: .2rem .3rem;
+    }
+    .lang-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: .75rem; font-weight: 700; color: var(--dim);
+      padding: .25rem .5rem; border-radius: 5px;
+      transition: background .15s, color .15s;
+      font-family: 'JetBrains Mono', monospace; letter-spacing: .5px;
+    }
+    .lang-btn:hover { color: var(--text); }
+    .lang-btn.active { background: var(--blue); color: #fff; }
+    .lang-sep { color: var(--border-hi); font-size: .7rem; user-select: none; }
+
     /* ── HERO ────────────────────────── */
     .hero {
       min-height: 100vh; display: flex; align-items: center;
@@ -146,6 +163,7 @@
     .lang-fill { height: 100%; border-radius: 99px; background: var(--grad); }
 
     /* ── EXPERIENCE / TIMELINE ───────── */
+    #experience { background: var(--bg-2); }
     .timeline { position: relative; padding-left: 1.75rem; }
     .timeline::before {
       content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px;
@@ -171,7 +189,6 @@
     .tl-ref { display: flex; gap: .6rem; margin-top: 1rem; flex-wrap: wrap; }
 
     /* ── AUTOMATION PROJECTS ────────── */
-    #automations { background: var(--bg-2); }
     .auto-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(340px,1fr)); gap: 1.25rem; }
     .auto-card {
       background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
@@ -264,6 +281,7 @@
     @media (max-width: 780px) {
       nav { padding: 0 1.25rem; }
       .nav-links { display: none; }
+      .lang-toggle { margin-left: auto; }
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
       .hero-photo { width: 170px; height: 170px; margin: 0 auto; order: -1; }
       .hero-cta, .hero-stats { justify-content: center; }
@@ -278,28 +296,33 @@
 <nav>
   <div class="nav-logo">JK</div>
   <ul class="nav-links">
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#automations">Automations</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+    <li><a href="#automations" data-i18n="nav.automations">Automations</a></li>
+    <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+    <li><a href="#projects" data-i18n="nav.projects">Projects</a></li>
+    <li><a href="#education" data-i18n="nav.education">Education</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
   </ul>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <span class="lang-sep">|</span>
+    <button class="lang-btn" id="btn-de" onclick="setLang('de')">DE</button>
+  </div>
 </nav>
 
 <!-- ═══ HERO ═══════════════════════════════════════════════════════════════ -->
 <section class="hero">
   <div class="hero-inner">
     <div>
-      <div class="hero-badge"><span class="badge-dot"></span> Open to new opportunities</div>
+      <div class="hero-badge"><span class="badge-dot"></span> <span data-i18n="hero.badge">Open to new opportunities</span></div>
       <h1>Jubair<br><span>Khandaker</span></h1>
-      <p class="hero-role">Automation & Data Engineer &nbsp;·&nbsp; M.Sc. Technology & Innovation Management &nbsp;·&nbsp; Advanced Industrial Engineering Grad Student</p>
-      <p class="hero-desc">
+      <p class="hero-role" data-i18n="hero.role">Automation &amp; Data Engineer &nbsp;·&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;·&nbsp; Advanced Industrial Engineering Grad Student</p>
+      <p class="hero-desc" data-i18n="hero.desc">
         I build end-to-end automation pipelines that turn hours of manual work into minutes. From Shopify analytics and ERP integrations to carrier payment reconciliation and cash-flow forecasting, I translate operational complexity into reliable digital workflows.
       </p>
       <div class="hero-cta">
-        <a href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
-        <a href="mailto:jubairkhandaker73@gmail.com" class="btn btn-outline">Get in Touch</a>
+        <a href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" class="btn btn-primary" data-i18n="hero.cta1">LinkedIn Profile</a>
+        <a href="mailto:jubairkhandaker73@gmail.com" class="btn btn-outline" data-i18n="hero.cta2">Get in Touch</a>
       </div>
     </div>
     <img src="profile.png" alt="Jubair Khandaker" class="hero-photo" />
@@ -309,12 +332,12 @@
 <!-- ═══ SKILLS ════════════════════════════════════════════════════════════ -->
 <section id="skills">
   <div class="container">
-    <div class="section-eyebrow">Toolbox</div>
-    <h2 class="section-title">Technical Skills</h2>
-    <p class="section-sub">Technologies and platforms I work with every day</p>
+    <div class="section-eyebrow" data-i18n="skills.eyebrow">Toolbox</div>
+    <h2 class="section-title" data-i18n="skills.title">Technical Skills</h2>
+    <p class="section-sub" data-i18n="skills.sub">Technologies and platforms I work with every day</p>
     <div class="skills-grid fade-up">
       <div class="skill-card">
-        <div class="skill-cat">Workflow Automation</div>
+        <div class="skill-cat" data-i18n="skills.cat.automation">Workflow Automation</div>
         <div class="skill-tags">
           <span class="tag">n8n</span><span class="tag">Power Automate</span>
           <span class="tag">Playwright</span><span class="tag">Office Scripts</span>
@@ -322,7 +345,7 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">APIs & Integrations</div>
+        <div class="skill-cat" data-i18n="skills.cat.apis">APIs &amp; Integrations</div>
         <div class="skill-tags">
           <span class="tag">Shopify GraphQL API</span><span class="tag">ShopifyQL</span>
           <span class="tag">Xentral REST API</span><span class="tag">Slack API</span>
@@ -330,7 +353,7 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Data & Analytics</div>
+        <div class="skill-cat" data-i18n="skills.cat.data">Data &amp; Analytics</div>
         <div class="skill-tags">
           <span class="tag p">Python</span><span class="tag p">Pandas</span>
           <span class="tag p">NumPy</span><span class="tag p">Scikit-learn</span>
@@ -338,14 +361,14 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Databases</div>
+        <div class="skill-cat" data-i18n="skills.cat.databases">Databases</div>
         <div class="skill-tags">
           <span class="tag g">SQL</span><span class="tag g">MySQL</span>
           <span class="tag g">PostgreSQL</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Business Intelligence</div>
+        <div class="skill-cat" data-i18n="skills.cat.bi">Business Intelligence</div>
         <div class="skill-tags">
           <span class="tag a">Power BI</span><span class="tag a">Looker Studio</span>
           <span class="tag a">Excel</span><span class="tag a">Power Query</span>
@@ -353,32 +376,44 @@
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">ERP & Operations</div>
+        <div class="skill-cat" data-i18n="skills.cat.erp">ERP &amp; Operations</div>
         <div class="skill-tags">
           <span class="tag">Xentral ERP</span><span class="tag">NetBox</span>
           <span class="tag">Shopify Admin</span><span class="tag">Belege Importer</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Cloud & Collaboration</div>
+        <div class="skill-cat" data-i18n="skills.cat.cloud">Cloud &amp; Collaboration</div>
         <div class="skill-tags">
           <span class="tag p">Notion</span><span class="tag p">Jira</span>
           <span class="tag p">MS Visio</span><span class="tag p">SharePoint Online</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-cat">Lean & Process Engineering</div>
+        <div class="skill-cat" data-i18n="skills.cat.lean">Lean &amp; Process Engineering</div>
         <div class="skill-tags">
           <span class="tag g">DMAIC Six Sigma</span><span class="tag g">KANBAN</span>
           <span class="tag g">SMED</span><span class="tag g">PESTEL</span>
         </div>
       </div>
     </div>
-    <h3 style="margin:3rem 0 1.25rem;font-size:.95rem;color:var(--muted);font-weight:600;">Language Skills</h3>
+    <h3 style="margin:3rem 0 1.25rem;font-size:.95rem;color:var(--muted);font-weight:600;" data-i18n="skills.lang.title">Language Skills</h3>
     <div class="lang-grid fade-up">
-      <div class="lang-card"><div class="lang-name">Bengali</div><div class="lang-level">Native</div><div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div></div>
-      <div class="lang-card"><div class="lang-name">English</div><div class="lang-level">C1, Near native fluency</div><div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div></div>
-      <div class="lang-card"><div class="lang-name">German</div><div class="lang-level">B1 / B2, Conversational</div><div class="lang-bar"><div class="lang-fill" style="width:52%"></div></div></div>
+      <div class="lang-card">
+        <div class="lang-name">Bengali</div>
+        <div class="lang-level" data-i18n="lang.bengali.level">Native</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">English</div>
+        <div class="lang-level" data-i18n="lang.english.level">C1, Near native fluency</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+      </div>
+      <div class="lang-card">
+        <div class="lang-name">Deutsch</div>
+        <div class="lang-level" data-i18n="lang.german.level">B1 / B2, Conversational</div>
+        <div class="lang-bar"><div class="lang-fill" style="width:52%"></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -386,9 +421,9 @@
 <!-- ═══ AUTOMATION PROJECTS ═══════════════════════════════════════════════ -->
 <section id="automations">
   <div class="container">
-    <div class="section-eyebrow">Built at Bears with Benefits</div>
-    <h2 class="section-title">Automation Projects</h2>
-    <p class="section-sub">14 production automations built from scratch, each fully documented and live</p>
+    <div class="section-eyebrow" data-i18n="auto.eyebrow">Built at Bears with Benefits</div>
+    <h2 class="section-title" data-i18n="auto.title">Automation Projects</h2>
+    <p class="section-sub" data-i18n="auto.sub">14 production automations built from scratch, each fully documented and live</p>
 
     <div class="auto-grid">
 
@@ -397,31 +432,31 @@
         <div class="auto-header">
           <div class="auto-icon">&#128230;</div>
           <div>
-            <div class="auto-name">B2B Purchase Order Automation</div>
+            <div class="auto-name" data-i18n="auto.1.name">B2B Purchase Order Automation</div>
             <div class="auto-context">Excel → Power Automate → n8n → Xentral</div>
           </div>
         </div>
-        <p class="auto-desc">Reads B2B purchase orders from SharePoint Excel, detects ready rows, triggers n8n via email bridge, creates fully structured PO headers and line items in Xentral ERP via V3 REST API. Handles multiple bulk groups per run.</p>
+        <p class="auto-desc" data-i18n="auto.1.desc">Reads B2B purchase orders from SharePoint Excel, detects ready rows, triggers n8n via email bridge, creates fully structured PO headers and line items in Xentral ERP via V3 REST API. Handles multiple bulk groups per run.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Power Automate</span><span class="tag">Xentral V3 API</span><span class="tag">SharePoint Excel</span>
         </div>
-        <span class="auto-impact">15–30 min/order &#8594; 4–5 min/order</span>
+        <span class="auto-impact" data-i18n="auto.1.impact">15–30 min/order → 4–5 min/order</span>
       </div>
 
-      <!-- 2 Vendor Sales Order (B2B Order Parsing) -->
+      <!-- 2 Vendor Sales Order -->
       <div class="auto-card fade-up">
         <div class="auto-header">
           <div class="auto-icon p">&#128239;</div>
           <div>
-            <div class="auto-name">Multi-Vendor Sales Order Creation</div>
+            <div class="auto-name" data-i18n="auto.2.name">Multi-Vendor Sales Order Creation</div>
             <div class="auto-context">Email Attachment → n8n → Xentral</div>
           </div>
         </div>
-        <p class="auto-desc">Parses incoming B2B purchase orders from 10+ retail chains, flash-sale platforms, and marketplace partners across DE, AT, IT, ES, CH, and NL from PDF, CSV, and Excel. Applies partner-specific master data (customer numbers, currencies, tax, warehouses, payment terms) and creates sales orders in Xentral automatically.</p>
+        <p class="auto-desc" data-i18n="auto.2.desc">Parses incoming B2B purchase orders from 10+ retail chains, flash-sale platforms, and marketplace partners across DE, AT, IT, ES, CH, and NL from PDF, CSV, and Excel. Applies partner-specific master data (customer numbers, currencies, tax, warehouses, payment terms) and creates sales orders in Xentral automatically.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Xentral V3 API</span><span class="tag">PDF Parsing</span><span class="tag">Multi-vendor Logic</span>
         </div>
-        <span class="auto-impact">10+ retail &amp; marketplace partners automated</span>
+        <span class="auto-impact" data-i18n="auto.2.impact">10+ retail &amp; marketplace partners automated</span>
       </div>
 
       <!-- 3 Shopify Refunds -->
@@ -429,15 +464,15 @@
         <div class="auto-header">
           <div class="auto-icon a">&#128200;</div>
           <div>
-            <div class="auto-name">Shopify Refunds Tracker (7 Stores)</div>
+            <div class="auto-name" data-i18n="auto.3.name">Shopify Refunds Tracker (7 Stores)</div>
             <div class="auto-context">Shopify GraphQL + ShopifyQL → n8n → Power Automate → Excel</div>
           </div>
         </div>
-        <p class="auto-desc">Fetches all refund events, order counts, and total sales per month for DE, FR, NL, IT, ES, CH, and USA stores. Classifies refund reasons (TikTok, Cancellation, Carrier Return, Customer Return, etc.), calculates refund rates as % of orders and revenue, and tracks voided COD transactions for Italy and Spain.</p>
+        <p class="auto-desc" data-i18n="auto.3.desc">Fetches all refund events, order counts, and total sales per month for DE, FR, NL, IT, ES, CH, and USA stores. Classifies refund reasons (TikTok, Cancellation, Carrier Return, Customer Return, etc.), calculates refund rates as % of orders and revenue, and tracks voided COD transactions for Italy and Spain.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Shopify GraphQL</span><span class="tag">ShopifyQL</span><span class="tag">Office Scripts</span><span class="tag">Power Automate</span>
         </div>
-        <span class="auto-impact">Phase 2 live across 7 markets</span>
+        <span class="auto-impact" data-i18n="auto.3.impact">Phase 2 live across 7 markets</span>
       </div>
 
       <!-- 4 Shopify Weekly Actuals -->
@@ -445,15 +480,15 @@
         <div class="auto-header">
           <div class="auto-icon g">&#128179;</div>
           <div>
-            <div class="auto-name">Shopify Weekly Cash-Flow Pipeline</div>
+            <div class="auto-name" data-i18n="auto.4.name">Shopify Weekly Cash-Flow Pipeline</div>
             <div class="auto-context">Shopify ShopifyQL → n8n → Power Automate → SharePoint Excel</div>
           </div>
         </div>
-        <p class="auto-desc">Extracts weekly net sales and shipping charges per DTC market (DE, IT, FR, NL, ES, CH) via the Shopify Admin GraphQL API with full pagination. Aggregates by ISO week and writes structured rows into SharePoint Excel for weekly cash-flow planning, replacing a fully manual reporting process.</p>
+        <p class="auto-desc" data-i18n="auto.4.desc">Extracts weekly net sales and shipping charges per DTC market (DE, IT, FR, NL, ES, CH) via the Shopify Admin GraphQL API with full pagination. Aggregates by ISO week and writes structured rows into SharePoint Excel for weekly cash-flow planning, replacing a fully manual reporting process.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Shopify GraphQL</span><span class="tag">OAuth2</span><span class="tag">Power Automate</span><span class="tag">SharePoint</span>
         </div>
-        <span class="auto-impact">6 EU stores automated</span>
+        <span class="auto-impact" data-i18n="auto.4.impact">6 EU stores automated</span>
       </div>
 
       <!-- 5 COD Payment Automation -->
@@ -461,15 +496,15 @@
         <div class="auto-header">
           <div class="auto-icon">&#128176;</div>
           <div>
-            <div class="auto-name">COD Payment Automation</div>
+            <div class="auto-name" data-i18n="auto.5.name">COD Payment Automation</div>
             <div class="auto-context">Carrier Email → n8n → Shopify REST + Xentral v1 API</div>
           </div>
         </div>
-        <p class="auto-desc">Ingests logistics carrier remittance emails as PDF, EML, TXT, or CSV across multiple carriers and two markets. Extracts order references, validates amounts, and marks orders as paid in both Shopify (via transaction API) and Xentral (via v1 invoice PATCH). Handles files up to 17,000+ orders per run.</p>
+        <p class="auto-desc" data-i18n="auto.5.desc">Ingests logistics carrier remittance emails as PDF, EML, TXT, or CSV across multiple carriers and two markets. Extracts order references, validates amounts, and marks orders as paid in both Shopify (via transaction API) and Xentral (via v1 invoice PATCH). Handles files up to 17,000+ orders per run.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Shopify REST API</span><span class="tag">Xentral v1 API</span><span class="tag">PDF / EML Parsing</span>
         </div>
-        <span class="auto-impact">Italy &amp; Spain, up to 17,000+ orders/run</span>
+        <span class="auto-impact" data-i18n="auto.5.impact">Italy &amp; Spain, up to 17,000+ orders/run</span>
       </div>
 
       <!-- 6 Xentral Analytics → SharePoint -->
@@ -477,15 +512,15 @@
         <div class="auto-header">
           <div class="auto-icon a">&#128218;</div>
           <div>
-            <div class="auto-name">Xentral Analytics → SharePoint Inventory Sync</div>
+            <div class="auto-name" data-i18n="auto.6.name">Xentral Analytics → SharePoint Inventory Sync</div>
             <div class="auto-context">Xentral API → Power Automate → Office Scripts → Excel</div>
           </div>
         </div>
-        <p class="auto-desc">Automated pipeline covering 5 report variants: Daily Stock (every 2–4 hrs), Weekly, Monthly, Quarterly, and MTD. Detects new exports by timestamp, downloads base64-encoded CSVs, parses via Office Script with full quote handling, and writes to SharePoint Excel tables consumed downstream by Power Query.</p>
+        <p class="auto-desc" data-i18n="auto.6.desc">Automated pipeline covering 5 report variants: Daily Stock (every 2–4 hrs), Weekly, Monthly, Quarterly, and MTD. Detects new exports by timestamp, downloads base64-encoded CSVs, parses via Office Script with full quote handling, and writes to SharePoint Excel tables consumed downstream by Power Query.</p>
         <div class="auto-stack">
           <span class="tag">Power Automate</span><span class="tag">Office Scripts</span><span class="tag">Xentral REST</span><span class="tag">Power Query</span>
         </div>
-        <span class="auto-impact">5 report variants, replaces fully manual exports</span>
+        <span class="auto-impact" data-i18n="auto.6.impact">5 report variants, replaces fully manual exports</span>
       </div>
 
       <!-- 7 Slack Change Log -->
@@ -493,15 +528,15 @@
         <div class="auto-header">
           <div class="auto-icon p">&#128172;</div>
           <div>
-            <div class="auto-name">Slack Operational Change Log</div>
+            <div class="auto-name" data-i18n="auto.7.name">Slack Operational Change Log</div>
             <div class="auto-context">Slack API → n8n → Power Automate → SharePoint Excel</div>
           </div>
         </div>
-        <p class="auto-desc">Monitors 6 Slack channels (CH, DE, ES, FR, IT, NL) for operational e-commerce updates. Uses rule-based keyword classification to detect product status changes, promo switches, banner changes, price updates, and stock issues. Writes structured rows to SharePoint Excel. v2.0 eliminated OpenAI dependency entirely.</p>
+        <p class="auto-desc" data-i18n="auto.7.desc">Monitors 6 Slack channels (CH, DE, ES, FR, IT, NL) for operational e-commerce updates. Uses rule-based keyword classification to detect product status changes, promo switches, banner changes, price updates, and stock issues. Writes structured rows to SharePoint Excel. v2.0 eliminated OpenAI dependency entirely.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">Slack API</span><span class="tag">Power Automate</span><span class="tag">Rule-based NLP</span>
         </div>
-        <span class="auto-impact">Replaced OpenAI, zero API cost</span>
+        <span class="auto-impact" data-i18n="auto.7.impact">Replaced OpenAI, zero API cost</span>
       </div>
 
       <!-- 8 Veepee Invoice Automation -->
@@ -509,15 +544,15 @@
         <div class="auto-header">
           <div class="auto-icon g">&#129534;</div>
           <div>
-            <div class="auto-name">Flash-Sale Platform Invoice Automation</div>
+            <div class="auto-name" data-i18n="auto.8.name">Flash-Sale Platform Invoice Automation</div>
             <div class="auto-context">Email (10 Excel + 1 CSV) → n8n → Xentral Belege Importer</div>
           </div>
         </div>
-        <p class="auto-desc">Triggered by a single email with 10 country sales exports + 1 price CSV from a European flash-sale platform. Classifies files by market, applies multi-country merging rules, looks up prices, and generates 5 Xentral-ready CSVs (DE, AT, IT, ES, BENELUX) in the Belege Importer NEW/PARENT format.</p>
+        <p class="auto-desc" data-i18n="auto.8.desc">Triggered by a single email with 10 country sales exports + 1 price CSV from a European flash-sale platform. Classifies files by market, applies multi-country merging rules, looks up prices, and generates 5 Xentral-ready CSVs (DE, AT, IT, ES, BENELUX) in the Belege Importer NEW/PARENT format.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">IMAP Trigger</span><span class="tag">Xentral Belege Importer</span><span class="tag">File Classification</span>
         </div>
-        <span class="auto-impact">~622 line items across 5 segments per campaign</span>
+        <span class="auto-impact" data-i18n="auto.8.impact">~622 line items across 5 segments per campaign</span>
       </div>
 
       <!-- 9 Westwing Order Automation -->
@@ -525,31 +560,31 @@
         <div class="auto-header">
           <div class="auto-icon">&#128233;</div>
           <div>
-            <div class="auto-name">Marketplace Order Import Automation</div>
+            <div class="auto-name" data-i18n="auto.9.name">Marketplace Order Import Automation</div>
             <div class="auto-context">Email → n8n → Xentral Sales Order Import CSV</div>
           </div>
         </div>
-        <p class="auto-desc">Email-triggered workflow that reads campaign export Excel files from an EU home &amp; living marketplace, groups line items by order, maps to Xentral's order import schema (customer, address, delivery date, SKU, price, currency), and returns a ready-to-upload CSV via reply email -~200+ orders per campaign.</p>
+        <p class="auto-desc" data-i18n="auto.9.desc">Email-triggered workflow that reads campaign export Excel files from an EU home &amp; living marketplace, groups line items by order, maps to Xentral's order import schema (customer, address, delivery date, SKU, price, currency), and returns a ready-to-upload CSV via reply email — ~200+ orders per campaign.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">IMAP Trigger</span><span class="tag">Xentral Order Import</span><span class="tag">JavaScript</span>
         </div>
-        <span class="auto-impact">~206 orders processed per campaign run</span>
+        <span class="auto-impact" data-i18n="auto.9.impact">~206 orders processed per campaign run</span>
       </div>
 
-      <!-- 10 Amapharm Cash Flow -->
+      <!-- 10 Supplier Cash Flow -->
       <div class="auto-card fade-up">
         <div class="auto-header">
           <div class="auto-icon a">&#128197;</div>
           <div>
-            <div class="auto-name">Supplier Invoice Cash-Flow Automation</div>
+            <div class="auto-name" data-i18n="auto.10.name">Supplier Invoice Cash-Flow Automation</div>
             <div class="auto-context">Inventory Excel → Power Automate → Office Scripts → Forecast</div>
           </div>
         </div>
-        <p class="auto-desc">Reads open supplier invoices from a SharePoint inventory file, applies a CW+9 payment rule (invoice date + 63 days, snapped to Monday of that ISO week), aggregates net totals by pay week with applicable VAT, and auto-populates the weekly cash-flow forecast. Validated against confirmed payment data.</p>
+        <p class="auto-desc" data-i18n="auto.10.desc">Reads open supplier invoices from a SharePoint inventory file, applies a CW+9 payment rule (invoice date + 63 days, snapped to Monday of that ISO week), aggregates net totals by pay week with applicable VAT, and auto-populates the weekly cash-flow forecast. Validated against confirmed payment data.</p>
         <div class="auto-stack">
           <span class="tag">Power Automate</span><span class="tag">Office Scripts</span><span class="tag">TypeScript</span><span class="tag">SharePoint Excel</span>
         </div>
-        <span class="auto-impact">Replaces 30–60 min/week of manual forecast entry</span>
+        <span class="auto-impact" data-i18n="auto.10.impact">Replaces 30–60 min/week of manual forecast entry</span>
       </div>
 
       <!-- 11 Xentral AMZ B2B Sync -->
@@ -557,31 +592,31 @@
         <div class="auto-header">
           <div class="auto-icon g">&#128666;</div>
           <div>
-            <div class="auto-name">Amazon B2B Sales Weekly Sync</div>
+            <div class="auto-name" data-i18n="auto.11.name">Amazon B2B Sales Weekly Sync</div>
             <div class="auto-context">Xentral API → Power Automate → Office Scripts → Cash-Flow</div>
           </div>
         </div>
-        <p class="auto-desc">Extracts Amazon B2B sales from a Xentral Analytics report, filters for AMZ project tags, aggregates net revenue by ISO calendar week, and writes weekly totals into the correct columns of the cash-flow forecast spreadsheet. Runs hourly via Power Automate recurrence.</p>
+        <p class="auto-desc" data-i18n="auto.11.desc">Extracts Amazon B2B sales from a Xentral Analytics report, filters for AMZ project tags, aggregates net revenue by ISO calendar week, and writes weekly totals into the correct columns of the cash-flow forecast spreadsheet. Runs hourly via Power Automate recurrence.</p>
         <div class="auto-stack">
           <span class="tag">Power Automate</span><span class="tag">Xentral API</span><span class="tag">Office Scripts</span><span class="tag">Base64 Decode</span>
         </div>
-        <span class="auto-impact">Hourly updates to cash-flow forecast</span>
+        <span class="auto-impact" data-i18n="auto.11.impact">Hourly updates to cash-flow forecast</span>
       </div>
 
-      <!-- 12 B2B Sales Data Sync (Havea) -->
+      <!-- 12 B2B Sales Data Sync -->
       <div class="auto-card fade-up">
         <div class="auto-header">
           <div class="auto-icon p">&#128202;</div>
           <div>
-            <div class="auto-name">Xentral B2B Sales Data Sync</div>
+            <div class="auto-name" data-i18n="auto.12.name">Xentral B2B Sales Data Sync</div>
             <div class="auto-context">Xentral ERP → Power Automate → Office Scripts → SharePoint</div>
           </div>
         </div>
-        <p class="auto-desc">Hourly scheduled pipeline that pulls ~5,000 rows of B2B sales data from a Xentral Analytics report, decodes the base64 CSV response, validates column counts, sorts by order date descending, and writes in 500-row batches to a SharePoint Excel table for downstream reporting and analysis.</p>
+        <p class="auto-desc" data-i18n="auto.12.desc">Hourly scheduled pipeline that pulls ~5,000 rows of B2B sales data from a Xentral Analytics report, decodes the base64 CSV response, validates column counts, sorts by order date descending, and writes in 500-row batches to a SharePoint Excel table for downstream reporting and analysis.</p>
         <div class="auto-stack">
           <span class="tag">Power Automate</span><span class="tag">Xentral REST API</span><span class="tag">Office Scripts</span><span class="tag">Batch Processing</span>
         </div>
-        <span class="auto-impact">~5,000 rows synced hourly</span>
+        <span class="auto-impact" data-i18n="auto.12.impact">~5,000 rows synced hourly</span>
       </div>
 
       <!-- 13 OPOS Debtor Reporting -->
@@ -589,15 +624,15 @@
         <div class="auto-header">
           <div class="auto-icon">&#128193;</div>
           <div>
-            <div class="auto-name">OPOS B2B Receivables Pipeline</div>
+            <div class="auto-name" data-i18n="auto.13.name">OPOS B2B Receivables Pipeline</div>
             <div class="auto-context">Raw OPOS Export → Excel Logic → Cash-Flow Left Side</div>
           </div>
         </div>
-        <p class="auto-desc">Transforms the weekly OPOS debtor export (~13,500 rows) into a clean B2B receivables view. Applies customer-specific payment terms (net 30, net 60, end-of-month rules), implements a two-tranche payment split logic for specific partners, and assigns ISO calendar weeks to each invoice for cash-flow week matching.</p>
+        <p class="auto-desc" data-i18n="auto.13.desc">Transforms the weekly OPOS debtor export (~13,500 rows) into a clean B2B receivables view. Applies customer-specific payment terms (net 30, net 60, end-of-month rules), implements a two-tranche payment split logic for specific partners, and assigns ISO calendar weeks to each invoice for cash-flow week matching.</p>
         <div class="auto-stack">
           <span class="tag">Excel</span><span class="tag">Power Query</span><span class="tag">Payment Terms Logic</span><span class="tag">ISO Week Calc</span>
         </div>
-        <span class="auto-impact">10–12 B2B customers tracked weekly</span>
+        <span class="auto-impact" data-i18n="auto.13.impact">10–12 B2B customers tracked weekly</span>
       </div>
 
       <!-- 14 COD Data Extraction -->
@@ -605,27 +640,27 @@
         <div class="auto-header">
           <div class="auto-icon g">&#128247;</div>
           <div>
-            <div class="auto-name">COD Data Extraction &amp; Normalization</div>
+            <div class="auto-name" data-i18n="auto.14.name">COD Data Extraction &amp; Normalization</div>
             <div class="auto-context">Email (body / PDF / TXT) → n8n → Normalized CSV</div>
           </div>
         </div>
-        <p class="auto-desc">Reads incoming carrier remittance emails from any format (HTML table, PDF, TXT attachment), extracts Date / Amount / Order Number from each, normalizes to a consistent 3-column schema, and replies with a clean CSV, serving as the data extraction layer for the full COD Payment Automation.</p>
+        <p class="auto-desc" data-i18n="auto.14.desc">Reads incoming carrier remittance emails from any format (HTML table, PDF, TXT attachment), extracts Date / Amount / Order Number from each, normalizes to a consistent 3-column schema, and replies with a clean CSV, serving as the data extraction layer for the full COD Payment Automation.</p>
         <div class="auto-stack">
           <span class="tag">n8n</span><span class="tag">PDF Extraction</span><span class="tag">IMAP</span><span class="tag">MIME Parsing</span>
         </div>
-        <span class="auto-impact">Multi-format: PDF, EML, TXT, HTML</span>
+        <span class="auto-impact" data-i18n="auto.14.impact">Multi-format: PDF, EML, TXT, HTML</span>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ═══ AUTOMATION PROJECTS ═══════════════════════════════════════════════ -->
+<!-- ═══ EXPERIENCE ════════════════════════════════════════════════════════ -->
 <section id="experience">
   <div class="container">
-    <div class="section-eyebrow">Career</div>
-    <h2 class="section-title">Work Experience</h2>
-    <p class="section-sub">Five years of delivering automation, data, and process solutions across three countries</p>
+    <div class="section-eyebrow" data-i18n="exp.eyebrow">Career</div>
+    <h2 class="section-title" data-i18n="exp.title">Work Experience</h2>
+    <p class="section-sub" data-i18n="exp.sub">Five years of delivering automation, data, and process solutions across three countries</p>
 
     <div class="timeline">
 
@@ -633,14 +668,14 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role">Automation Engineer (Internship)</div>
+            <div class="tl-role" data-i18n="exp.1.role">Automation Engineer (Internship)</div>
             <a class="tl-company" href="https://www.bears-with-benefits.com/" target="_blank">Bears with Benefits GmbH</a>
-            <div class="tl-where">&#128205; Munich, Germany</div>
+            <div class="tl-where" data-i18n="exp.1.where">&#128205; Munich, Germany</div>
           </div>
-          <div class="tl-period">Jan 2026 - Present</div>
+          <div class="tl-period" data-i18n="exp.1.period">Jan 2026 - Present</div>
         </div>
         <div class="tl-body">
-          <ul>
+          <ul data-i18n="exp.1.list">
             <li>Built 14+ end-to-end automation pipelines using n8n, Power Automate, and Office Scripts, connecting Shopify, Xentral ERP, SharePoint, and Slack to replace manual processes across finance, operations, and logistics.</li>
             <li>Developed Shopify data pipelines across 7 markets covering weekly sales actuals, refund analytics, and COD payment reconciliation, feeding directly into cash-flow planning spreadsheets.</li>
             <li>Designed a multi-format B2B order processing system that parses purchase orders from email attachments (PDF, CSV, Excel) and auto-creates enriched sales orders in Xentral ERP across 10+ retail and marketplace partners.</li>
@@ -654,21 +689,21 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role">Working Student, Production Data Analysis</div>
+            <div class="tl-role" data-i18n="exp.2.role">Working Student, Production Data Analysis</div>
             <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
-            <div class="tl-where">&#128205; Linnich, Germany</div>
+            <div class="tl-where" data-i18n="exp.2.where">&#128205; Linnich, Germany</div>
           </div>
-          <div class="tl-period">Sep 2024 - Dec 2024</div>
+          <div class="tl-period" data-i18n="exp.2.period">Sep 2024 - Dec 2024</div>
         </div>
         <div class="tl-body">
-          <ul>
+          <ul data-i18n="exp.2.list">
             <li>Contributed to the full development cycle of predictive maintenance solutions using Python in Google Colaboratory, reducing machine downtime.</li>
             <li>Improved data quality by up to 100% and accelerated analytical workflows with efficient data pipelines.</li>
             <li>Delivered interactive Power BI and Excel dashboards to support maintenance decision-making.</li>
             <li>Mapped project goals for predictive maintenance initiatives using MS Visio.</li>
           </ul>
           <div class="tl-ref">
-            <a href="https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing" target="_blank" class="btn btn-outline btn-sm">&#128196; Employer Reference</a>
+            <a href="https://drive.google.com/file/d/1KaXQv26-QqzAtJWMxYj74oAWYiyC61Ge/view?usp=sharing" target="_blank" class="btn btn-outline btn-sm">&#128196; <span data-i18n="btn.ref">Employer Reference</span></a>
           </div>
         </div>
       </div>
@@ -677,11 +712,11 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role">Masters Thesis Student</div>
+            <div class="tl-role" data-i18n="exp.3.role">Masters Thesis Student</div>
             <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
-            <div class="tl-where">&#128205; Linnich, Germany</div>
+            <div class="tl-where" data-i18n="exp.3.where">&#128205; Linnich, Germany</div>
           </div>
-          <div class="tl-period">Apr 2024 - Aug 2024</div>
+          <div class="tl-period" data-i18n="exp.3.period">Apr 2024 - Aug 2024</div>
         </div>
         <div class="tl-body">
           <div class="tl-thesis">
@@ -694,21 +729,21 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role">Working Student, Product Management</div>
+            <div class="tl-role" data-i18n="exp.4.role">Working Student, Product Management</div>
             <a class="tl-company" href="https://www.sig.biz/de-de" target="_blank">SIG International Services GmbH</a>
-            <div class="tl-where">&#128205; Linnich, Germany</div>
+            <div class="tl-where" data-i18n="exp.4.where">&#128205; Linnich, Germany</div>
           </div>
-          <div class="tl-period">Jan 2023 - Dec 2023</div>
+          <div class="tl-period" data-i18n="exp.4.period">Jan 2023 - Dec 2023</div>
         </div>
         <div class="tl-body">
-          <ul>
+          <ul data-i18n="exp.4.list">
             <li>Led product management for a SIG filling machine software feature sale, evaluating technical, commercial, and operational feasibility with cross-functional stakeholders.</li>
             <li>Evaluated machine effectiveness by analyzing server data with PostgreSQL; translated 150+ customer survey insights into user stories for Jira.</li>
             <li>Maintained structured customer infrastructure data (IP allocations, devices, network topology) in NetBox.</li>
             <li>Produced marketing materials including newsletters, presentations, and short videos aligned with corporate design using CapCut.</li>
           </ul>
           <div class="tl-ref">
-            <a href="https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">&#128196; Employer Reference</a>
+            <a href="https://drive.google.com/file/d/17tYPObUZrMHk-k6XJKRQW4H1gNFQ9Xbu/view?usp=drive_link" target="_blank" class="btn btn-outline btn-sm">&#128196; <span data-i18n="btn.ref">Employer Reference</span></a>
           </div>
         </div>
       </div>
@@ -717,14 +752,14 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role">Industrial Engineer, Product &amp; Supply Chain Management</div>
+            <div class="tl-role" data-i18n="exp.5.role">Industrial Engineer, Product &amp; Supply Chain Management</div>
             <a class="tl-company" href="https://www.hameemgroup.net/" target="_blank">Ha-Meem Group</a>
-            <div class="tl-where">&#128205; Dhaka, Bangladesh</div>
+            <div class="tl-where" data-i18n="exp.5.where">&#128205; Dhaka, Bangladesh</div>
           </div>
-          <div class="tl-period">Mar 2019 - Jun 2020</div>
+          <div class="tl-period" data-i18n="exp.5.period">Mar 2019 - Jun 2020</div>
         </div>
         <div class="tl-body">
-          <ul>
+          <ul data-i18n="exp.5.list">
             <li>Coordinated pre-production activities across merchandising, planning, sales, and warehouse teams to prevent backlog and feeding crises.</li>
             <li>Applied lean tools (KANBAN, SMED) reducing idle time by 5–10 min per production cycle.</li>
             <li>Reduced defect rates by up to 40% using DMAIC Six Sigma approach.</li>
@@ -739,52 +774,52 @@
 <!-- ═══ OTHER PROJECTS ════════════════════════════════════════════════════ -->
 <section id="projects">
   <div class="container">
-    <div class="section-eyebrow">Work</div>
-    <h2 class="section-title">Other Projects</h2>
-    <p class="section-sub">Analytics, BI, and engineering initiatives</p>
+    <div class="section-eyebrow" data-i18n="proj.eyebrow">Work</div>
+    <h2 class="section-title" data-i18n="proj.title">Other Projects</h2>
+    <p class="section-sub" data-i18n="proj.sub">Analytics, BI, and engineering initiatives</p>
 
     <div class="proj-grid">
 
       <a href="https://lookerstudio.google.com/reporting/5f73c65b-9a75-496a-bda6-80012478f12a" target="_blank" class="proj-card fade-up">
         <div class="proj-icon">&#128202;</div>
-        <div class="proj-name">Monthly Performance Dashboard · Looker Studio</div>
-        <div class="proj-desc">Interactive ecommerce KPI dashboard tracking monthly topline, marketing, and profitability metrics, filterable by country and sales channel (D2C, B2B, Amazon).</div>
-        <div class="proj-link">View Live Dashboard &#8594;</div>
+        <div class="proj-name" data-i18n="proj.1.name">Monthly Performance Dashboard · Looker Studio</div>
+        <div class="proj-desc" data-i18n="proj.1.desc">Interactive ecommerce KPI dashboard tracking monthly topline, marketing, and profitability metrics, filterable by country and sales channel (D2C, B2B, Amazon).</div>
+        <div class="proj-link" data-i18n="proj.1.link">View Live Dashboard →</div>
       </a>
 
       <a href="https://jubair-khandaker.github.io/jira-ticketing-demo/" target="_blank" class="proj-card fade-up">
         <div class="proj-icon">&#128203;</div>
-        <div class="proj-name">eMobility Support Hub · Jira Ticketing Demo</div>
-        <div class="proj-desc">Complete Jira workflow demonstrating service requests, incidents, and approval processes, with custom dashboards for ticket status, priority, and team workload tracking.</div>
-        <div class="proj-link">View Demo &#8594;</div>
+        <div class="proj-name" data-i18n="proj.2.name">eMobility Support Hub · Jira Ticketing Demo</div>
+        <div class="proj-desc" data-i18n="proj.2.desc">Complete Jira workflow demonstrating service requests, incidents, and approval processes, with custom dashboards for ticket status, priority, and team workload tracking.</div>
+        <div class="proj-link" data-i18n="proj.2.link">View Demo →</div>
       </a>
 
       <a href="https://drive.google.com/file/d/1qeXAJkOYDI6roRvzwD_YOpqJclsJVK5a/view" target="_blank" class="proj-card fade-up">
         <div class="proj-icon">&#9889;</div>
-        <div class="proj-name">Smart Energy Automation · FHEM &amp; IoT</div>
-        <div class="proj-desc">Automated dorm room appliances and heating systems using smart devices and FHEM to save energy and promote sustainability, as a university engineering project.</div>
-        <div class="proj-link">Read Report &#8594;</div>
+        <div class="proj-name" data-i18n="proj.3.name">Smart Energy Automation · FHEM &amp; IoT</div>
+        <div class="proj-desc" data-i18n="proj.3.desc">Automated dorm room appliances and heating systems using smart devices and FHEM to save energy and promote sustainability, as a university engineering project.</div>
+        <div class="proj-link" data-i18n="proj.3.link">Read Report →</div>
       </a>
 
       <div class="proj-card fade-up" style="cursor:default">
         <div class="proj-icon">&#129302;</div>
-        <div class="proj-name">Predictive Maintenance · Machine Learning (Thesis)</div>
-        <div class="proj-desc">Master's thesis: ML approaches for predicting structural component failures in aseptic filling machines for food &amp; beverage packaging (SIG International). Grade 1.80.</div>
-        <div class="proj-link" style="color:var(--dim)">M.Sc. Thesis Research</div>
+        <div class="proj-name" data-i18n="proj.4.name">Predictive Maintenance · Machine Learning (Thesis)</div>
+        <div class="proj-desc" data-i18n="proj.4.desc">Master's thesis: ML approaches for predicting structural component failures in aseptic filling machines for food &amp; beverage packaging (SIG International). Grade 1.80.</div>
+        <div class="proj-link" style="color:var(--dim)" data-i18n="proj.4.link">M.Sc. Thesis Research</div>
       </div>
 
       <a href="https://drive.google.com/file/d/1PbjXRiq3xXlmJap7EwFMqKVto9rKUYt9/view" target="_blank" class="proj-card fade-up">
         <div class="proj-icon">&#128161;</div>
-        <div class="proj-name">Idea Engineering · Knowledge Café Research</div>
-        <div class="proj-desc">Examined knowledge café and world café methods in physical and virtual settings for the Magdeburg Center of Excellence paid-service ideation initiative.</div>
-        <div class="proj-link">Read Report &#8594;</div>
+        <div class="proj-name" data-i18n="proj.5.name">Idea Engineering · Knowledge Café Research</div>
+        <div class="proj-desc" data-i18n="proj.5.desc">Examined knowledge café and world café methods in physical and virtual settings for the Magdeburg Center of Excellence paid-service ideation initiative.</div>
+        <div class="proj-link" data-i18n="proj.5.link">Read Report →</div>
       </a>
 
       <a href="https://drive.google.com/file/d/1A7sXxE1Y0GVCWusjnpmsIuKOK0_nTD-k/view" target="_blank" class="proj-card fade-up">
         <div class="proj-icon">&#127758;</div>
-        <div class="proj-name">Sustainable Mobility · Canada, Nigeria &amp; Brazil</div>
-        <div class="proj-desc">PESTEL analysis of current mobility challenges in three continents, proposing innovations aligned with global Megatrends and UN Sustainable Development Goals.</div>
-        <div class="proj-link">Read Report &#8594;</div>
+        <div class="proj-name" data-i18n="proj.6.name">Sustainable Mobility · Canada, Nigeria &amp; Brazil</div>
+        <div class="proj-desc" data-i18n="proj.6.desc">PESTEL analysis of current mobility challenges in three continents, proposing innovations aligned with global Megatrends and UN Sustainable Development Goals.</div>
+        <div class="proj-link" data-i18n="proj.6.link">Read Report →</div>
       </a>
 
     </div>
@@ -794,50 +829,50 @@
 <!-- ═══ EDUCATION ═════════════════════════════════════════════════════════ -->
 <section id="education">
   <div class="container">
-    <div class="section-eyebrow">Academic</div>
-    <h2 class="section-title">Education</h2>
-    <p class="section-sub">Engineering and technology management foundation across three universities</p>
+    <div class="section-eyebrow" data-i18n="edu.eyebrow">Academic</div>
+    <h2 class="section-title" data-i18n="edu.title">Education</h2>
+    <p class="section-sub" data-i18n="edu.sub">Engineering and technology management foundation across three universities</p>
 
     <div class="edu-list">
 
       <div class="edu-card fade-up">
         <div class="edu-icon">&#127891;</div>
         <div>
-          <div class="edu-degree">M.Sc. Advanced Industrial Engineering</div>
+          <div class="edu-degree" data-i18n="edu.1.degree">M.Sc. Advanced Industrial Engineering</div>
           <div class="edu-uni"><a href="https://www.th-rosenheim.de/" target="_blank">TH Rosenheim</a></div>
           <div class="edu-meta">
-            <span>&#128197; Oct 2025 - Present</span>
-            <span>&#128205; Rosenheim, Germany</span>
+            <span data-i18n="edu.1.period">&#128197; Oct 2025 - Present</span>
+            <span data-i18n="edu.1.where">&#128205; Rosenheim, Germany</span>
           </div>
-          <div style="margin-top:.75rem;font-size:.78rem;color:var(--dim);">Advanced Production Systems · Data Analytics · Supply Chain Optimization · Sustainable Manufacturing</div>
+          <div style="margin-top:.75rem;font-size:.78rem;color:var(--dim);" data-i18n="edu.1.subjects">Advanced Production Systems · Data Analytics · Supply Chain Optimization · Sustainable Manufacturing</div>
         </div>
       </div>
 
       <div class="edu-card fade-up">
         <div class="edu-icon">&#127891;</div>
         <div>
-          <div class="edu-degree">M.Sc. Technology and Innovation Management</div>
+          <div class="edu-degree" data-i18n="edu.2.degree">M.Sc. Technology and Innovation Management</div>
           <div class="edu-uni"><a href="https://www.hs-harz.de/en/" target="_blank">Hochschule Harz</a></div>
           <div class="edu-meta">
-            <span>&#128197; Mar 2021 - Feb 2025</span>
-            <span>&#128205; Wernigerode, Germany</span>
-            <span>&#11088; Grade: 1.80</span>
+            <span data-i18n="edu.2.period">&#128197; Mar 2021 - Feb 2025</span>
+            <span data-i18n="edu.2.where">&#128205; Wernigerode, Germany</span>
+            <span data-i18n="edu.2.grade">&#11088; Grade: 1.80</span>
           </div>
-          <div class="edu-thesis">Thesis: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines</div>
+          <div class="edu-thesis" data-i18n="edu.2.thesis">Thesis: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines</div>
         </div>
       </div>
 
       <div class="edu-card fade-up">
         <div class="edu-icon">&#127891;</div>
         <div>
-          <div class="edu-degree">B.Sc. Industrial and Production Engineering</div>
+          <div class="edu-degree" data-i18n="edu.3.degree">B.Sc. Industrial and Production Engineering</div>
           <div class="edu-uni"><a href="https://www.sust.edu/" target="_blank">Shahjalal University of Science and Technology</a></div>
           <div class="edu-meta">
-            <span>&#128197; Apr 2014 - Feb 2019</span>
-            <span>&#128205; Sylhet, Bangladesh</span>
-            <span>&#11088; Grade: 2.00</span>
+            <span data-i18n="edu.3.period">&#128197; Apr 2014 - Feb 2019</span>
+            <span data-i18n="edu.3.where">&#128205; Sylhet, Bangladesh</span>
+            <span data-i18n="edu.3.grade">&#11088; Grade: 2.00</span>
           </div>
-          <div class="edu-thesis">Thesis: Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh</div>
+          <div class="edu-thesis" data-i18n="edu.3.thesis">Thesis: Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh</div>
         </div>
       </div>
 
@@ -848,9 +883,9 @@
 <!-- ═══ CERTIFICATIONS ════════════════════════════════════════════════════ -->
 <section id="certifications">
   <div class="container">
-    <div class="section-eyebrow">Learning</div>
-    <h2 class="section-title">Certifications</h2>
-    <p class="section-sub">Continuous upskilling in data engineering, BI, and automation</p>
+    <div class="section-eyebrow" data-i18n="cert.eyebrow">Learning</div>
+    <h2 class="section-title" data-i18n="cert.title">Certifications</h2>
+    <p class="section-sub" data-i18n="cert.sub">Continuous upskilling in data engineering, BI, and automation</p>
     <div class="certs-grid">
       <a href="https://www.udemy.com/certificate/UC-66447a4d-7b29-41dc-a1bd-f32ba7cf200c/" target="_blank" class="cert-card fade-up">
         <div class="cert-icon">&#128202;</div><div><div class="cert-name">Microsoft Power BI for Business Intelligence</div><div class="cert-issuer">Udemy</div></div>
@@ -877,33 +912,370 @@
 <!-- ═══ CONTACT ═══════════════════════════════════════════════════════════ -->
 <section id="contact">
   <div class="container">
-    <div class="section-eyebrow">Reach Out</div>
-    <h2 class="section-title">Get in Touch</h2>
-    <p class="section-sub">Open to full-time roles, internships, and automation consulting</p>
+    <div class="section-eyebrow" data-i18n="contact.eyebrow">Reach Out</div>
+    <h2 class="section-title" data-i18n="contact.title">Get in Touch</h2>
+    <p class="section-sub" data-i18n="contact.sub">Open to full-time roles, internships, and automation consulting</p>
     <div class="contact-grid">
       <a href="mailto:jubairkhandaker73@gmail.com" class="contact-card">
         <div class="contact-icon">&#9993;</div>
-        <div><div class="contact-label">Email</div><div class="contact-value">jubairkhandaker73@gmail.com</div></div>
+        <div>
+          <div class="contact-label" data-i18n="contact.label.email">Email</div>
+          <div class="contact-value">jubairkhandaker73@gmail.com</div>
+        </div>
       </a>
       <a href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" class="contact-card">
         <div class="contact-icon">&#128101;</div>
-        <div><div class="contact-label">LinkedIn</div><div class="contact-value">Jubair Khandaker</div></div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">Jubair Khandaker</div>
+        </div>
       </a>
       <a href="tel:+4915781303249" class="contact-card">
         <div class="contact-icon">&#128222;</div>
-        <div><div class="contact-label">Phone</div><div class="contact-value">+49 157 813 03249</div></div>
+        <div>
+          <div class="contact-label" data-i18n="contact.label.phone">Phone</div>
+          <div class="contact-value">+49 157 813 03249</div>
+        </div>
       </a>
     </div>
   </div>
 </section>
 
-<footer>&copy; 2026 Jubair Khandaker &nbsp;·&nbsp; Automation &amp; Industrial Engineering</footer>
+<footer data-i18n="footer">&copy; 2026 Jubair Khandaker &nbsp;·&nbsp; Automation &amp; Industrial Engineering</footer>
 
 <script>
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+const t = {
+  en: {
+    /* nav */
+    'nav.skills':       'Skills',
+    'nav.automations':  'Automations',
+    'nav.experience':   'Experience',
+    'nav.projects':     'Projects',
+    'nav.education':    'Education',
+    'nav.contact':      'Contact',
+    /* hero */
+    'hero.badge': 'Open to new opportunities',
+    'hero.role':  'Automation &amp; Data Engineer &nbsp;&middot;&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;&middot;&nbsp; Advanced Industrial Engineering Grad Student',
+    'hero.desc':  'I build end-to-end automation pipelines that turn hours of manual work into minutes. From Shopify analytics and ERP integrations to carrier payment reconciliation and cash-flow forecasting, I translate operational complexity into reliable digital workflows.',
+    'hero.cta1':  'LinkedIn Profile',
+    'hero.cta2':  'Get in Touch',
+    /* skills */
+    'skills.eyebrow':        'Toolbox',
+    'skills.title':          'Technical Skills',
+    'skills.sub':            'Technologies and platforms I work with every day',
+    'skills.cat.automation': 'Workflow Automation',
+    'skills.cat.apis':       'APIs &amp; Integrations',
+    'skills.cat.data':       'Data &amp; Analytics',
+    'skills.cat.databases':  'Databases',
+    'skills.cat.bi':         'Business Intelligence',
+    'skills.cat.erp':        'ERP &amp; Operations',
+    'skills.cat.cloud':      'Cloud &amp; Collaboration',
+    'skills.cat.lean':       'Lean &amp; Process Engineering',
+    'skills.lang.title':     'Language Skills',
+    'lang.bengali.level':    'Native',
+    'lang.english.level':    'C1, Near native fluency',
+    'lang.german.level':     'B1 / B2, Conversational',
+    /* automations */
+    'auto.eyebrow': 'Built at Bears with Benefits',
+    'auto.title':   'Automation Projects',
+    'auto.sub':     '14 production automations built from scratch, each fully documented and live',
+    'auto.1.name':   'B2B Purchase Order Automation',
+    'auto.1.desc':   'Reads B2B purchase orders from SharePoint Excel, detects ready rows, triggers n8n via email bridge, creates fully structured PO headers and line items in Xentral ERP via V3 REST API. Handles multiple bulk groups per run.',
+    'auto.1.impact': '15–30 min/order → 4–5 min/order',
+    'auto.2.name':   'Multi-Vendor Sales Order Creation',
+    'auto.2.desc':   'Parses incoming B2B purchase orders from 10+ retail chains, flash-sale platforms, and marketplace partners across DE, AT, IT, ES, CH, and NL from PDF, CSV, and Excel. Applies partner-specific master data (customer numbers, currencies, tax, warehouses, payment terms) and creates sales orders in Xentral automatically.',
+    'auto.2.impact': '10+ retail &amp; marketplace partners automated',
+    'auto.3.name':   'Shopify Refunds Tracker (7 Stores)',
+    'auto.3.desc':   'Fetches all refund events, order counts, and total sales per month for DE, FR, NL, IT, ES, CH, and USA stores. Classifies refund reasons (TikTok, Cancellation, Carrier Return, Customer Return, etc.), calculates refund rates as % of orders and revenue, and tracks voided COD transactions for Italy and Spain.',
+    'auto.3.impact': 'Phase 2 live across 7 markets',
+    'auto.4.name':   'Shopify Weekly Cash-Flow Pipeline',
+    'auto.4.desc':   'Extracts weekly net sales and shipping charges per DTC market (DE, IT, FR, NL, ES, CH) via the Shopify Admin GraphQL API with full pagination. Aggregates by ISO week and writes structured rows into SharePoint Excel for weekly cash-flow planning, replacing a fully manual reporting process.',
+    'auto.4.impact': '6 EU stores automated',
+    'auto.5.name':   'COD Payment Automation',
+    'auto.5.desc':   'Ingests logistics carrier remittance emails as PDF, EML, TXT, or CSV across multiple carriers and two markets. Extracts order references, validates amounts, and marks orders as paid in both Shopify (via transaction API) and Xentral (via v1 invoice PATCH). Handles files up to 17,000+ orders per run.',
+    'auto.5.impact': 'Italy &amp; Spain, up to 17,000+ orders/run',
+    'auto.6.name':   'Xentral Analytics → SharePoint Inventory Sync',
+    'auto.6.desc':   'Automated pipeline covering 5 report variants: Daily Stock (every 2–4 hrs), Weekly, Monthly, Quarterly, and MTD. Detects new exports by timestamp, downloads base64-encoded CSVs, parses via Office Script with full quote handling, and writes to SharePoint Excel tables consumed downstream by Power Query.',
+    'auto.6.impact': '5 report variants, replaces fully manual exports',
+    'auto.7.name':   'Slack Operational Change Log',
+    'auto.7.desc':   'Monitors 6 Slack channels (CH, DE, ES, FR, IT, NL) for operational e-commerce updates. Uses rule-based keyword classification to detect product status changes, promo switches, banner changes, price updates, and stock issues. Writes structured rows to SharePoint Excel. v2.0 eliminated OpenAI dependency entirely.',
+    'auto.7.impact': 'Replaced OpenAI, zero API cost',
+    'auto.8.name':   'Flash-Sale Platform Invoice Automation',
+    'auto.8.desc':   'Triggered by a single email with 10 country sales exports + 1 price CSV from a European flash-sale platform. Classifies files by market, applies multi-country merging rules, looks up prices, and generates 5 Xentral-ready CSVs (DE, AT, IT, ES, BENELUX) in the Belege Importer NEW/PARENT format.',
+    'auto.8.impact': '~622 line items across 5 segments per campaign',
+    'auto.9.name':   'Marketplace Order Import Automation',
+    'auto.9.desc':   'Email-triggered workflow that reads campaign export Excel files from an EU home &amp; living marketplace, groups line items by order, maps to Xentral\'s order import schema (customer, address, delivery date, SKU, price, currency), and returns a ready-to-upload CSV via reply email — ~200+ orders per campaign.',
+    'auto.9.impact': '~206 orders processed per campaign run',
+    'auto.10.name':   'Supplier Invoice Cash-Flow Automation',
+    'auto.10.desc':   'Reads open supplier invoices from a SharePoint inventory file, applies a CW+9 payment rule (invoice date + 63 days, snapped to Monday of that ISO week), aggregates net totals by pay week with applicable VAT, and auto-populates the weekly cash-flow forecast. Validated against confirmed payment data.',
+    'auto.10.impact': 'Replaces 30–60 min/week of manual forecast entry',
+    'auto.11.name':   'Amazon B2B Sales Weekly Sync',
+    'auto.11.desc':   'Extracts Amazon B2B sales from a Xentral Analytics report, filters for AMZ project tags, aggregates net revenue by ISO calendar week, and writes weekly totals into the correct columns of the cash-flow forecast spreadsheet. Runs hourly via Power Automate recurrence.',
+    'auto.11.impact': 'Hourly updates to cash-flow forecast',
+    'auto.12.name':   'Xentral B2B Sales Data Sync',
+    'auto.12.desc':   'Hourly scheduled pipeline that pulls ~5,000 rows of B2B sales data from a Xentral Analytics report, decodes the base64 CSV response, validates column counts, sorts by order date descending, and writes in 500-row batches to a SharePoint Excel table for downstream reporting and analysis.',
+    'auto.12.impact': '~5,000 rows synced hourly',
+    'auto.13.name':   'OPOS B2B Receivables Pipeline',
+    'auto.13.desc':   'Transforms the weekly OPOS debtor export (~13,500 rows) into a clean B2B receivables view. Applies customer-specific payment terms (net 30, net 60, end-of-month rules), implements a two-tranche payment split logic for specific partners, and assigns ISO calendar weeks to each invoice for cash-flow week matching.',
+    'auto.13.impact': '10–12 B2B customers tracked weekly',
+    'auto.14.name':   'COD Data Extraction &amp; Normalization',
+    'auto.14.desc':   'Reads incoming carrier remittance emails from any format (HTML table, PDF, TXT attachment), extracts Date / Amount / Order Number from each, normalizes to a consistent 3-column schema, and replies with a clean CSV, serving as the data extraction layer for the full COD Payment Automation.',
+    'auto.14.impact': 'Multi-format: PDF, EML, TXT, HTML',
+    /* experience */
+    'exp.eyebrow': 'Career',
+    'exp.title':   'Work Experience',
+    'exp.sub':     'Five years of delivering automation, data, and process solutions across three countries',
+    'exp.1.role':   'Automation Engineer (Internship)',
+    'exp.1.where':  '&#128205; Munich, Germany',
+    'exp.1.period': 'Jan 2026 - Present',
+    'exp.1.list':   '<li>Built 14+ end-to-end automation pipelines using n8n, Power Automate, and Office Scripts, connecting Shopify, Xentral ERP, SharePoint, and Slack to replace manual processes across finance, operations, and logistics.</li><li>Developed Shopify data pipelines across 7 markets covering weekly sales actuals, refund analytics, and COD payment reconciliation, feeding directly into cash-flow planning spreadsheets.</li><li>Designed a multi-format B2B order processing system that parses purchase orders from email attachments (PDF, CSV, Excel) and auto-creates enriched sales orders in Xentral ERP across 10+ retail and marketplace partners.</li><li>Automated inventory reporting and financial forecasting via scheduled Power Automate flows and Office Scripts, covering stock levels, weekly sales, supplier payment timelines, and Amazon B2B revenue.</li><li>Designed a company-wide Notion workspace and built a Slack monitoring automation that classifies daily operational updates across 6 markets into a structured, searchable SharePoint log.</li>',
+    'exp.2.role':   'Working Student, Production Data Analysis',
+    'exp.2.where':  '&#128205; Linnich, Germany',
+    'exp.2.period': 'Sep 2024 - Dec 2024',
+    'exp.2.list':   '<li>Contributed to the full development cycle of predictive maintenance solutions using Python in Google Colaboratory, reducing machine downtime.</li><li>Improved data quality by up to 100% and accelerated analytical workflows with efficient data pipelines.</li><li>Delivered interactive Power BI and Excel dashboards to support maintenance decision-making.</li><li>Mapped project goals for predictive maintenance initiatives using MS Visio.</li>',
+    'exp.3.role':   'Masters Thesis Student',
+    'exp.3.where':  '&#128205; Linnich, Germany',
+    'exp.3.period': 'Apr 2024 - Aug 2024',
+    'exp.4.role':   'Working Student, Product Management',
+    'exp.4.where':  '&#128205; Linnich, Germany',
+    'exp.4.period': 'Jan 2023 - Dec 2023',
+    'exp.4.list':   '<li>Led product management for a SIG filling machine software feature sale, evaluating technical, commercial, and operational feasibility with cross-functional stakeholders.</li><li>Evaluated machine effectiveness by analyzing server data with PostgreSQL; translated 150+ customer survey insights into user stories for Jira.</li><li>Maintained structured customer infrastructure data (IP allocations, devices, network topology) in NetBox.</li><li>Produced marketing materials including newsletters, presentations, and short videos aligned with corporate design using CapCut.</li>',
+    'exp.5.role':   'Industrial Engineer, Product &amp; Supply Chain Management',
+    'exp.5.where':  '&#128205; Dhaka, Bangladesh',
+    'exp.5.period': 'Mar 2019 - Jun 2020',
+    'exp.5.list':   '<li>Coordinated pre-production activities across merchandising, planning, sales, and warehouse teams to prevent backlog and feeding crises.</li><li>Applied lean tools (KANBAN, SMED) reducing idle time by 5–10 min per production cycle.</li><li>Reduced defect rates by up to 40% using DMAIC Six Sigma approach.</li>',
+    'btn.ref': 'Employer Reference',
+    /* other projects */
+    'proj.eyebrow': 'Work',
+    'proj.title':   'Other Projects',
+    'proj.sub':     'Analytics, BI, and engineering initiatives',
+    'proj.1.name': 'Monthly Performance Dashboard · Looker Studio',
+    'proj.1.desc': 'Interactive ecommerce KPI dashboard tracking monthly topline, marketing, and profitability metrics, filterable by country and sales channel (D2C, B2B, Amazon).',
+    'proj.1.link': 'View Live Dashboard →',
+    'proj.2.name': 'eMobility Support Hub · Jira Ticketing Demo',
+    'proj.2.desc': 'Complete Jira workflow demonstrating service requests, incidents, and approval processes, with custom dashboards for ticket status, priority, and team workload tracking.',
+    'proj.2.link': 'View Demo →',
+    'proj.3.name': 'Smart Energy Automation · FHEM &amp; IoT',
+    'proj.3.desc': 'Automated dorm room appliances and heating systems using smart devices and FHEM to save energy and promote sustainability, as a university engineering project.',
+    'proj.3.link': 'Read Report →',
+    'proj.4.name': 'Predictive Maintenance · Machine Learning (Thesis)',
+    'proj.4.desc': 'Master\'s thesis: ML approaches for predicting structural component failures in aseptic filling machines for food &amp; beverage packaging (SIG International). Grade 1.80.',
+    'proj.4.link': 'M.Sc. Thesis Research',
+    'proj.5.name': 'Idea Engineering · Knowledge Café Research',
+    'proj.5.desc': 'Examined knowledge café and world café methods in physical and virtual settings for the Magdeburg Center of Excellence paid-service ideation initiative.',
+    'proj.5.link': 'Read Report →',
+    'proj.6.name': 'Sustainable Mobility · Canada, Nigeria &amp; Brazil',
+    'proj.6.desc': 'PESTEL analysis of current mobility challenges in three continents, proposing innovations aligned with global Megatrends and UN Sustainable Development Goals.',
+    'proj.6.link': 'Read Report →',
+    /* education */
+    'edu.eyebrow': 'Academic',
+    'edu.title':   'Education',
+    'edu.sub':     'Engineering and technology management foundation across three universities',
+    'edu.1.degree':   'M.Sc. Advanced Industrial Engineering',
+    'edu.1.period':   '&#128197; Oct 2025 - Present',
+    'edu.1.where':    '&#128205; Rosenheim, Germany',
+    'edu.1.subjects': 'Advanced Production Systems · Data Analytics · Supply Chain Optimization · Sustainable Manufacturing',
+    'edu.2.degree':   'M.Sc. Technology and Innovation Management',
+    'edu.2.period':   '&#128197; Mar 2021 - Feb 2025',
+    'edu.2.where':    '&#128205; Wernigerode, Germany',
+    'edu.2.grade':    '&#11088; Grade: 1.80',
+    'edu.2.thesis':   'Thesis: Optimizing Preventive Maintenance Strategies in Food and Beverage Packaging: Machine Learning Approaches for Predicting Structural Component Failures in Aseptic Filling Machines',
+    'edu.3.degree':   'B.Sc. Industrial and Production Engineering',
+    'edu.3.period':   '&#128197; Apr 2014 - Feb 2019',
+    'edu.3.where':    '&#128205; Sylhet, Bangladesh',
+    'edu.3.grade':    '&#11088; Grade: 2.00',
+    'edu.3.thesis':   'Thesis: Adoption of Lean Tools and Techniques in Garments Manufacturing Industries in Bangladesh',
+    /* certifications */
+    'cert.eyebrow': 'Learning',
+    'cert.title':   'Certifications',
+    'cert.sub':     'Continuous upskilling in data engineering, BI, and automation',
+    /* contact */
+    'contact.eyebrow':      'Reach Out',
+    'contact.title':        'Get in Touch',
+    'contact.sub':          'Open to full-time roles, internships, and automation consulting',
+    'contact.label.email':  'Email',
+    'contact.label.phone':  'Phone',
+    /* footer */
+    'footer': '&copy; 2026 Jubair Khandaker &nbsp;&middot;&nbsp; Automation &amp; Industrial Engineering'
+  },
+
+  de: {
+    /* nav */
+    'nav.skills':       'Fähigkeiten',
+    'nav.automations':  'Automatisierungen',
+    'nav.experience':   'Erfahrung',
+    'nav.projects':     'Projekte',
+    'nav.education':    'Bildung',
+    'nav.contact':      'Kontakt',
+    /* hero */
+    'hero.badge': 'Offen für neue Möglichkeiten',
+    'hero.role':  'Automatisierungs- &amp; Dateningenieur &nbsp;&middot;&nbsp; M.Sc. Technologie- &amp; Innovationsmanagement &nbsp;&middot;&nbsp; Student Advanced Industrial Engineering',
+    'hero.desc':  'Ich entwickle End-to-End-Automatisierungspipelines, die stundenlange manuelle Arbeit auf wenige Minuten reduzieren. Von Shopify-Analysen und ERP-Integrationen bis zur Spediteur-Zahlungsabstimmung und Cash-Flow-Prognosen – ich übersetze operative Komplexität in zuverlässige digitale Workflows.',
+    'hero.cta1':  'LinkedIn-Profil',
+    'hero.cta2':  'Kontakt aufnehmen',
+    /* skills */
+    'skills.eyebrow':        'Werkzeugkasten',
+    'skills.title':          'Technische Fähigkeiten',
+    'skills.sub':            'Technologien und Plattformen, mit denen ich täglich arbeite',
+    'skills.cat.automation': 'Workflow-Automatisierung',
+    'skills.cat.apis':       'APIs &amp; Integrationen',
+    'skills.cat.data':       'Daten &amp; Analytik',
+    'skills.cat.databases':  'Datenbanken',
+    'skills.cat.bi':         'Business Intelligence',
+    'skills.cat.erp':        'ERP &amp; Betrieb',
+    'skills.cat.cloud':      'Cloud &amp; Zusammenarbeit',
+    'skills.cat.lean':       'Lean &amp; Prozessoptimierung',
+    'skills.lang.title':     'Sprachkenntnisse',
+    'lang.bengali.level':    'Muttersprache',
+    'lang.english.level':    'C1, Nahezu muttersprachlich',
+    'lang.german.level':     'B1 / B2, Konversationssicher',
+    /* automations */
+    'auto.eyebrow': 'Entwickelt bei Bears with Benefits',
+    'auto.title':   'Automatisierungsprojekte',
+    'auto.sub':     '14 Produktionsautomatisierungen von Grund auf entwickelt, vollständig dokumentiert und live',
+    'auto.1.name':   'B2B-Bestellungsautomatisierung',
+    'auto.1.desc':   'Liest B2B-Bestellungen aus SharePoint Excel, erkennt fertige Zeilen, triggert n8n über eine E-Mail-Brücke und erstellt vollständig strukturierte Bestellkopfzeilen und -positionen in Xentral ERP über die V3 REST API. Verarbeitet mehrere Mengengruppen pro Durchlauf.',
+    'auto.1.impact': '15–30 Min./Bestellung → 4–5 Min./Bestellung',
+    'auto.2.name':   'Multi-Lieferanten-Auftragsanlage',
+    'auto.2.desc':   'Verarbeitet eingehende B2B-Bestellungen von 10+ Einzelhandelsketten, Flash-Sale-Plattformen und Marktplatz-Partnern aus DE, AT, IT, ES, CH und NL im PDF-, CSV- und Excel-Format. Wendet partnerspezifische Stammdaten (Kundennummern, Währungen, Steuern, Lager, Zahlungsbedingungen) an und erstellt Aufträge automatisch in Xentral.',
+    'auto.2.impact': '10+ Einzel- &amp; Marktplatz-Partner automatisiert',
+    'auto.3.name':   'Shopify-Rückerstattungs-Tracker (7 Shops)',
+    'auto.3.desc':   'Ruft alle Rückerstattungsereignisse, Bestellzahlen und Gesamtumsätze pro Monat für DE, FR, NL, IT, ES, CH und USA ab. Klassifiziert Rückerstattungsgründe (TikTok, Stornierung, Spediteur-Rückgabe, Kundenrückgabe usw.), berechnet Rückerstattungsquoten als % der Bestellungen und des Umsatzes und verfolgt stornierte COD-Transaktionen für Italien und Spanien.',
+    'auto.3.impact': 'Phase 2 live in 7 Märkten',
+    'auto.4.name':   'Shopify Wöchentliche Cash-Flow-Pipeline',
+    'auto.4.desc':   'Extrahiert wöchentliche Nettoumsätze und Versandkosten pro DTC-Markt (DE, IT, FR, NL, ES, CH) über die Shopify Admin GraphQL API mit vollständiger Paginierung. Aggregiert nach ISO-Woche und schreibt strukturierte Zeilen in SharePoint Excel für die wöchentliche Cash-Flow-Planung – ersetzt einen vollständig manuellen Reporting-Prozess.',
+    'auto.4.impact': '6 EU-Shops automatisiert',
+    'auto.5.name':   'COD-Zahlungsautomatisierung',
+    'auto.5.desc':   'Verarbeitet Logistik-Überweisungs-E-Mails als PDF, EML, TXT oder CSV von mehreren Spediteuren in zwei Märkten. Extrahiert Bestellreferenzen, validiert Beträge und markiert Bestellungen in Shopify (über Transaction API) und Xentral (über v1 Invoice PATCH) als bezahlt. Verarbeitet bis zu 17.000+ Bestellungen pro Durchlauf.',
+    'auto.5.impact': 'Italien &amp; Spanien, bis zu 17.000+ Bestellungen/Durchlauf',
+    'auto.6.name':   'Xentral-Analytik → SharePoint-Bestandssynchronisation',
+    'auto.6.desc':   'Automatisierte Pipeline für 5 Berichtsvarianten: Täglicher Bestand (alle 2–4 Std.), wöchentlich, monatlich, quartalsweise und MTD. Erkennt neue Exporte anhand des Zeitstempels, lädt Base64-kodierte CSVs herunter, verarbeitet sie per Office Script und schreibt in SharePoint Excel-Tabellen für Power Query.',
+    'auto.6.impact': '5 Berichtsvarianten, ersetzt vollständig manuelle Exporte',
+    'auto.7.name':   'Slack Betriebs-Änderungsprotokoll',
+    'auto.7.desc':   'Überwacht 6 Slack-Kanäle (CH, DE, ES, FR, IT, NL) auf operative E-Commerce-Updates. Verwendet regelbasierte Schlüsselwortklassifizierung zur Erkennung von Produktstatusänderungen, Promo-Wechseln, Banner-Änderungen, Preisaktualisierungen und Lageranfragen. v2.0 eliminierte die OpenAI-Abhängigkeit vollständig.',
+    'auto.7.impact': 'OpenAI ersetzt, null API-Kosten',
+    'auto.8.name':   'Flash-Sale-Plattform Rechnungsautomatisierung',
+    'auto.8.desc':   'Ausgelöst durch eine einzelne E-Mail mit 10 länderspezifischen Verkaufsexporten + 1 Preis-CSV einer europäischen Flash-Sale-Plattform. Klassifiziert Dateien nach Markt, wendet Zusammenführungsregeln an, schlägt Preise nach und erstellt 5 Xentral-fähige CSVs (DE, AT, IT, ES, BENELUX) im Belege-Importer-Format.',
+    'auto.8.impact': '~622 Positionen über 5 Segmente pro Kampagne',
+    'auto.9.name':   'Marktplatz-Auftragsimport-Automatisierung',
+    'auto.9.desc':   'E-Mail-gesteuerter Workflow, der Kampagnen-Export-Excel-Dateien eines EU-Heim-&amp;-Wohnen-Marktplatzes liest, Positionen nach Auftrag gruppiert, dem Xentral-Auftragsimportschema zuordnet und ein uploadfertiges CSV per Antwort-E-Mail zurücksendet – ~200+ Bestellungen pro Kampagne.',
+    'auto.9.impact': '~206 Bestellungen pro Kampagnendurchlauf',
+    'auto.10.name':   'Lieferantenrechnung Cash-Flow-Automatisierung',
+    'auto.10.desc':   'Liest offene Lieferantenrechnungen aus einer SharePoint-Bestandsdatei, wendet eine CW+9-Zahlungsregel an (Rechnungsdatum + 63 Tage, gerundet auf Montag der ISO-Woche), aggregiert Nettosummen nach Zahlungswoche inkl. Mehrwertsteuer und befüllt automatisch die wöchentliche Cash-Flow-Prognose.',
+    'auto.10.impact': 'Ersetzt 30–60 Min./Woche manuelle Prognoseeingabe',
+    'auto.11.name':   'Amazon B2B Wöchentlicher Umsatzabgleich',
+    'auto.11.desc':   'Extrahiert Amazon B2B-Umsätze aus einem Xentral-Analytics-Bericht, filtert nach AMZ-Projekt-Tags, aggregiert den Nettoumsatz nach ISO-Kalenderwoche und schreibt wöchentliche Gesamtsummen in die entsprechenden Spalten der Cash-Flow-Prognose. Läuft stündlich per Power Automate.',
+    'auto.11.impact': 'Stündliche Updates der Cash-Flow-Prognose',
+    'auto.12.name':   'Xentral B2B Umsatzdaten-Synchronisation',
+    'auto.12.desc':   'Stündlich geplante Pipeline, die ~5.000 Zeilen B2B-Umsatzdaten aus einem Xentral-Analytics-Bericht abruft, die Base64-CSV-Antwort dekodiert, Spaltenanzahlen validiert, nach Bestelldatum absteigend sortiert und in 500-Zeilen-Chargen in eine SharePoint Excel-Tabelle schreibt.',
+    'auto.12.impact': '~5.000 Zeilen stündlich synchronisiert',
+    'auto.13.name':   'OPOS B2B-Forderungs-Pipeline',
+    'auto.13.desc':   'Transformiert den wöchentlichen OPOS-Debitorenexport (~13.500 Zeilen) in eine übersichtliche B2B-Forderungsansicht. Wendet kundenspezifische Zahlungsbedingungen an (netto 30, netto 60, Monatsabschlussregeln), implementiert eine Zwei-Tranchen-Zahlungsaufteilung und ordnet jeder Rechnung ISO-Kalenderwochen für den Cash-Flow-Abgleich zu.',
+    'auto.13.impact': '10–12 B2B-Kunden wöchentlich verfolgt',
+    'auto.14.name':   'COD-Datenextraktion &amp; -Normalisierung',
+    'auto.14.desc':   'Liest eingehende Spediteur-Überweisungs-E-Mails in beliebigem Format (HTML-Tabelle, PDF, TXT-Anhang), extrahiert Datum / Betrag / Bestellnummer und normalisiert auf ein konsistentes 3-Spalten-Schema. Antwortet mit einer bereinigten CSV – dient als Datenextraktionsschicht für die COD-Zahlungsautomatisierung.',
+    'auto.14.impact': 'Multi-Format: PDF, EML, TXT, HTML',
+    /* experience */
+    'exp.eyebrow': 'Karriere',
+    'exp.title':   'Berufserfahrung',
+    'exp.sub':     'Fünf Jahre Erfahrung in Automatisierungs-, Daten- und Prozesslösungen in drei Ländern',
+    'exp.1.role':   'Automatisierungsingenieur (Praktikum)',
+    'exp.1.where':  '&#128205; München, Deutschland',
+    'exp.1.period': 'Jan. 2026 – Heute',
+    'exp.1.list':   '<li>Entwickelte 14+ End-to-End-Automatisierungspipelines mit n8n, Power Automate und Office Scripts, die Shopify, Xentral ERP, SharePoint und Slack verbinden, um manuelle Prozesse in Finanzen, Betrieb und Logistik zu ersetzen.</li><li>Entwickelte Shopify-Datenpipelines für 7 Märkte mit wöchentlichen Umsatzdaten, Rückerstattungsanalysen und COD-Zahlungsabstimmung, die direkt in Cash-Flow-Planungstabellen einfließen.</li><li>Entwarf ein Multi-Format-B2B-Auftragsverarbeitungssystem, das Bestellungen aus E-Mail-Anhängen (PDF, CSV, Excel) verarbeitet und angereicherte Aufträge in Xentral ERP für 10+ Partner automatisch erstellt.</li><li>Automatisierte Bestandsberichte und Finanzprognosen über geplante Power Automate-Flows und Office Scripts – Bestandsniveaus, Wochenumsätze, Lieferanten-Zahlungsfristen und Amazon B2B-Umsätze.</li><li>Entwarf einen unternehmensweiten Notion-Arbeitsbereich und entwickelte eine Slack-Monitoring-Automatisierung, die tägliche operative Updates aus 6 Märkten in ein strukturiertes SharePoint-Protokoll klassifiziert.</li>',
+    'exp.2.role':   'Werkstudent, Produktionsdatenanalyse',
+    'exp.2.where':  '&#128205; Linnich, Deutschland',
+    'exp.2.period': 'Sep. 2024 – Dez. 2024',
+    'exp.2.list':   '<li>Trug zum vollständigen Entwicklungszyklus von Predictive-Maintenance-Lösungen mit Python in Google Colaboratory bei und reduzierte Maschinenausfallzeiten.</li><li>Verbesserte Datenqualität um bis zu 100 % und beschleunigte analytische Workflows durch effiziente Datenpipelines.</li><li>Erstellte interaktive Power BI- und Excel-Dashboards zur Unterstützung von Wartungsentscheidungen.</li><li>Kartierte Projektziele für Predictive-Maintenance-Initiativen mit MS Visio.</li>',
+    'exp.3.role':   'Masterthesis-Student',
+    'exp.3.where':  '&#128205; Linnich, Deutschland',
+    'exp.3.period': 'Apr. 2024 – Aug. 2024',
+    'exp.4.role':   'Werkstudent, Produktmanagement',
+    'exp.4.where':  '&#128205; Linnich, Deutschland',
+    'exp.4.period': 'Jan. 2023 – Dez. 2023',
+    'exp.4.list':   '<li>Leitete das Produktmanagement für den Verkauf eines SIG-Abfüllmaschinen-Softwarefeatures und evaluierte technische, kommerzielle und operative Machbarkeit mit cross-funktionalen Stakeholdern.</li><li>Evaluierte Maschineneffektivität durch Analyse von Serverdaten mit PostgreSQL; übersetzte 150+ Kundenbefragungserkenntnisse in User Stories für Jira.</li><li>Pflegte strukturierte Kunden-Infrastrukturdaten (IP-Zuteilungen, Geräte, Netzwerktopologie) in NetBox.</li><li>Erstellte Marketingmaterialien inkl. Newsletter, Präsentationen und Kurzvideos im Corporate Design mit CapCut.</li>',
+    'exp.5.role':   'Wirtschaftsingenieur, Produkt- &amp; Supply-Chain-Management',
+    'exp.5.where':  '&#128205; Dhaka, Bangladesch',
+    'exp.5.period': 'März 2019 – Juni 2020',
+    'exp.5.list':   '<li>Koordinierte Vorproduktionsaktivitäten in Merchandising, Planung, Vertrieb und Lager zur Vermeidung von Rückstaus und Versorgungsengpässen.</li><li>Wandte Lean-Werkzeuge (KANBAN, SMED) an und reduzierte Leerzeiten um 5–10 Min. pro Produktionszyklus.</li><li>Reduzierte Fehlerquoten um bis zu 40 % durch den DMAIC Six-Sigma-Ansatz.</li>',
+    'btn.ref': 'Arbeitszeugnis',
+    /* other projects */
+    'proj.eyebrow': 'Projekte',
+    'proj.title':   'Weitere Projekte',
+    'proj.sub':     'Analyse-, BI- und Ingenieurbau-Initiativen',
+    'proj.1.name': 'Monatliches Leistungs-Dashboard · Looker Studio',
+    'proj.1.desc': 'Interaktives E-Commerce-KPI-Dashboard zur Verfolgung monatlicher Topline-, Marketing- und Rentabilitätskennzahlen, filterbar nach Land und Vertriebskanal (D2C, B2B, Amazon).',
+    'proj.1.link': 'Live-Dashboard ansehen →',
+    'proj.2.name': 'eMobility Support Hub · Jira Ticketing Demo',
+    'proj.2.desc': 'Vollständiger Jira-Workflow zur Demonstration von Service-Anfragen, Vorfällen und Genehmigungsprozessen mit benutzerdefinierten Dashboards für Ticket-Status, Priorität und Team-Arbeitsbelastung.',
+    'proj.2.link': 'Demo ansehen →',
+    'proj.3.name': 'Intelligente Energieautomatisierung · FHEM &amp; IoT',
+    'proj.3.desc': 'Automatisierte Geräte und Heizsysteme im Wohnheim mit Smarthome-Geräten und FHEM zur Energieeinsparung und Nachhaltigkeitsförderung – als universitäres Ingenieuprojekt.',
+    'proj.3.link': 'Bericht lesen →',
+    'proj.4.name': 'Predictive Maintenance · Machine Learning (Thesis)',
+    'proj.4.desc': 'Masterarbeit: ML-Ansätze zur Vorhersage von Bauteilausfällen in aseptischen Abfüllmaschinen für die Lebensmittel- &amp; Getränkeverpackung (SIG International). Note 1,80.',
+    'proj.4.link': 'M.Sc.-Forschungsarbeit',
+    'proj.5.name': 'Ideenentwicklung · Knowledge-Café-Forschung',
+    'proj.5.desc': 'Untersuchte Knowledge-Café- und World-Café-Methoden in physischen und virtuellen Umgebungen für die kostenpflichtige Ideationinitiative des Magdeburg Center of Excellence.',
+    'proj.5.link': 'Bericht lesen →',
+    'proj.6.name': 'Nachhaltige Mobilität · Kanada, Nigeria &amp; Brasilien',
+    'proj.6.desc': 'PESTEL-Analyse aktueller Mobilitätsherausforderungen auf drei Kontinenten mit Innovationsvorschlägen, die mit globalen Megatrends und den UN-Zielen für nachhaltige Entwicklung übereinstimmen.',
+    'proj.6.link': 'Bericht lesen →',
+    /* education */
+    'edu.eyebrow': 'Akademisch',
+    'edu.title':   'Ausbildung',
+    'edu.sub':     'Ingenieurwesen und Technologiemanagement an drei Universitäten',
+    'edu.1.degree':   'M.Sc. Advanced Industrial Engineering',
+    'edu.1.period':   '&#128197; Okt. 2025 – Heute',
+    'edu.1.where':    '&#128205; Rosenheim, Deutschland',
+    'edu.1.subjects': 'Fortgeschrittene Produktionssysteme · Datenanalyse · Supply-Chain-Optimierung · Nachhaltiges Produzieren',
+    'edu.2.degree':   'M.Sc. Technologie- und Innovationsmanagement',
+    'edu.2.period':   '&#128197; März 2021 – Feb. 2025',
+    'edu.2.where':    '&#128205; Wernigerode, Deutschland',
+    'edu.2.grade':    '&#11088; Note: 1,80',
+    'edu.2.thesis':   'Thesis: Optimierung präventiver Wartungsstrategien in der Lebensmittel- und Getränkeverpackung: Machine-Learning-Ansätze zur Vorhersage von Bauteilausfällen in aseptischen Abfüllmaschinen',
+    'edu.3.degree':   'B.Sc. Industrie- und Produktionstechnik',
+    'edu.3.period':   '&#128197; Apr. 2014 – Feb. 2019',
+    'edu.3.where':    '&#128205; Sylhet, Bangladesch',
+    'edu.3.grade':    '&#11088; Note: 2,00',
+    'edu.3.thesis':   'Thesis: Einführung von Lean Tools und Techniken in der Bekleidungsfertigungsindustrie in Bangladesch',
+    /* certifications */
+    'cert.eyebrow': 'Weiterbildung',
+    'cert.title':   'Zertifikate',
+    'cert.sub':     'Kontinuierliche Weiterbildung in Datentechnik, BI und Automatisierung',
+    /* contact */
+    'contact.eyebrow':     'Kontakt',
+    'contact.title':       'Kontakt aufnehmen',
+    'contact.sub':         'Offen für Vollzeitstellen, Praktika und Automatisierungsberatung',
+    'contact.label.email': 'E-Mail',
+    'contact.label.phone': 'Telefon',
+    /* footer */
+    'footer': '&copy; 2026 Jubair Khandaker &nbsp;&middot;&nbsp; Automatisierungs- &amp; Wirtschaftsingenieurwesen'
+  }
+};
+
+function setLang(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[lang] && t[lang][key] !== undefined) {
+      el.innerHTML = t[lang][key];
+    }
+  });
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.documentElement.lang = lang;
+  localStorage.setItem('portfolio-lang', lang);
+}
+
+/* Scroll animation */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.fade-up').forEach(el => io.observe(el));
+
+/* Restore saved language preference */
+const savedLang = localStorage.getItem('portfolio-lang') || 'en';
+setLang(savedLang);
 </script>
 </body>
 </html>
