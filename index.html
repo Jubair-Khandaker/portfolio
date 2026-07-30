@@ -35,16 +35,17 @@
       position: fixed; top: 0; inset-inline: 0; z-index: 200;
       height: 64px; display: flex; align-items: center; justify-content: space-between;
       padding: 0 2.5rem;
-      background: rgba(8,12,24,.75); backdrop-filter: blur(20px) saturate(1.4);
+      background: rgba(8,12,24,.85); backdrop-filter: blur(20px) saturate(1.4);
       border-bottom: 1px solid transparent;
-      transition: background .3s;
+      box-shadow: 0 8px 32px rgba(0,0,0,.35);
+      transition: background .3s, box-shadow .3s;
     }
     nav::after {
-      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px;
       background: linear-gradient(90deg, transparent 0%, var(--blue) 30%, var(--purple) 70%, transparent 100%);
-      opacity: .45;
+      opacity: .9; box-shadow: 0 0 12px rgba(59,130,246,.5);
     }
-    nav.scrolled { background: rgba(8,12,24,.96); }
+    nav.scrolled { background: rgba(8,12,24,.97); box-shadow: 0 8px 32px rgba(0,0,0,.5); }
 
     .nav-logo {
       font-weight: 800; font-size: .95rem; letter-spacing: .5px;
@@ -57,19 +58,19 @@
 
     .nav-links { display: flex; gap: 1.6rem; list-style: none; }
     .nav-links a {
-      position: relative; color: var(--dim); font-size: .92rem; font-weight: 500;
+      position: relative; color: var(--muted); font-size: .92rem; font-weight: 600;
       text-decoration: none; letter-spacing: .3px;
       padding-bottom: .2rem;
-      transition: color .2s;
+      transition: color .2s, text-shadow .2s;
     }
     .nav-links a::after {
       content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 2px;
       background: var(--grad); border-radius: 1px;
       transition: width .25s ease;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover { color: #fff; text-shadow: 0 0 12px rgba(59,130,246,.5); }
     .nav-links a:hover::after { width: 100%; }
-    .nav-links a.active { color: var(--text); }
+    .nav-links a.active { color: #fff; text-shadow: 0 0 12px rgba(59,130,246,.5); }
     .nav-links a.active::after { width: 100%; }
 
     /* ── LANG TOGGLE ─────────────────── */
