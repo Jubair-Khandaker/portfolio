@@ -1,5 +1,5 @@
 # Summary
-Industrial Engineering graduate student at TH Rosenheim with hands-on experience in automation, business intelligence, and process optimization. Currently building end-to-end automation workflows at Bears with Benefits using n8n, Power Automate, and the Shopify API, with a background in predictive maintenance and data analysis from three years at SIG International. Experienced working in cross-functional, international environments with a focus on translating operational problems into scalable digital solutions.
+Industrial Engineering graduate student at TH Rosenheim with hands-on experience in automation, business intelligence, and process optimization. Currently a working student in innovation management at BSH Hausgeräte (since October 2026). Previously built end-to-end automation workflows at Bears with Benefits using n8n, Power Automate, and the Shopify API, with a background in predictive maintenance and data analysis from three years at SIG International. Experienced working in cross-functional, international environments with a focus on translating operational problems into scalable digital solutions.
 
 - __Phone:__ +4915781303249
 - __Email:__ jubairkhandaker73@gmail.com
@@ -15,10 +15,18 @@ Industrial Engineering graduate student at TH Rosenheim with hands-on experience
 
 # Work Experiences
 
+### Working Student - COS-IM
+[BSH Hausgeräte GmbH](https://www.bsh-group.com/); Munich, Germany
+
+_October 2026 - Present_
+- Supporting sub-projects and work packages in innovation management, including innovation portfolio maintenance and Power BI reporting
+- Contributing to company-wide innovation projects, including the use of AI in the innovation process
+
+
 ### Internship - Automations
 [Bears with Benefits](https://www.bears-with-benefits.com/); Munich, Germany                                                             
 
-_January 2026 - Present_                                                                                           
+_January 2026 - July 2026_                                                                                           
 - Designed and deployed an end-to-end order processing automation in n8n that ingests B2B purchase orders from multiple input formats (email body, PDF, Excel) and automatically creates sales orders in Xentral ERP, returning a confirmation link to the sender for review and approval
 - Built a second automation workflow handling bulk vendor orders: converts raw order files into Xentral-compatible format, processes tracking number assignments, and generates country-specific invoice CSV files for upload into Xentral's Beleg importer across multiple markets
 - Developed a real-time Shopify analytics pipeline using the Shopify API (read_orders, read_customers, read_reports scopes) that runs on a 10-minute schedule and updates a SharePoint Excel workbook with order, refund, and customer metrics per sales channel (Shopify, TikTok Shop); connected a live pivot summary table to the same data source
