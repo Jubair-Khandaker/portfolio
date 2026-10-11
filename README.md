@@ -15,7 +15,7 @@ Industrial Engineering graduate student at TH Rosenheim with hands-on experience
 
 # Work Experiences
 
-### Working Student - COS-IM
+### Working Student - Innovation Management
 [BSH Hausgeräte GmbH](https://www.bsh-group.com/); Munich, Germany
 
 _October 2026 - Present_

@@ -319,6 +319,91 @@
       section { padding: 3.5rem 1.25rem; }
       .auto-grid { grid-template-columns: 1fr; }
     }
+
+    /* ── CAREER QUEST (interactive) ──── */
+    #quest { background: var(--bg); position: relative; }
+    .quest-hud {
+      display: grid; grid-template-columns: auto 1fr auto; gap: 1.25rem; align-items: center;
+      background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: 16px; padding: 1rem 1.25rem;
+    }
+    .q-avatar { width: 64px; height: 64px; border-radius: 50%; object-fit: cover; border: 2px solid var(--blue); box-shadow: 0 0 18px rgba(59,130,246,.45); }
+    .q-name { font-weight: 800; font-size: 1.05rem; }
+    .q-rank { font-family: 'JetBrains Mono', monospace; font-size: .78rem; color: var(--amber); letter-spacing: .5px; }
+    .q-xpwrap { margin-top: .55rem; }
+    .q-xpbar { height: 10px; background: #0b1222; border: 1px solid var(--border); border-radius: 99px; overflow: hidden; }
+    .q-xpfill { height: 100%; width: 0; background: var(--grad-green); transition: width .6s cubic-bezier(.2,.8,.2,1); box-shadow: 0 0 12px rgba(16,185,129,.5); }
+    .q-xptext { display: flex; justify-content: space-between; margin-top: .3rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--muted); }
+    .q-stats { display: flex; gap: 1.1rem; font-family: 'JetBrains Mono', monospace; font-size: .75rem; color: var(--muted); }
+    .q-stats b { color: var(--text); font-size: .95rem; display: block; }
+    .q-btns { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: 1.1rem; }
+    .q-btn {
+      font-family: 'JetBrains Mono', monospace; font-size: .8rem; font-weight: 600; letter-spacing: .4px;
+      padding: .55rem 1.05rem; border-radius: 10px; cursor: pointer; border: 1px solid var(--border-hi);
+      background: rgba(255,255,255,.04); color: var(--text); transition: transform .15s, box-shadow .2s, background .2s;
+    }
+    .q-btn:hover { transform: translateY(-1px); background: var(--bg-hover); }
+    .q-btn.primary { background: var(--grad); border-color: transparent; color: #fff; box-shadow: 0 0 18px rgba(59,130,246,.35); }
+    .q-btn:focus-visible, .q-node:focus-visible .q-orb { outline: 2px solid var(--amber); outline-offset: 3px; }
+    .quest-map { position: relative; margin: 2rem 0 1.5rem; overflow-x: auto; padding: 1.2rem .5rem 1rem; scrollbar-width: thin; }
+    .q-track { display: flex; min-width: 900px; justify-content: space-between; position: relative; }
+    .q-track::before { content: ''; position: absolute; top: 28px; left: 42px; right: 42px; height: 4px; background: var(--border-hi); border-radius: 4px; }
+    .q-fill { position: absolute; top: 28px; left: 42px; height: 4px; width: 0; border-radius: 4px; background: var(--grad-green); box-shadow: 0 0 12px rgba(16,185,129,.6); transition: width .6s cubic-bezier(.2,.8,.2,1); }
+    .q-node { width: 84px; display: flex; flex-direction: column; align-items: center; gap: .4rem; background: none; border: none; color: inherit; cursor: pointer; position: relative; z-index: 1; font-family: inherit; }
+    .q-orb { width: 56px; height: 56px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; background: var(--bg-card); border: 2px solid var(--border-hi); transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .q-node:hover .q-orb { transform: scale(1.08); }
+    .q-node.unlocked .q-orb { border-color: var(--green); box-shadow: 0 0 14px rgba(16,185,129,.35); }
+    .q-node.nextup .q-orb { border-color: var(--amber); animation: qhint 1.6s ease-in-out infinite; }
+    .q-node.active .q-orb { border-color: var(--blue); transform: scale(1.14); box-shadow: 0 0 0 4px rgba(59,130,246,.25), 0 0 24px rgba(59,130,246,.65); }
+    .q-node.locked .q-orb { filter: grayscale(1); opacity: .5; }
+    .q-node.locked { cursor: not-allowed; }
+    .q-year { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--muted); }
+    .q-lv { font-size: .68rem; color: var(--dim); text-transform: uppercase; letter-spacing: .6px; }
+    .q-node.shake .q-orb { animation: qshake .4s; }
+    @keyframes qhint { 0%,100% { box-shadow: 0 0 0 0 rgba(245,158,11,.5); } 50% { box-shadow: 0 0 0 9px rgba(245,158,11,0); } }
+    @keyframes qshake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-6px); } 75% { transform: translateX(6px); } }
+    .quest-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 1.25rem; }
+    .q-card { background: var(--bg-card); border: 1px solid var(--border-hi); border-radius: 16px; padding: 1.5rem; }
+    .q-card h3 { font-size: 1.15rem; line-height: 1.3; }
+    .q-card.q-in { animation: qin .45s ease both; }
+    @keyframes qin { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+    .q-lvtag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: #fff; background: var(--grad); padding: .15rem .6rem; border-radius: 99px; margin-bottom: .6rem; }
+    .q-org { color: var(--muted); font-size: .9rem; margin-top: .2rem; }
+    .q-meta { display: flex; flex-wrap: wrap; gap: .4rem 1rem; color: var(--dim); font-size: .8rem; margin-top: .45rem; }
+    .q-label { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--amber); text-transform: uppercase; letter-spacing: .8px; margin: 1.1rem 0 .4rem; }
+    .q-boss { background: rgba(239,68,68,.07); border: 1px solid rgba(239,68,68,.25); border-radius: 12px; padding: .8rem 1rem; font-size: .95rem; }
+    .q-log { list-style: none; display: grid; gap: .45rem; }
+    .q-log li { position: relative; padding-left: 1.3rem; color: var(--muted); font-size: .9rem; }
+    .q-log li::before { content: '>'; position: absolute; left: 0; color: var(--green); font-family: 'JetBrains Mono', monospace; }
+    .q-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .q-chip { font-size: .75rem; font-weight: 600; padding: .22rem .65rem; border-radius: 99px; background: rgba(59,130,246,.12); border: 1px solid rgba(59,130,246,.3); color: #93c5fd; }
+    .q-chip.new { animation: qpop .5s ease both; background: rgba(245,158,11,.15); border-color: rgba(245,158,11,.5); color: #fcd34d; }
+    @keyframes qpop { 0% { transform: scale(.6); opacity: 0; } 70% { transform: scale(1.12); } 100% { transform: scale(1); opacity: 1; } }
+    .q-xpgain { font-family: 'JetBrains Mono', monospace; color: var(--green); font-weight: 700; }
+    .q-link { display: inline-block; margin-top: 1.1rem; font-size: .85rem; font-weight: 600; color: #93c5fd; text-decoration: none; }
+    .q-link:hover { text-decoration: underline; }
+    .q-cta { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.1rem; }
+    .q-side { display: grid; gap: 1.25rem; align-content: start; }
+    .q-empty { color: var(--dim); font-size: .85rem; }
+    .q-badges { display: grid; gap: .6rem; }
+    .q-badge { display: flex; gap: .7rem; align-items: center; padding: .55rem .7rem; border-radius: 12px; border: 1px solid var(--border); font-size: .82rem; color: var(--dim); }
+    .q-badge .ic { font-size: 1.25rem; filter: grayscale(1); opacity: .5; }
+    .q-badge.got { color: var(--text); border-color: rgba(245,158,11,.45); background: rgba(245,158,11,.07); }
+    .q-badge.got .ic { filter: none; opacity: 1; }
+    .q-badge small { display: block; color: var(--dim); font-size: .72rem; }
+    .q-toast { position: fixed; right: 1.25rem; bottom: 1.25rem; z-index: 300; display: grid; gap: .5rem; pointer-events: none; }
+    .q-toast div { background: #0b1222; border: 1px solid var(--amber); color: #fde68a; padding: .6rem .9rem; border-radius: 12px; font-size: .85rem; box-shadow: 0 8px 28px rgba(0,0,0,.5); animation: qin .3s ease both; }
+    .q-confetti { position: fixed; top: 0; left: 0; width: 100%; height: 0; z-index: 310; pointer-events: none; }
+    .q-confetti span { position: absolute; top: -20px; font-size: 1.4rem; animation: qfall 2.4s ease-in forwards; }
+    @keyframes qfall { to { transform: translateY(105vh) rotate(540deg); opacity: .2; } }
+    @media (max-width: 900px) {
+      .quest-grid { grid-template-columns: 1fr; }
+      .quest-hud { grid-template-columns: auto 1fr; }
+      .q-stats { grid-column: 1 / -1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .q-card.q-in, .q-chip.new, .q-node.nextup .q-orb, .q-node.shake .q-orb, .q-toast div, .q-confetti span { animation: none; }
+      .q-xpfill, .q-fill { transition: none; }
+    }
   </style>
 </head>
 <body>
@@ -327,6 +412,7 @@
 <nav>
   <div class="nav-logo">JK</div>
   <ul class="nav-links">
+    <li><a href="#quest" data-i18n="nav.quest">Quest</a></li>
     <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
     <li><a href="#automations" data-i18n="nav.automations">Automations</a></li>
     <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
@@ -346,7 +432,7 @@
     <div>
       <div class="hero-badge"><span class="badge-dot"></span> <span data-i18n="hero.badge">Open to new opportunities</span></div>
       <h1>Jubair<br><span>Khandaker</span></h1>
-      <p class="hero-role" data-i18n="hero.role">Working Student, BSH &nbsp;·&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;·&nbsp; Advanced Industrial Engineering Grad Student</p>
+      <p class="hero-role" data-i18n="hero.role">Working Student, Innovation Management at BSH &nbsp;·&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;·&nbsp; Advanced Industrial Engineering Grad Student</p>
       <p class="hero-desc" data-i18n="hero.desc">
         I build end-to-end automation pipelines that turn hours of manual work into minutes. From Shopify analytics and ERP integrations to carrier payment reconciliation and cash-flow forecasting, I translate operational complexity into reliable digital workflows.
       </p>
@@ -356,6 +442,18 @@
       </div>
     </div>
     <img src="profile.png" alt="Jubair Khandaker" class="hero-photo" />
+  </div>
+</section>
+
+<!-- ═══ CAREER QUEST (interactive) ═════════════════════════════════════════ -->
+<section id="quest">
+  <div class="container">
+    <div class="section-eyebrow" id="q-eyebrow">Interactive</div>
+    <h2 class="section-title" id="q-title">Career Quest</h2>
+    <p class="section-sub" id="q-sub">Unlock my education and experience level by level.</p>
+    <div id="quest-root"></div>
+    <div class="q-toast" id="q-toast" aria-live="polite"></div>
+    <div class="q-confetti" id="q-confetti" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -730,7 +828,7 @@
       <div class="timeline-item fade-up">
         <div class="tl-meta">
           <div>
-            <div class="tl-role" data-i18n="exp.6.role">Working Student, COS-IM</div>
+            <div class="tl-role" data-i18n="exp.6.role">Working Student, Innovation Management</div>
             <a class="tl-company" href="https://www.bsh-group.com/" target="_blank">BSH Hausgeräte GmbH</a>
             <div class="tl-where" data-i18n="exp.6.where">&#128205; Munich, Germany</div>
           </div>
@@ -1039,13 +1137,14 @@ const t = {
     /* nav */
     'nav.skills':       'Skills',
     'nav.automations':  'Automations',
+    'nav.quest':        'Quest',
     'nav.experience':   'Experience',
     'nav.projects':     'Projects',
     'nav.education':    'Education',
     'nav.contact':      'Contact',
     /* hero */
     'hero.badge': 'Open to new opportunities',
-    'hero.role':  'Working Student, BSH &nbsp;&middot;&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;&middot;&nbsp; Advanced Industrial Engineering Grad Student',
+    'hero.role':  'Working Student, Innovation Management at BSH &nbsp;&middot;&nbsp; M.Sc. Technology &amp; Innovation Management &nbsp;&middot;&nbsp; Advanced Industrial Engineering Grad Student',
     'hero.desc':  'I build end-to-end automation pipelines that turn hours of manual work into minutes. From Shopify analytics and ERP integrations to carrier payment reconciliation and cash-flow forecasting, I translate operational complexity into reliable digital workflows.',
     'hero.cta1':  'LinkedIn Profile',
     'hero.cta2':  'Get in Touch',
@@ -1121,7 +1220,7 @@ const t = {
     'exp.eyebrow': 'Career',
     'exp.title':   'Work Experience',
     'exp.sub':     'Automation, data, and process work across e-commerce, manufacturing, and industrial operations',
-    'exp.6.role':   'Working Student, COS-IM',
+    'exp.6.role':   'Working Student, Innovation Management',
     'exp.6.where':  '&#128205; Munich, Germany',
     'exp.6.period': 'Oct 2026 - Present',
     'exp.6.list':   '<li>Supporting sub-projects and work packages in innovation management, including innovation portfolio maintenance and Power BI reporting.</li><li>Contributing to company-wide innovation projects, including the use of AI in the innovation process.</li>',
@@ -1207,13 +1306,14 @@ const t = {
     /* nav */
     'nav.skills':       'Fähigkeiten',
     'nav.automations':  'Automatisierungen',
+    'nav.quest':        'Quest',
     'nav.experience':   'Erfahrung',
     'nav.projects':     'Projekte',
     'nav.education':    'Bildung',
     'nav.contact':      'Kontakt',
     /* hero */
     'hero.badge': 'Offen für neue Möglichkeiten',
-    'hero.role':  'Werkstudent, BSH &nbsp;&middot;&nbsp; M.Sc. Technologie- &amp; Innovationsmanagement &nbsp;&middot;&nbsp; Student Advanced Industrial Engineering',
+    'hero.role':  'Werkstudent Innovationsmanagement bei BSH &nbsp;&middot;&nbsp; M.Sc. Technologie- &amp; Innovationsmanagement &nbsp;&middot;&nbsp; Student Advanced Industrial Engineering',
     'hero.desc':  'Ich entwickle End-to-End-Automatisierungspipelines, die stundenlange manuelle Arbeit auf wenige Minuten reduzieren. Von Shopify-Analysen und ERP-Integrationen bis zur Spediteur-Zahlungsabstimmung und Cash-Flow-Prognosen – ich übersetze operative Komplexität in zuverlässige digitale Workflows.',
     'hero.cta1':  'LinkedIn-Profil',
     'hero.cta2':  'Kontakt aufnehmen',
@@ -1289,7 +1389,7 @@ const t = {
     'exp.eyebrow': 'Karriere',
     'exp.title':   'Berufserfahrung',
     'exp.sub':     'Automatisierungs-, Daten- und Prozessarbeit in E-Commerce, Fertigung und industriellem Betrieb',
-    'exp.6.role':   'Werkstudent, COS-IM',
+    'exp.6.role':   'Werkstudent, Innovationsmanagement',
     'exp.6.where':  '&#128205; München, Deutschland',
     'exp.6.period': 'Okt. 2026 – heute',
     'exp.6.list':   '<li>Unterstützung bei Teilprojekten und Arbeitspaketen im Innovationsmanagement, u. a. Pflege des Innovationsportfolios und Power-BI-Berichte.</li><li>Mitwirkung an unternehmensweiten Innovationsprojekten, u. a. zum Einsatz von KI im Innovationsprozess.</li>',
@@ -1382,6 +1482,7 @@ function setLang(lang) {
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
   document.getElementById('btn-de').classList.toggle('active', lang === 'de');
   document.documentElement.lang = lang;
+  if (window.questSetLang) window.questSetLang(lang);
   localStorage.setItem('portfolio-lang', lang);
 }
 
@@ -1413,6 +1514,311 @@ navSections.forEach(s => sectionObserver.observe(s));
 /* Restore saved language preference */
 const savedLang = localStorage.getItem('portfolio-lang') || 'en';
 setLang(savedLang);
+</script>
+
+<script>
+/* ── CAREER QUEST ─────────────────────────────────────────────────────── */
+(function () {
+  var root = document.getElementById('quest-root');
+  if (!root) return;
+
+  var LEVELS = [
+    { icon: '🎓', year: '2014', xp: 100, anchor: '#education',
+      loot: ['Lean', 'Production Engineering'],
+      en: { title: 'B.Sc. Industrial & Production Engineering', org: 'Shahjalal University of Science and Technology', place: 'Sylhet, Bangladesh', period: 'Apr 2014 - Feb 2019',
+            boss: 'Thesis: adopting lean tools and techniques in garment manufacturing.',
+            log: ['Built the engineering base: production systems, process design and quality.', 'Graduated with a grade of 2.00.'] },
+      de: { title: 'B.Sc. Industrial and Production Engineering', org: 'Shahjalal University of Science and Technology', place: 'Sylhet, Bangladesch', period: 'Apr. 2014 - Feb. 2019',
+            boss: 'Abschlussarbeit: Einführung von Lean-Werkzeugen in der Bekleidungsindustrie.',
+            log: ['Ingenieurgrundlage aufgebaut: Produktionssysteme, Prozessgestaltung und Qualität.', 'Abschluss mit der Note 2,00.'] } },
+    { icon: '🏭', year: '2019', xp: 150, anchor: '#experience',
+      loot: ['Six Sigma', 'DMAIC', 'KANBAN', 'SMED'],
+      en: { title: 'Industrial Engineer, Product & Supply Chain', org: 'Ha Meem Group', place: 'Dhaka, Bangladesh', period: 'Mar 2019 - Jun 2020',
+            boss: 'Reduced defect rates by up to 40% using DMAIC Six Sigma.',
+            log: ['Coordinated pre-production across merchandising, planning, sales and warehouse.', 'Cut idle time by 5-10 minutes per production cycle with KANBAN and SMED.'] },
+      de: { title: 'Wirtschaftsingenieur, Produkt- & Supply-Chain-Management', org: 'Ha Meem Group', place: 'Dhaka, Bangladesch', period: 'März 2019 - Juni 2020',
+            boss: 'Fehlerquoten um bis zu 40 % gesenkt mit dem DMAIC-Six-Sigma-Ansatz.',
+            log: ['Vorproduktion zwischen Merchandising, Planung, Vertrieb und Lager koordiniert.', 'Leerlaufzeiten um 5-10 Minuten pro Produktionszyklus gesenkt mit KANBAN und SMED.'] } },
+    { icon: '💡', year: '2021', xp: 200, anchor: '#education',
+      loot: ['Innovation Management', 'Machine Learning'],
+      en: { title: 'M.Sc. Technology and Innovation Management', org: 'Hochschule Harz', place: 'Wernigerode, Germany', period: 'Mar 2021 - Feb 2025',
+            boss: 'Thesis: machine learning to predict component failures in aseptic filling machines. Grade 1.80.',
+            log: ['Studied in the Department of Automation and Computer Science.', 'Combined innovation management with data and automation.'] },
+      de: { title: 'M.Sc. Technologie- und Innovationsmanagement', org: 'Hochschule Harz', place: 'Wernigerode, Deutschland', period: 'März 2021 - Feb. 2025',
+            boss: 'Masterarbeit: Maschinelles Lernen zur Vorhersage von Bauteilausfällen in aseptischen Abfüllmaschinen. Note 1,80.',
+            log: ['Studium im Fachbereich Automatisierung und Informatik.', 'Innovationsmanagement mit Daten und Automatisierung verbunden.'] } },
+    { icon: '📋', year: '2023', xp: 150, anchor: '#experience',
+      loot: ['Product Management', 'PostgreSQL', 'NetBox'],
+      en: { title: 'Working Student, Product Management', org: 'SIG International Services', place: 'Linnich, Germany', period: 'Jan 2023 - Dec 2023',
+            boss: 'Turned 150+ customer survey responses into structured user stories.',
+            log: ['Evaluated technical, commercial and operational feasibility of a software feature with cross-functional stakeholders.', 'Analysed server data with PostgreSQL and maintained customer infrastructure data in NetBox.'] },
+      de: { title: 'Werkstudent, Produktmanagement', org: 'SIG International Services', place: 'Linnich, Deutschland', period: 'Jan. 2023 - Dez. 2023',
+            boss: '150+ Kundenbefragungen in strukturierte User Stories übersetzt.',
+            log: ['Technische, kommerzielle und operative Machbarkeit eines Software-Features mit bereichsübergreifenden Stakeholdern bewertet.', 'Serverdaten mit PostgreSQL analysiert und Kundeninfrastrukturdaten in NetBox gepflegt.'] } },
+    { icon: '📈', year: '2024', xp: 200, anchor: '#experience',
+      loot: ['Python', 'Pandas', 'scikit-learn', 'Power BI'],
+      en: { title: 'Working Student, Production Data Analysis', org: 'SIG International Services', place: 'Linnich, Germany', period: 'Apr 2024 - Dec 2024',
+            boss: 'Built Python pipelines and machine learning models to predict machine component failures.',
+            log: ['Cleaned and structured machine sensor data with Pandas and NumPy.', 'Delivered interactive Power BI and Excel dashboards for maintenance decisions.'] },
+      de: { title: 'Werkstudent, Produktionsdatenanalyse', org: 'SIG International Services', place: 'Linnich, Deutschland', period: 'Apr. 2024 - Dez. 2024',
+            boss: 'Python-Pipelines und Machine-Learning-Modelle zur Vorhersage von Bauteilausfällen gebaut.',
+            log: ['Maschinensensordaten mit Pandas und NumPy bereinigt und strukturiert.', 'Interaktive Power-BI- und Excel-Dashboards für Wartungsentscheidungen geliefert.'] } },
+    { icon: '🏛️', year: '2025', xp: 150, anchor: '#education',
+      loot: ['Production Systems', 'Digital Twin'],
+      en: { title: 'M.Sc. Advanced Industrial Engineering', org: 'TH Rosenheim', place: 'Rosenheim, Germany', period: 'Oct 2025 - Present',
+            boss: 'In progress: advanced production systems, data analytics and supply chain optimisation.',
+            log: ['A second Master’s degree, studied alongside work.', 'Topics include digital twins, ERP processes and factory and production system design.'] },
+      de: { title: 'M.Sc. Advanced Industrial Engineering', org: 'TH Rosenheim', place: 'Rosenheim, Deutschland', period: 'Okt. 2025 - heute',
+            boss: 'In Arbeit: Fortgeschrittene Produktionssysteme, Datenanalyse und Supply-Chain-Optimierung.',
+            log: ['Ein zweiter Master, neben der Arbeit.', 'Themen sind Digital Twins, ERP-Prozesse sowie Fabrik- und Produktionssystemplanung.'] } },
+    { icon: '⚡', year: '2026', xp: 300, anchor: '#automations',
+      loot: ['n8n', 'Power Automate', 'Office Scripts', 'REST APIs', 'OAuth', 'Xentral ERP', 'Claude'],
+      en: { title: 'Automations Intern', org: 'Bears with Benefits', place: 'Munich, Germany', period: 'Jan 2026 - Jul 2026',
+            boss: 'Replaced hours of manual work with 15 production automations. B2B orders now take 4-5 minutes instead of 15-30.',
+            log: ['Payment reconciliation runs handle up to 17,000+ orders each.', 'Connected Shopify, Xentral ERP, SharePoint and Slack with n8n and Power Automate.', 'Built MCP connectors so Claude can work with internal systems.'] },
+      de: { title: 'Automatisierungspraktikant', org: 'Bears with Benefits', place: 'München, Deutschland', period: 'Jan. 2026 - Jul. 2026',
+            boss: 'Stunden manueller Arbeit durch 15 produktive Automatisierungen ersetzt. B2B-Bestellungen dauern jetzt 4-5 statt 15-30 Minuten.',
+            log: ['Zahlungsabgleiche verarbeiten bis zu 17.000+ Bestellungen pro Lauf.', 'Shopify, Xentral ERP, SharePoint und Slack mit n8n und Power Automate verbunden.', 'MCP-Connectors gebaut, mit denen Claude auf interne Systeme zugreifen kann.'] } },
+    { icon: '🚀', year: '2026', xp: 100, anchor: '#experience',
+      loot: ['Innovation Portfolio', 'AI in Innovation'],
+      en: { title: 'Working Student, Innovation Management', org: 'BSH Hausgeräte', place: 'Munich, Germany', period: 'Oct 2026 - Present',
+            boss: 'The current level: innovation portfolio, Power BI reporting and AI in the innovation process.',
+            log: ['Supporting sub-projects and work packages in innovation management.', 'Contributing to company-wide innovation projects.'] },
+      de: { title: 'Werkstudent, Innovationsmanagement', org: 'BSH Hausgeräte', place: 'München, Deutschland', period: 'Okt. 2026 - heute',
+            boss: 'Das aktuelle Level: Innovationsportfolio, Power-BI-Berichte und KI im Innovationsprozess.',
+            log: ['Unterstützung bei Teilprojekten und Arbeitspaketen im Innovationsmanagement.', 'Mitwirkung an unternehmensweiten Innovationsprojekten.'] } },
+    { icon: '🏁', year: 'Next', xp: 0, anchor: '#contact', final: true, loot: [],
+      en: { title: 'Final level: your team', org: 'Open to full-time roles', place: 'Munich, Germany or remote', period: 'Available from December 2026',
+            boss: 'Workflow automation, AI agents and process integration. Ready to build with you?', log: [] },
+      de: { title: 'Finales Level: Dein Team', org: 'Offen für Vollzeitstellen', place: 'München, Deutschland oder remote', period: 'Verfügbar ab Dezember 2026',
+            boss: 'Workflow-Automatisierung, KI-Agenten und Prozessintegration. Bereit, gemeinsam zu bauen?', log: [] } }
+  ];
+
+  var UI = {
+    en: {
+      eyebrow: 'Interactive', title: 'Career Quest',
+      sub: 'Unlock my education and experience level by level. Click a level or use the arrow keys. Collect XP, loot and badges.',
+      name: 'Jubair Khandaker', start: '▶ Start quest', next: '▶ Next level', reset: 'Reset', skip: 'Skip to the end',
+      xp: 'XP', levels: 'Levels', loot: 'Loot', badges: 'Badges', level: 'Level',
+      intro: 'Press Start to begin the quest. Each level is a chapter of my education or work history. Unlock all of them to reach the final level.',
+      boss: 'Boss fight', log: 'Quest log', lootGot: 'Loot collected', full: 'Read the full story', reward: 'Reward',
+      inv: 'Inventory', invEmpty: 'Nothing collected yet. Unlock a level to find skills.', ach: 'Achievements',
+      locked: 'Finish the previous level first.', unlocked: 'Level unlocked', badge: 'Badge unlocked',
+      ranks: ['Rookie', 'Apprentice', 'Engineer', 'Automation Architect'], done: 'Quest complete: open to work',
+      linkedin: 'LinkedIn', mail: 'Email me',
+      achs: { first: ['First steps', 'Unlock level 1'], lean: ['Lean mind', 'Unlock the Ha Meem level'], twin: ['Double master', 'Unlock both Master’s degrees'], data: ['Data wrangler', 'Unlock the production data level'], auto: ['Automation unlocked', 'Unlock the automation level'], all: ['Quest complete', 'Reach the final level'] }
+    },
+    de: {
+      eyebrow: 'Interaktiv', title: 'Karriere-Quest',
+      sub: 'Schalte meine Ausbildung und Erfahrung Level für Level frei. Klicke ein Level an oder nutze die Pfeiltasten. Sammle XP, Beute und Abzeichen.',
+      name: 'Jubair Khandaker', start: '▶ Quest starten', next: '▶ Nächstes Level', reset: 'Zurücksetzen', skip: 'Zum Ende springen',
+      xp: 'XP', levels: 'Level', loot: 'Beute', badges: 'Abzeichen', level: 'Level',
+      intro: 'Drücke Start, um die Quest zu beginnen. Jedes Level ist ein Kapitel meiner Ausbildung oder meines Berufswegs. Schalte alle frei, um das finale Level zu erreichen.',
+      boss: 'Endgegner', log: 'Questlog', lootGot: 'Gesammelte Beute', full: 'Ganze Geschichte lesen', reward: 'Belohnung',
+      inv: 'Inventar', invEmpty: 'Noch nichts gesammelt. Schalte ein Level frei, um Skills zu finden.', ach: 'Erfolge',
+      locked: 'Schließe zuerst das vorherige Level ab.', unlocked: 'Level freigeschaltet', badge: 'Abzeichen freigeschaltet',
+      ranks: ['Anfänger', 'Lehrling', 'Ingenieur', 'Automatisierungs-Architekt'], done: 'Quest abgeschlossen: offen für neue Aufgaben',
+      linkedin: 'LinkedIn', mail: 'E-Mail schreiben',
+      achs: { first: ['Erste Schritte', 'Level 1 freischalten'], lean: ['Lean-Denker', 'Das Ha-Meem-Level freischalten'], twin: ['Doppelter Master', 'Beide Master-Abschlüsse freischalten'], data: ['Datenbändiger', 'Das Produktionsdaten-Level freischalten'], auto: ['Automatisierung freigeschaltet', 'Das Automatisierungs-Level freischalten'], all: ['Quest abgeschlossen', 'Das finale Level erreichen'] }
+    }
+  };
+  var ACH_ICONS = { first: '👣', lean: '🧠', twin: '🎓', data: '📊', auto: '⚙️', all: '🏆' };
+  var ACH_ORDER = ['first', 'lean', 'twin', 'data', 'auto', 'all'];
+  var TOTAL_XP = LEVELS.reduce(function (s, l) { return s + l.xp; }, 0);
+  var ALL_LOOT = [];
+  LEVELS.forEach(function (l) { l.loot.forEach(function (x) { if (ALL_LOOT.indexOf(x) < 0) ALL_LOOT.push(x); }); });
+
+  var lang = document.documentElement.lang === 'de' ? 'de' : 'en';
+  var unlocked = [];            /* indices in order */
+  var cur = -1, fresh = [], badges = {}, keyNav = false;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function T() { return UI[lang]; }
+  function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;'); }
+  function xpNow() { return unlocked.reduce(function (s, i) { return s + LEVELS[i].xp; }, 0); }
+  function lootNow() {
+    var out = [];
+    unlocked.forEach(function (i) { LEVELS[i].loot.forEach(function (x) { if (out.indexOf(x) < 0) out.push(x); }); });
+    return out;
+  }
+  function rankName() {
+    var xp = xpNow(), r = T().ranks;
+    if (unlocked.length === LEVELS.length) return T().done;
+    return xp >= 1100 ? r[3] : xp >= 700 ? r[2] : xp >= 300 ? r[1] : r[0];
+  }
+
+  function toast(msg) {
+    var box = document.getElementById('q-toast');
+    var d = document.createElement('div');
+    d.textContent = msg; box.appendChild(d);
+    while (box.children.length > 3) box.removeChild(box.firstChild);
+    setTimeout(function () { if (d.parentNode) d.parentNode.removeChild(d); }, 2800);
+  }
+  function confetti() {
+    if (reduce) return;
+    var box = document.getElementById('q-confetti'), em = ['🎉', '✨', '⭐', '🚀', '💡'];
+    for (var i = 0; i < 28; i++) {
+      var s = document.createElement('span');
+      s.textContent = em[i % em.length];
+      s.style.left = (Math.random() * 100) + '%';
+      s.style.animationDelay = (Math.random() * 0.6) + 's';
+      box.appendChild(s);
+      (function (n) { setTimeout(function () { if (n.parentNode) n.parentNode.removeChild(n); }, 3200); })(s);
+    }
+  }
+
+  function checkBadges() {
+    var has = function (i) { return unlocked.indexOf(i) >= 0; };
+    var cond = {
+      first: has(0), lean: has(1), twin: has(2) && has(5), data: has(4), auto: has(6), all: has(LEVELS.length - 1)
+    };
+    ACH_ORDER.forEach(function (k) {
+      if (cond[k] && !badges[k]) {
+        badges[k] = true;
+        toast('🏅 ' + T().badge + ': ' + T().achs[k][0]);
+      }
+    });
+  }
+
+  function unlock(i, viaKey) {
+    if (i < 0 || i >= LEVELS.length) return;
+    if (i > unlocked.length) {                         /* not reachable yet */
+      var n = document.getElementById('q-node-' + i);
+      if (n) { n.classList.remove('shake'); void n.offsetWidth; n.classList.add('shake'); }
+      toast(T().locked);
+      return;
+    }
+    keyNav = !!viaKey; cur = i; fresh = [];
+    if (unlocked.indexOf(i) < 0) {
+      var before = lootNow();
+      unlocked.push(i);
+      fresh = LEVELS[i].loot.filter(function (x) { return before.indexOf(x) < 0; });
+      if (LEVELS[i].xp) toast('+' + LEVELS[i].xp + ' ' + T().xp + ' · ' + T().unlocked + ' ' + (i + 1));
+      checkBadges();
+      if (LEVELS[i].final) confetti();
+    }
+    render();
+  }
+  function skipAll() {
+    for (var i = 0; i < LEVELS.length; i++) {
+      if (unlocked.indexOf(i) < 0) {
+        unlocked.push(i);
+      }
+    }
+    fresh = []; cur = LEVELS.length - 1; checkBadges(); confetti(); render();
+  }
+  function reset() { unlocked = []; cur = -1; fresh = []; badges = {}; render(); }
+  function step(d) {
+    var to = cur + d;
+    if (to < 0) return;
+    unlock(Math.min(to, unlocked.length, LEVELS.length - 1), true);
+  }
+
+  function render() {
+    var t = T(), xp = xpNow(), pct = Math.round(xp / TOTAL_XP * 100);
+    document.getElementById('q-eyebrow').textContent = t.eyebrow;
+    document.getElementById('q-title').textContent = t.title;
+    document.getElementById('q-sub').textContent = t.sub;
+    var lootAll = lootNow();
+    var primaryLabel = unlocked.length === 0 ? t.start : (unlocked.length < LEVELS.length ? t.next : t.reset);
+    var primaryAct = unlocked.length < LEVELS.length ? 'next' : 'reset';
+
+    var h = '';
+    h += '<div class="quest-hud">';
+    h += '<img class="q-avatar" src="profile.png" alt="" />';
+    h += '<div><div class="q-name">' + esc(t.name) + '</div><div class="q-rank">' + esc(rankName()) + '</div>';
+    h += '<div class="q-xpwrap"><div class="q-xpbar" role="progressbar" aria-valuemin="0" aria-valuemax="' + TOTAL_XP + '" aria-valuenow="' + xp + '"><div class="q-xpfill" style="width:' + pct + '%"></div></div>';
+    h += '<div class="q-xptext"><span>' + xp + ' / ' + TOTAL_XP + ' ' + t.xp + '</span><span>' + pct + '%</span></div></div></div>';
+    h += '<div class="q-stats"><div><b>' + unlocked.length + '/' + LEVELS.length + '</b>' + t.levels + '</div><div><b>' + lootAll.length + '/' + ALL_LOOT.length + '</b>' + t.loot + '</div><div><b>' + Object.keys(badges).length + '/' + ACH_ORDER.length + '</b>' + t.badges + '</div></div>';
+    h += '</div>';
+    h += '<div class="q-btns"><button class="q-btn primary" data-act="' + primaryAct + '">' + esc(primaryLabel) + '</button>';
+    if (unlocked.length < LEVELS.length) h += '<button class="q-btn" data-act="skip">' + esc(t.skip) + '</button>';
+    if (unlocked.length) h += '<button class="q-btn" data-act="reset">' + esc(t.reset) + '</button>';
+    h += '</div>';
+
+    var fillPct = unlocked.length > 1 ? Math.min(100, (unlocked.length - 1) / (LEVELS.length - 1) * 100) : 0;
+    h += '<div class="quest-map"><div class="q-track" role="group" aria-label="' + esc(t.title) + '"><div class="q-fill" style="width:calc((100% - 84px) * ' + (fillPct / 100) + ')"></div>';
+    LEVELS.forEach(function (l, i) {
+      var cls = 'q-node';
+      var isDone = unlocked.indexOf(i) >= 0, isNext = !isDone && i === unlocked.length, isLocked = !isDone && !isNext;
+      if (isDone) cls += ' unlocked';
+      else if (isNext) cls += ' nextup';
+      else cls += ' locked';
+      if (i === cur) cls += ' active';
+      var icon = isLocked ? '🔒' : l.icon;
+      h += '<button class="' + cls + '" id="q-node-' + i + '" data-i="' + i + '" aria-label="' + esc(t.level + ' ' + (i + 1) + ': ' + l[lang].title) + '"' + (i === cur ? ' aria-current="step"' : '') + '>';
+      h += '<span class="q-orb">' + icon + '</span><span class="q-year">' + esc(l.year) + '</span><span class="q-lv">' + esc(t.level) + ' ' + (i + 1) + '</span></button>';
+    });
+    h += '</div></div>';
+
+    h += '<div class="quest-grid"><div class="q-card q-in" id="q-panel">';
+    if (cur < 0) {
+      h += '<span class="q-lvtag">' + esc(t.level) + ' 0</span><h3>' + esc(t.title) + '</h3><p class="q-org" style="margin-top:.6rem">' + esc(t.intro) + '</p>';
+    } else {
+      var L = LEVELS[cur], d = L[lang];
+      h += '<span class="q-lvtag">' + esc(t.level) + ' ' + (cur + 1) + ' · ' + esc(L.year) + '</span>';
+      h += '<h3>' + esc(d.title) + '</h3><div class="q-org">' + esc(d.org) + '</div>';
+      h += '<div class="q-meta"><span>📅 ' + esc(d.period) + '</span><span>📍 ' + esc(d.place) + '</span>' + (L.xp ? '<span class="q-xpgain">+' + L.xp + ' ' + t.xp + '</span>' : '') + '</div>';
+      h += '<div class="q-label">' + esc(t.boss) + '</div><div class="q-boss">' + esc(d.boss) + '</div>';
+      if (d.log.length) {
+        h += '<div class="q-label">' + esc(t.log) + '</div><ul class="q-log">';
+        d.log.forEach(function (x) { h += '<li>' + esc(x) + '</li>'; });
+        h += '</ul>';
+      }
+      if (L.loot.length) {
+        h += '<div class="q-label">' + esc(t.lootGot) + '</div><div class="q-chips">';
+        L.loot.forEach(function (x) { h += '<span class="q-chip' + (fresh.indexOf(x) >= 0 ? ' new' : '') + '">' + esc(x) + '</span>'; });
+        h += '</div>';
+      }
+      if (L.final) {
+        h += '<div class="q-cta"><a class="btn btn-primary" href="https://www.linkedin.com/in/jubairkhandaker/" target="_blank" rel="noopener">' + esc(t.linkedin) + '</a><a class="btn btn-outline" href="mailto:jubairkhandaker73@gmail.com">' + esc(t.mail) + '</a></div>';
+      } else {
+        h += '<a class="q-link" href="' + L.anchor + '">' + esc(t.full) + ' →</a>';
+      }
+    }
+    h += '</div><div class="q-side"><div class="q-card"><div class="q-label" style="margin-top:0">' + esc(t.inv) + '</div>';
+    if (lootAll.length) {
+      h += '<div class="q-chips">';
+      lootAll.forEach(function (x) { h += '<span class="q-chip' + (fresh.indexOf(x) >= 0 ? ' new' : '') + '">' + esc(x) + '</span>'; });
+      h += '</div>';
+    } else h += '<div class="q-empty">' + esc(t.invEmpty) + '</div>';
+    h += '</div><div class="q-card"><div class="q-label" style="margin-top:0">' + esc(t.ach) + '</div><div class="q-badges">';
+    ACH_ORDER.forEach(function (k) {
+      h += '<div class="q-badge' + (badges[k] ? ' got' : '') + '"><span class="ic">' + ACH_ICONS[k] + '</span><span>' + esc(t.achs[k][0]) + '<small>' + esc(t.achs[k][1]) + '</small></span></div>';
+    });
+    h += '</div></div></div></div>';
+
+    root.innerHTML = h;
+    if (keyNav && cur >= 0) {
+      var f = document.getElementById('q-node-' + cur);
+      if (f) { f.focus({ preventScroll: false }); }
+    }
+    if (cur >= 0) {
+      var a = document.getElementById('q-node-' + cur);
+      var map = root.querySelector('.quest-map');
+      if (a && map && map.scrollWidth > map.clientWidth) {
+        map.scrollLeft = a.offsetLeft - map.clientWidth / 2 + a.offsetWidth / 2;
+      }
+    }
+  }
+
+  root.addEventListener('click', function (e) {
+    var b = e.target.closest('button');
+    if (!b || !root.contains(b)) return;
+    if (b.classList.contains('q-node')) { unlock(parseInt(b.getAttribute('data-i'), 10), false); return; }
+    var act = b.getAttribute('data-act');
+    if (act === 'next') unlock(unlocked.length, false);
+    else if (act === 'skip') skipAll();
+    else if (act === 'reset') reset();
+  });
+  root.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); step(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); step(-1); }
+  });
+
+  window.questSetLang = function (l) { lang = (l === 'de') ? 'de' : 'en'; render(); };
+  render();
+})();
 </script>
 </body>
 </html>
